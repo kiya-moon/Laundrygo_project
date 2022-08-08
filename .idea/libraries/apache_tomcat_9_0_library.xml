@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="apache tomcat 9.0 library">
+    <CLASSES>
+      <root url="file://$USER_HOME$/OneDrive/바탕 화면/스프링의정석/apache-tomcat-9.0.64/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$USER_HOME$/OneDrive/바탕 화면/스프링의정석/apache-tomcat-9.0.64/lib" recursive="false" />
+  </library>
+</component>
