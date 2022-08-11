@@ -7,6 +7,28 @@
 **		   URL: http://www.inspiro-media.com						                **
 **	       													                                  **
 ************************************************************************/
+
+@font-face {
+    font-family: 'Happiness-Sans-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Happiness-Sans-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Happiness-Sans-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*  Content & Layout */
 html { overflow-x: hidden; }
 
@@ -35,7 +57,7 @@ section { padding: 80px 0; position: relative; width: 100%; overflow: hidden; z-
 -------------------------------------------------------------------------*/
 #page-title { clear: both; height: 82%; padding: 80px 0; background-color: #f8f9fa; position: relative; /* page header left*/ /* page header right*/ }
 #page-title .page-title { text-align: center; padding: 0; }
-#page-title .page-title > h1 { font-family: "Poppins", sans-serif; font-size: 2.5rem; line-height: 1.2; font-weight: 400; margin-bottom: 1rem; }
+#page-title .page-title > h1 { font-family: 'Happiness-Sans-Title'; font-size: 2.5rem; line-height: 1.2; font-weight: 400; margin-bottom: 1rem; }
 #page-title .page-title > span { font-weight: 400; font-size: 14px; }
 #page-title .breadcrumb { text-align: center; margin-bottom: 0; padding: 0; }
 #page-title.page-title-left .page-title { float: left; text-align: left; clear: both; }
@@ -808,9 +830,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 html { font-size: 88%; }
 
 @media all and (max-width: 768px) { html { font-size: 81.25%; } }
-body { font-size: 1em; line-height: 1.65714286em; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "Poppins", sans-serif; color: #484848; }
+body { font-size: 1em; line-height: 1.65714286em; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: 'Happiness-Sans-Regular'; color: #484848; }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Poppins", sans-serif; color: #1f1f1f; margin: 0; letter-spacing: 0.5px; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Happiness-Sans-Title'; color: #1f1f1f; margin: 0; letter-spacing: 0.5px; }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small { font-weight: 100; }
 
 h1, .h1 { font-size: 3.14285714em; line-height: 1.31818182em; }
