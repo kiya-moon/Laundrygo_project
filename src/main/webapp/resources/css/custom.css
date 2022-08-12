@@ -7,16 +7,4 @@
 
 */
 
-/* 고객센터 css 시작 */
-body .body-inner-cs {
-	position: relative;
-	margin-top: 100px;
-}
-
-body .page-title-cs{
-	text-align: center;
-	padding-top: 
-}
-
-
-
+.max-w { max-width: 100% !important; }

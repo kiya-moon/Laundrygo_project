@@ -16,7 +16,7 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="widget">
-                                <div class="widget-title p-l-20"><img src="images/logo_gw.png"></div>
+                                <div class="widget-title p-l-20"><img src="/images/logo_gw.png"></div>
                                 <p class="mb-5 text-light">©Lifegoeson. Corp</p>
                             </div>
                         </div>

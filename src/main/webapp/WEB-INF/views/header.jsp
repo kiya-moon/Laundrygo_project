@@ -22,7 +22,7 @@
 <title>Pension Reservation</title>
 
 </head>
-<body>
+<body class="p-r-0">
  <!-- Body Inner -->
     <div class="body-inner">
 		<div id="topbar" class="d-none d-xl-block d-lg-block topbar-fullwidth p-t-10 no-border ">
@@ -32,9 +32,9 @@
 	                        <ul class="top-menu">
 	                            <li><a href="#">로그인</a></li>
 	                            <li><a href="#">회원가입</a></li>
-	                            <li><a href="#"><img src="images/naver_logo.png" alt=""></a></li>
-	                            <li><a href="#"><img src="images/in_logo.png" alt=""></a></li>
-	                            <li><a href="#"><img src="images/you_logo.png" alt=""></a></li>
+	                            <li><a href="#"><img src="/images/naver_logo.png"></a></li>
+	                            <li><a href="#"><img src="/images/in_logo.png"></a></li>
+	                            <li><a href="#"><img src="/images/you_logo.png"></a></li>
 	                        </ul>
 	                    </div>
 	                </div>
