@@ -29,6 +29,7 @@
     font-style: normal;
 }
 
+
 /*  Content & Layout */
 html { overflow-x: hidden; }
 
@@ -80,7 +81,7 @@ section { padding: 80px 0; position: relative; width: 100%; overflow: hidden; z-
   #header[data-transparent="true"] + #page-title { top: -120px; margin-bottom: -124px; padding: 160px 0 80px 0; } }
 /*-------------------------------------------------------- Content
 ---------------------------------------------------------*/
-#page-content:not(.no-sidebar) { padding: 40px 0 40px 0; }
+#page-content:not(.no-sidebar) { padding: 40px 0 40px 0; height: 100%;}
 #page-content:not(.no-sidebar).sidebar-left > .container > .row, #page-content:not(.no-sidebar).sidebar-left > .container-wide > .row, #page-content:not(.no-sidebar).sidebar-left > .container-fluid > .row { -webkit-box-orient: horizontal; -webkit-box-direction: reverse; -ms-flex-direction: row-reverse; flex-direction: row-reverse; }
 #page-content:not(.no-sidebar).sidebar-right > .container > .row, #page-content:not(.no-sidebar).sidebar-right > .container-wide > .row, #page-content:not(.no-sidebar).sidebar-right > .container-fluid > .row { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
 #page-content:not(.no-sidebar).sidebar-right > .container > .row, #page-content:not(.no-sidebar).sidebar-right > .container-wide > .row, #page-content:not(.no-sidebar).sidebar-right > .container-fluid > .row { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
@@ -830,9 +831,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 html { font-size: 88%; }
 
 @media all and (max-width: 768px) { html { font-size: 81.25%; } }
-body { font-size: 1em; line-height: 1.65714286em; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: 'Happiness-Sans-Regular'; color: #484848; }
+body { font-size: 1em; line-height: 1.65714286em; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: 'Happiness-Sans-Title'; color: #484848; }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Happiness-Sans-Title'; color: #1f1f1f; margin: 0; letter-spacing: 0.5px; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Poppins", sans-serif; color: #1f1f1f; margin: 0; letter-spacing: 0.5px; }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small { font-weight: 100; }
 
 h1, .h1 { font-size: 3.14285714em; line-height: 1.31818182em; }
@@ -869,7 +870,7 @@ strong { font-weight: 600; }
 
 del { -webkit-text-decoration-line: line-through; text-decoration-line: line-through; }
 
-a:not(.btn):not(.badge):hover, a:not(.btn):not(.badge):focus, a:not(.btn):not(.badge):active { text-decoration: none; outline: none; color: #2250fc; }
+a:not(.btn):not(.badge):hover, a:not(.btn):not(.badge):focus, a:not(.btn):not(.badge):active { text-decoration: none; outline: none; color: #13b383; }
 a:not(.btn):not(.badge):not(.btn):not([href]):not([tabindex]) { color: #484848; }
 
 .font-pacifico { font-family: 'Dancing Script' !important; }
@@ -2998,7 +2999,7 @@ ul.nav li.dropdown:hover > ul.dropdown-menu { display: block; }
 .tabs .nav-tabs .nav-link { color: #484848; padding: 14px 24px; color: rgba(72, 72, 72, 0.8); -webkit-transition: 0.3s ease; transition: 0.3s ease; font-weight: 500; border: 0; /*border: $nav-tabs-border-width solid transparent;*/ border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom: 2px solid #ececec; }
 .tabs .nav-tabs .nav-link i { margin-right: 6px; }
 .tabs .nav-tabs .nav-link.disabled { color: rgba(72, 72, 72, 0.5); }
-.tabs .nav-tabs .nav-link.active { color: #2250fc; background-color: transparent; border-bottom: 2px solid #2250fc; }
+.tabs .nav-tabs .nav-link.active { color: #13b383; background-color: transparent; border-bottom: 2px solid #13b383; }
 .tabs .nav-tabs .dropdown-menu { border-radius: 5px; border: 0; -webkit-box-shadow: 0 6px 38px rgba(0, 0, 0, 0.05); box-shadow: 0 6px 38px rgba(0, 0, 0, 0.05); }
 .tabs.tabs-clean .nav-tabs { border-bottom: 0; }
 .tabs.tabs-clean .nav-tabs .nav-link { border: 1px solid transparent; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }

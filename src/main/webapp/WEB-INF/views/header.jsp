@@ -26,95 +26,91 @@
 
 </head>
 <body class="p-r-0">
-	<!-- Body Inner -->
-	<div class="body-inner">
-		<div id="topbar"
-			class="d-none d-xl-block d-lg-block topbar-fullwidth p-t-10 no-border ">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<ul class="top-menu">
+ <!-- Body Inner -->
+    <div class="body-inner">
+		<div id="topbar" class="d-none d-xl-block d-lg-block topbar-fullwidth p-t-10 no-border ">
+	        	<div class="container">
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <ul class="top-menu">
+                          
+                              <!-- 유섭 시작 -->
+                              <!-- 눈속임용 태그 -->
+                              <li><span id="click" style="color: white;">클릭</li>
 
-							<!-- 유섭 시작 -->
-							<!-- 눈속임용 태그 -->
-							<li><span id="click" style="color: white;">클릭</li>
+                              <!-- 로그인 시작 -->
+                              <!--Modal trigger button-->
+                              <li><a href="#" data-target="#login" data-toggle="modal">로그인</a></li>
+                              <!--End: Modal trigger button-->
 
-							<!-- 로그인 시작 -->
-							<!--Modal trigger button-->
-							<li><a href="#" data-target="#login" data-toggle="modal">로그인</a></li>
-							<!--End: Modal trigger button-->
+                              <!-- 로그인 끝 -->
 
-							<!-- 로그인 끝 -->
+                              <!-- 회원가입 -->
+                              <li><a href="#" data-target="#user" data-toggle="modal">회원가입</a></li>
 
-							<!-- 회원가입 -->
-							<li><a href="#" data-target="#user" data-toggle="modal">회원가입</a></li>
+                              <!-- 회원가입 끝 -->
 
-							<!-- 회원가입 끝 -->
-
-							<!-- 유섭 끝 -->
-
-							<li><a href="#"><img src="images/naver_logo.png" alt=""></a></li>
-							<li><a href="#"><img src="images/in_logo.png" alt=""></a></li>
-							<li><a href="#"><img src="images/you_logo.png" alt=""></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end: Topbar -->
-		<!-- Header -->
-		<header id="header" data-fullwidth="true" class="header-disable-fixed">
-			<div class="header-inner">
-				<div class="container">
-					<!--Logo-->
-					<div class="row">
-						<div id="logo" class="col-lg-2">
-							<a href="index.html"> <img src="images/logo.png"
-								class="logo-default"> <img src="images/logo-sticky.png"
-								class="logo-sticky">
-							</a>
-						</div>
-						<div class="col-lg-10 p-t-10">
-							<hr color="#13b383" width="98.8%">
-						</div>
-					</div>
-					<!--End: Logo-->
-					<!-- Search -->
-					<div id="search">
-						<a id="btn-search-close" class="btn-search-close"
-							aria-label="Close search form"><i class="icon-x"></i></a>
-						<form class="search-form" action="search-results-page.html"
-							method="get">
-							<input class="form-control" name="q" type="search"
-								placeholder="Type & Search..." /> <span class="text-muted">Start
-								typing / press "Enter" or "ESC" to close</span>
-						</form>
-					</div>
-					<!-- end: search -->
-
-					<!--Navigation Resposnive Trigger-->
-					<div id="mainMenu-trigger">
-						<a class="lines-button x"><span class="lines"></span></a>
-					</div>
-					<!--end: Navigation Resposnive Trigger-->
-					<!--Navigation-->
-					<div id="mainMenu">
-						<div class="container">
-							<nav class="p-b-40">
-								<ul>
-									<li><a href="section1">런드리고</a></li>
-									<li><a href="index.html">월정액</a></li>
-									<li><a href="index.html">수거신청</a></li>
-									<li><a href="index.html">고객센터</a></li>
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<!-- 로그인 Modal -->
+                              <!-- 유섭 끝 -->
+                              
+	                            <li><a href="#"><img src="/images/naver_logo.png"></a></li>
+	                            <li><a href="#"><img src="/images/in_logo.png"></a></li>
+	                            <li><a href="#"><img src="/images/you_logo.png"></a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	             </div>
+	        </div>
+	        <!-- end: Topbar -->
+	        <!-- Header -->
+	       <header id="header" data-fullwidth="true" class="header-disable-fixed">
+	            <div class="header-inner">
+	             <div class="container">
+	                    <!--Logo-->
+	                    <div class="row">
+		                    <div id="logo" class="col-lg-2">
+		                        <a href="index.html">
+		                            <img src="images/logo.png" class="logo-default">
+		                            <img src="images/logo-sticky.png" class="logo-sticky">
+		                        </a>
+		                    </div>
+		                    <div class="col-lg-10 p-t-10">
+		                    <hr color="#13b383" width="98.8%">
+		                    </div>
+	                    </div>
+	                    <!--End: Logo-->
+	                    <!-- Search -->
+	                    <div id="search"><a id="btn-search-close" class="btn-search-close" aria-label="Close search form"><i class="icon-x"></i></a>
+	                        <form class="search-form" action="search-results-page.html" method="get">
+	                            <input class="form-control" name="q" type="search" placeholder="Type & Search..." />
+	                            <span class="text-muted">Start typing / press "Enter" or "ESC" to close</span>
+	                        </form>
+	                    </div>
+	                    <!-- end: search -->
+	                  
+	                    <!--Navigation Resposnive Trigger-->
+	                    <div id="mainMenu-trigger">
+	                        <a class="lines-button x"><span class="lines"></span></a>
+	                    </div>
+	                    <!--end: Navigation Resposnive Trigger-->
+	                    <!--Navigation-->
+	                    <div id="mainMenu">
+	                        <div class="container">
+	                            <nav class="p-b-40">
+	                                <ul>
+	                                    <li><a href="section1">런드리고</a></li>
+	                                    <li><a href="index.html">월정액</a></li>
+	                                    <li><a href="index.html">수거신청</a></li>
+	                                    <li><a href="index.html">고객센터</a></li>
+	                                </ul>
+	                            </nav> 
+	                        </div>
+	                    </div>
+	              </div>
+	           </div>
+           </header>
+        <!-- end: header -->
+        
+        <!-- 로그인 Modal -->
 		<div class="modal fade" id="login" tabindex="-1" role="modal"
 			aria-labelledby="modal-label" aria-hidden="true"
 			style="display: none;">
@@ -213,28 +209,19 @@
 
 		<!-- end: Modal -->
 
-		<!-- end: header -->
-	</div>
-
-	<!-- end: Body Inner -->
-	<!-- Scroll top -->
-	<a id="scrollTop"><i class="icon-chevron-up"></i><i
-		class="icon-chevron-up"></i></a>
-	<!--Plugins-->
-
-	<script>
+        
+    </div>
+   
+    <!-- end: Body Inner -->
+    <!-- Scroll top -->
+    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    <!--Plugins-->
+    
+  <script>
 		function hideLogin() {
 			$("#login_close").trigger("click");
-			
-// 			$("#login").removeClass("show");
-// 			$(".modal-backdrop").removeClass("show");
-// 			$("div").remove('.modal-backdrop');
-// 			document.getElementById("login").removeAttribute("style");
-// 			document.getElementById("login").removeAttribute("aria-modal");
-// 			document.getElementById("login").style.display='none';
-// 			document.getElementById("login").setAttribute("aria-hidden", true);
 		}
 	</script>
-
+   
 </body>
 </html>
