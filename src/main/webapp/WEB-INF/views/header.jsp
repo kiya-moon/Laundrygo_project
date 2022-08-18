@@ -28,15 +28,13 @@
 <body class="p-r-0">
  <!-- Body Inner -->
     <div class="body-inner">
-		<div id="topbar" class="d-none d-xl-block d-lg-block topbar-fullwidth p-t-10 no-border ">
+		<div id="topbar" class="d-xl-block d-lg-block topbar-fullwidth p-t-10 no-border ">
 	        	<div class="container">
 	                <div class="row">
 	                    <div class="col-md-12">
 	                        <ul class="top-menu">
                           
                               <!-- 유섭 시작 -->
-                              <!-- 눈속임용 태그 -->
-                              <li><span id="click" style="color: white;">클릭</li>
 
                               <!-- 로그인 시작 -->
                               <!--Modal trigger button-->
@@ -52,9 +50,9 @@
 
                               <!-- 유섭 끝 -->
                               
-	                            <li><a href="#"><img src="/images/naver_logo.png"></a></li>
-	                            <li><a href="#"><img src="/images/in_logo.png"></a></li>
-	                            <li><a href="#"><img src="/images/you_logo.png"></a></li>
+	                            <li><a href="https://blog.naver.com/laundrygo" target="_blank"><img src="/images/naver_logo.png"></a></li>
+	                            <li><a href="https://www.instagram.com/Laundrygo.life/" target="_blank"><img src="/images/in_logo.png"></a></li>
+	                            <li><a href="youtube.com/channel/UCi9dhmANTexQguWXHBgwwSg" target="_blank"><img src="/images/you_logo.png"></a></li>
 	                        </ul>
 	                    </div>
 	                </div>
@@ -68,7 +66,7 @@
 	                    <!--Logo-->
 	                    <div class="row">
 		                    <div id="logo" class="col-lg-2">
-		                        <a href="index.html">
+		                        <a href="#">
 		                            <img src="images/logo.png" class="logo-default">
 		                            <img src="images/logo-sticky.png" class="logo-sticky">
 		                        </a>
@@ -97,10 +95,10 @@
 	                        <div class="container">
 	                            <nav class="p-b-40">
 	                                <ul>
-	                                    <li><a href="section1">런드리고</a></li>
-	                                    <li><a href="index.html">월정액</a></li>
-	                                    <li><a href="index.html">수거신청</a></li>
-	                                    <li><a href="index.html">고객센터</a></li>
+	                                    <li><a href="#">런드리고</a></li>
+	                                    <li><a href="#">월정액</a></li>
+	                                    <li><a href="#">수거신청</a></li>
+	                                    <li><a href="#">고객센터</a></li>
 	                                </ul>
 	                            </nav> 
 	                        </div>
