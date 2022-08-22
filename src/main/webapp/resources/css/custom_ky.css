@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/* 고객센터 css 시작 */
+body .body-inner-cs {
+	position: relative;
+	margin-top: 100px;
+}
+
+body .page-title-cs{
+	text-align: center;
+	padding-bottom: 50px; 
+}
+
+.tabs .nav-tabs .nav-link{
+	padding: 15px 30px !important;
+}
+
+.accordion .ac-item .ac-content{
+	padding-top: 30px !important;
+}
