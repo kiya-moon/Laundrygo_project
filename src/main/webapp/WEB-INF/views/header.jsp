@@ -20,6 +20,8 @@
 	type="text/css" rel="stylesheet">
 <link href="${pageContext.request.contextPath }/CSS/style.css"
 	type="text/css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/custom_ys.css"
+	type="text/css" rel="stylesheet">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Pension Reservation</title>
@@ -114,20 +116,28 @@
 			style="display: none;">
 			<div class="modal-dialog" style="top: 25%">
 				<div class="modal-content">
-					<div class="modal-header text-center">
+					<!-- <div class="modal-header text-center">
 						<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
 							type="button">×</button>
-					</div>
-					<div class="widget widget-form p-cb">
+					</div> -->
+					<div class="widget-form m-0 p-cb" >
+						<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
+							type="button">×</button>
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">로그인</h2>
-						<form action="" method="post" name="login">
+						<form action="" method="get" name="login">
 							<div class="form-group mb-3">
-								<input type="email" name="email" class="form-control" id="login_email"
-									placeholder="이메일">
+								<span>
+									<input type="email" name="login_email" class="form-control" id="login_email"
+										placeholder="이메일">
+								</span>
+								<span class="error_next_box"></span>
 							</div>
 							<div class="form-group mb-3">
-								<input type="password" name="password" id="login_password"
-									class="form-control" placeholder="비밀번호">
+								<span>
+									<input type="password" name="login_password" id="login_password"
+										class="form-control" placeholder="비밀번호">
+								</span>
+								<span class="error_next_box"></span>
 							</div>
 							<div class="col-md-12 text-center">
 								<button type="submit" class="btn btn-block">로그인</button>
@@ -157,41 +167,50 @@
 			<div class="modal-dialog" style="top: 15%">
 				
 				<div class="modal-content">
-					<div class="modal-header text-center">
+					<div class="widget-form m-0 p-cb">
 						<button aria-hidden="true" data-dismiss="modal" class="close" id="sign_close"
 							type="button">×</button>
-					</div>
-					<div class="widget widget-form p-cb">
 						<div style="text-align: center;">
-							<img src="images/logo.png" class="logo-default">
-						</div>
-
-						<div style="text-align: center; margin-bottom: 30px;">
-							<h4>우리집 모바일 세탁소</h4>
+							<img src="images/logo.png" class="logo-default m-t-15 m-b-15" >
 						</div>
 						
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">회원가입</h2>
 
-						<form action="" method="post" name="signUp">
+						<form action="" method="get" name="signUp">
 							<div class="form-group mb-3">
-								<input type="text" name="name" class="form-control" id="sign_name"
-									placeholder="이름">
+								<span>
+									<input type="text" name="sign_name" class="form-control" id="sign_name"
+										placeholder="이름">
+								</span>
+								<span class="error_next_box"></span>
 							</div>
 							<div class="form-group mb-3">
-								<input type="email" name="email" class="form-control" id="sign_email"
-									placeholder="이메일">
+								<span>
+									<input type="email" name="sign_email" class="form-control" id="sign_email"
+										placeholder="이메일">
+								</span>
+								<span class="error_next_box"></span>
 							</div>
 							<div class="form-group mb-3">
-								<input type="password" name="password" id="sign_password"
-									class="form-control" placeholder="비밀번호">
+								<span>
+									<input type="password" name="sign_password" id="sign_password"
+										class="form-control" placeholder="비밀번호">
+								</span>
+								<span class="error_next_box"></span>
 							</div>
 							<div class="form-group mb-3">
-								<input type="password" name="password" id="sign_password_check"
-									class="form-control" placeholder="비밀번호 확인">
+								<span>
+									<input type="password" name="sign_password_check" id="sign_password_check"
+										class="form-control" placeholder="비밀번호 확인">
+								</span>
+								<span class="error_next_box"></span>
 							</div>
 							<div class="form-group mb-3">
-								<input type="number" name="phone" class="form-control"
-									id="sign_phone" placeholder="전화번호(숫자만)">
+								<span>
+									<input type="tel" name="sign_phone" class="form-control"
+										id="sign_phone" placeholder="전화번호(ex 010-0000-0000)">
+								</span>
+								<span class="error_next_box"></span>
 							</div>
 
 							<div class="col-md-12 text-center">
@@ -215,10 +234,149 @@
     <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
     <!--Plugins-->
     
-  <script>
-		function hideLogin() {
+    <script>
+		
+    	/* 로그인창 닫기 버튼 클릭 trigger */
+    	function hideLogin() {
 			$("#login_close").trigger("click");
 		}
+    	
+    	/* 로그인, 회원가입 validation */
+    	
+    	var login_email = document.querySelector('#login_email');
+    	var login_password = document.querySelector('#login_password');
+    	
+    	var sign_name = document.querySelector('#sign_name');
+    	var sign_email = document.querySelector('#sign_email');
+    	var sign_password = document.querySelector('#sign_password');
+    	var sign_password_check = document.querySelector('#sign_password_check');
+    	var sign_phone = document.querySelector('#sign_phone');
+    	
+    	var error = document.querySelectorAll('.error_next_box');
+    	
+    	login_email.addEventListener("focusout", loginCheckEmail);
+    	login_password.addEventListener("focusout", loginCheckPassword);
+    	sign_name.addEventListener("focusout", signCheckName);
+    	sign_email.addEventListener("focusout", signCheckEmail);
+    	sign_password.addEventListener("focusout", signCheckPassword);
+    	sign_password_check.addEventListener("focusout", signCheckPassword2);
+    	sign_phone.addEventListener("focusout", signCheckPhone);
+    	
+    	/* 로그인 */
+    	
+    	function loginCheckEmail() {
+    		if(login_email.value.length==0) {
+    			error[0].innerHTML = "이메일을 입력해주세요";
+    			error[0].style.display = "block";
+    		} else {
+    			error[0].innerHTML = "";
+    			error[0].style.display = "none";
+    		}
+    	}
+    	
+    	function loginCheckPassword() {
+    		if(login_password.value.length==0) {
+    			error[1].innerHTML = "비밀번호를 입력해주세요";
+    			error[1].style.display = "block";
+    		} else {
+    			error[1].innerHTML = "";
+    			error[1].style.display = "none";
+    		}
+    	}
+    	
+    	/* 회원가입 */
+    		
+    	function signCheckName() {
+    		/* 이름 체크 */ 
+    		var namePattern = /[가-힣]/;
+    		if(sign_name.value.length==0) {
+    			error[2].innerHTML = "이름을 입력해 주세요";
+    			error[2].style.color = "red";
+    			error[2].style.display = "block";
+    		} else if(!namePattern.test(sign_name.value)) {
+    			error[2].innerHTML = "이름은 한글로만 입력해 주세요.";
+    			error[2].style.color = "red";
+    			error[2].style.display = "block";
+    		} else {
+    			error[2].innerHTML = "허용되는 이름입니다.";
+    			error[2].style.color = "#08A600";
+    	        error[2].style.display = "block";
+    		}
+    	}
+    	
+    	function signCheckEmail() {
+    		/* 이메일 체크 */
+    		var idPattern = /^[\w]+@[\w]+.[\.\w]{2,5}$/;
+    		if(sign_email.value.length==0) {
+    			error[3].innerHTML = "이메일을 입력해 주세요";
+    			error[3].style.display = "block";
+    		} else if(!idPattern.test(sign_email.value)) {
+    			error[3].innerHTML = "이메일 양식이 맞지 않습니다.";
+    			error[3].style.display = "block";
+    		} else {
+    			error[3].innerHTML = "이메일 양식이 맞습니다.";
+    			error[3].style.color = "#08A600";
+    	        error[3].style.display = "block";
+    		}
+    	} 
+    	
+    	function signCheckPassword() {
+    		/* 비밀번호 체크 */
+    		var pwPattern = /[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,16}/;
+    		if(sign_password.value.length==0) {
+    			error[4].innerHTML = "비밀번호를 입력해 주세요";
+    			error[4].style.display = "block";
+    		} else if(!pwPattern.test(sign_password.value)) {
+    			error[4].innerHTML = "비밀번호는 8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.";
+    			error[4].style.display = "block";
+    		} else {
+    			error[4].innerHTML = "";
+    			error[4].style.display = "none";
+    		}
+    	}
+    	
+    	function signCheckPassword2() {
+    		/* 비밀번호 확인 체크 */
+    		if(sign_password_check.value.length==0) {
+    			error[5].innerHTML = "비밀번호 확인을 입력해 주세요.";
+    			error[5].style.display = "block";
+    		} else if(sign_password_check.value != sign_password.value) {
+    			error[5].innerHTML = "비밀번호가 일치하지 않습니다.";
+    			error[5].style.display = "block";
+    		} else {
+    			error[5].innerHTML = "비밀번호가 일치합니다."
+   				error[5].style.color = "#08A600";
+    	        error[5].style.display = "block";
+    		}
+    	}
+    	
+    	function signCheckPhone() {
+    		/* 전화번호 확인 체크 */
+    		var phonePattern = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
+    		if(sign_phone.value === "") {
+    			error[6].innerHTML = "전화번호를 입력해 주세요.";
+    			error[6].style.display = "block";
+    		} else if(!phonePattern.test(sign_phone.value)) {
+    			error[6].innerHTML = "전화번호 형식이 잘못되었습니다.";
+    			error[6].style.display = "block";
+    		} else {
+    			error[6].innerHTML = "전화번호가 입력되었습니다."
+   				error[6].style.color = "#08A600";
+       	        error[6].style.display = "block";
+    		}
+    	}
+    	
+    	/* 모달창 닫을때 입력값 초기화 실패,, */
+    	$('#login').on('hidden.bs.modal', function(e) {
+			document.forms['login'].reset();
+		})
+		
+		$('#user').on('hidden.bs.modal', function(e) {
+			document.forms['signUp'].reset();
+		})
+		
+		
+    	
 	</script>
    
 </body>
