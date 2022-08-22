@@ -18,3 +18,4 @@ body .page-title-cs{
 }
 
 .max-w { max-width: 100% !important; }
+.min-h { min-height: 0 !important; }
