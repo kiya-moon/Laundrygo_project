@@ -6,3 +6,27 @@
     color: red;    
     display: none;
 }
+
+.myicon {
+	width: 200px;
+}
+
+.icon_point:hover {
+	border: 2px solid #13B383;
+	border-radius: 7px;
+}
+
+.icon_payList:hover {
+	border: 2px solid #13B383;
+	border-radius: 7px;
+}
+
+.icon_info:hover {
+	border: 2px solid #13B383;
+	border-radius: 7px;
+}
+
+.icon_using:hover {
+	border: 2px solid #13B383;
+	border-radius: 7px;
+}

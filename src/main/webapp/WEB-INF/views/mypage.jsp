@@ -15,7 +15,7 @@
 	type="text/css" rel="stylesheet">
 <link href="${pageContext.request.contextPath }/css/style.css"
 	type="text/css" rel="stylesheet">
-<link href="${pageContext.request.contextPath }/css/custom.css"
+<link href="${pageContext.request.contextPath }/css/custom_ys.css"
 	type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -28,38 +28,43 @@
 			<div class="text-center p-t-50">
 				<!-- Captions -->
 				<p class="text-medium">
-					<font style="vertical-align: inherit; color: black; font-size: 130px;"><strong>Mypage</strong></font>
+					<font style="vertical-align: inherit; color: black; font-size: 80px;"><strong>Mypage</strong></font>
 				</p>
-				<p class="p-t-50">
-					<font
-						style="vertical-align: inherit; color: black; font-size: 30px;"><strong>OOO</strong>님,
-						런드리고와 함께</font>
-				</p>
-				<p class="">
-					<font
-						style="vertical-align: inherit; color: black; font-size: 30px;">빨래없는
-						생활을 시작하세요!</font>
-				</p>
+				
 				<!-- end: Captions -->
 			</div>
 		</div>
+		<!-- end: Page title -->
 
 		<!--Follow Us-->
-		<div class="text center" style="background-color: powderblue; width: 75%">
-			<div class="m-t-50 text-center m-b-50">
-				<a href="#" data-target="#login" data-toggle="modal"><img src="/images/point.png" class="p-l-30 p-r-30" style="width: 200px;"></a>
-				<a href="#" data-target="#login" data-toggle="modal"><img src="/images/payList.png" class="p-l-30 p-r-30" style="width: 200px;"></a>
-				<a href="#" data-target="#login" data-toggle="modal"><img src="/images/info.png" class="p-l-30 p-r-30" style="width: 200px;"></a>
-				<a href="#" data-target="#login" data-toggle="modal"><img src="/images/using.png" class="p-l-30 p-r-30" style="width: 200px;"></a>
+		<div class="text center m-t-50 m-b-50" style="border: 4px solid #13B383; border-radius: 12px; width: 75%;">
+			<div class="text-center">
+				<div class="p-20 p-l-50 p-r-50">
+					<p class="p-t-20 m-b-5">
+						<font
+							style="vertical-align: inherit; color: #000000; font-size: 25px;"><strong style="font-size: 40px">OOO</strong> 님,
+							런드리고와 함께</font>
+					</p>
+					<p class="">
+						<font
+							style="vertical-align: inherit; color: #000000; font-size: 25px;">빨래없는
+							생활을 시작하세요!</font>
+					</p>
+					<p class="" style="border-bottom: 1px solid black">
+						
+					</p>
+				</div>
+				
+				<!-- 마이페이지 메뉴 -->
+				<div class="p-b-40">
+					<a href="#" data-target="#login" data-toggle="modal"><img src="/images/point.png" class="p-l-30 p-r-30 myicon icon_point"></a>
+					<a href="#" data-target="#login" data-toggle="modal"><img src="/images/payList.png" class="p-l-30 p-r-30 myicon icon_payList"></a>
+					<a href="#" data-target="#login" data-toggle="modal"><img src="/images/info.png" class="p-l-30 p-r-30 myicon icon_info"></a>
+					<a href="#" data-target="#login" data-toggle="modal"><img src="/images/using.png" class="p-l-30 p-r-30 myicon icon_using"></a>
+				</div>
 			</div>
 		</div>
 		<!--End: Follow Us-->
-
-		<!-- 마이페이지 메뉴 -->
-
-
-
-		<!-- end: Page title -->
 
 	</div>
 	<!-- end: Body Inner -->
