@@ -54,7 +54,7 @@
                               
 	                            <li><a href="https://blog.naver.com/laundrygo" target="_blank"><img src="/images/naver_logo.png"></a></li>
 	                            <li><a href="https://www.instagram.com/Laundrygo.life/" target="_blank"><img src="/images/in_logo.png"></a></li>
-	                            <li><a href="youtube.com/channel/UCi9dhmANTexQguWXHBgwwSg" target="_blank"><img src="/images/you_logo.png"></a></li>
+	                            <li><a href="https://www.youtube.com/channel/UCi9dhmANTexQguWXHBgwwSg" target="_blank"><img src="/images/you_logo.png"></a></li>
 	                        </ul>
 	                    </div>
 	                </div>

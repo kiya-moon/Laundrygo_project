@@ -10,4 +10,9 @@ public class Monthly_Controller {
 	public String monthly() {
 		return "Monthly";
 	}
+	
+	@RequestMapping("/apply")
+	public String apply() {
+		return "apply";
+	}
 }
