@@ -10,4 +10,9 @@ public class CS_Controller {
 	public String cs() {
 		return "customer_center";
 	}
+	
+	@RequestMapping("/qna")
+	public String qna() {
+		return "questions";
+	}
 }
