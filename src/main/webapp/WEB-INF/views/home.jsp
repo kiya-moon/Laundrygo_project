@@ -54,7 +54,7 @@
                         	<font style="vertical-align: inherit;"><strong>합리적인 가격</strong></font>
                         </p>
                         <h3 data-animate="fadeInUp" data-animate-delay="600">내 라이프 스타일에 맞춰 최대 52% 할인된 가격으로 구독하는 월정액 서비스와,<br>안심 정찰 가격으로 원할 때마다 자유롭게 이용하는 자유 이용 서비스,<br><br>어떤 서비스를 선택하든 합리적인 세탁 생활을 경험하세요.</h3>
-                        <button type="button" class="btn btn-lg btn-reveal btn-outline btn-reveal-left m-t-30"  data-animate="fadeInUp" data-animate-delay="700" >
+                        <button type="button" class="btn btn-lg btn-reveal btn-outline btn-reveal-left m-t-30"  data-animate="fadeInUp" data-animate-delay="700"  data-target="#set2" data-toggle="modal">
 		                    <font style="vertical-align: inherit;"><span>세탁요금제 안내 <img src="/images/logo_w.png"></span></font>
 		                    <i class="icon-chevron-right"></i>
                     	</button><br>
@@ -151,6 +151,23 @@
             </div>
         </section> 
         <!-- end: Content2 -->
+        
+         <!-- Content3 -->
+        <section id="page-content" style="background-color:#fff; background-size: cover; background-position: center center;">
+            <div class="container m-t-50">
+                    <div class="slide-captions text-center text-dark">
+                        <!-- Captions -->
+                         <p class="text-medium text-shadow-light p-b-50 " data-animate="fadeInUp" data-animate-delay="300">
+                        	<font style="vertical-align: inherit;"><strong>서비스 지역 확인</strong></font>
+                        </p>
+                        <img src="images/map.png" style="width:80%;">
+                        <!-- end: Captions -->
+                    </div>
+            </div>
+        </section> 
+        <!-- end: Content3 -->
+        
+        <!-- Popup1 -->
         <div class="fullwidth">
         <div class="modal fade p-r-0" id="set1" tabindex="-1" role="modal" aria-labelledby="modal-label-3" aria-hidden="true">
             <div class="modal-dialog max-w m-0">
@@ -161,9 +178,10 @@
                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                     </div>
                     <div class="modal-body">
-                        <div class="row mb20">
-                            <div class="col-md-12">
-                                <p>test</p>
+                        <div class="row m-b-20">
+                            <div class="col-md-12 text-center">
+                                <img src="https://static.laundrygo.com/images/homepage/modal/brand/pc_welcomekit_text_new2-v3.png"  style="width:50%;" alt="웰컴키트 구성 이미지 첫번째" >
+                            	<img class="p-t-50" src="https://static.laundrygo.com/images/homepage/modal/brand/pc_welcomekit_img_new-v3.png" style="width:60%;"  alt="웰컴키트 구성 이미지 두번째" >
                             </div>
                         </div>
                     </div>
@@ -171,6 +189,37 @@
             </div>
         </div>
 		</div>
+		<!-- end: Popup1 -->
+		
+		<!-- Popup2 -->
+        <div class="fullwidth">
+        <div class="modal fade p-r-0" id="set2" tabindex="-1" role="modal" aria-labelledby="modal-label-3" aria-hidden="true">
+            <div class="modal-dialog max-w m-0">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h2 class="text-bold p-t-40">월정액 서비스</h2>
+                        <h4>안심 정찰 가격 보다 <span style="color:#13b383;">할인된 금액</span>으로 이용 가능합니다.<span class="block">생활 패턴에 맞는 요금제를 선택하여 한 달 빨래 고민을 해결하세요.</span></h4>
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row m-b-20 m-t-20">
+                            <div class="m-auto">
+	                            <h3 class="text-bold p-t-30">드라이 온리</h3>
+    	                        <img src="https://static.laundrygo.com/images/homepage/modal/brand/m1-2-tb-3.png" alt="드라이온리 요금표">
+                            	
+                            	<h3 class="text-bold p-t-50">런드리 온리</h3>
+                            	<img src="https://static.laundrygo.com/images/homepage/modal/brand/m1-2-tb-5.png" alt="런드리온리 요금표">                            	
+                            	
+                            	<h3 class="text-bold p-t-50">드라이&amp런드리</h3>
+                            	<img src="https://static.laundrygo.com/images/homepage/modal/brand/m1-2-tb-4.png" alt="런드리&amp;드라이 요금표">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		</div>
+		<!-- end: Popup2 -->
     </div>
    <!-- end: Body Inner -->
    <jsp:include page="footer.jsp" />
