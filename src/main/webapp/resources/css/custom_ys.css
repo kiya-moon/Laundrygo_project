@@ -30,3 +30,15 @@
 	border: 2px solid #13B383;
 	border-radius: 7px;
 }
+
+.m-auto {
+	margin: 0 auto;
+}
+
+.v-m {
+	vertical-align: middle;
+}
+
+.v-t {
+	vertical-align: top;
+}
