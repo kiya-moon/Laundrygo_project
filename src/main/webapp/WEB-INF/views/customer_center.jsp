@@ -32,7 +32,7 @@
 			<nav class="navbar navbar-light justify-content-between p-r-0"
 				style="float: right">
 				<form class="form-inline nomargin center">
-					<input class="form-control mr-sm-2 p-r-100" placeholder="Search"
+					<input class="form-control mr-sm-2" placeholder="Search"
 						aria-label="Search" type="search">
 					<button class="btn m-0" type="submit">Search</button>
 				</form>
