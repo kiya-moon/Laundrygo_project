@@ -101,18 +101,18 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="/images/dry_icon.png">
+									<img src="images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>8장</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>2회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -130,18 +130,18 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="/images/dry_icon.png">
+									<img src="images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>12장</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>2회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -159,18 +159,18 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="/images/dry_icon.png">
+									<img src="images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>15장</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>2회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -188,18 +188,18 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="/images/dry_icon.png">
+									<img src="images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>18장</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -239,18 +239,18 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="/images/laun_icon.png">
+									<img src="images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>8개</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -268,18 +268,18 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="/images/laun_icon.png">
+									<img src="images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>4개</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -297,18 +297,18 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="/images/laun_icon.png">
+									<img src="images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>3개</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -349,23 +349,23 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-4 text-center p-t-30 p-l-60">
-									<img src="/images/laun_icon.png">
+									<img src="images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>8개</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30">
-									<img src="/images/dry_icon.png">
+									<img src="images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -383,23 +383,23 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-4 text-center p-t-30 p-l-60">
-									<img src="/images/laun_icon.png">
+									<img src="images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>4개</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30 ">
-									<img src="/images/dry_icon.png">
+									<img src="images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -417,23 +417,23 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-4 text-center p-t-30 p-l-60">
-									<img src="/images/laun_icon.png">
+									<img src="images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>3개</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30">
-									<img src="/images/dry_icon.png">
+									<img src="images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30 p-r-60">
-									<img src="/images/free_icon.png">
+									<img src="images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button" class="btn btn-block text-white">
-										<h4>신청하기 Click</h4>
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+										신청하기 Click
 									</button>
 								</div>
 							</div>
@@ -460,7 +460,7 @@
                         <div class="row m-b-20">
                             <div class="col-md-12 text-center p-t-30">
                             	<h4>하단의 지정품목을 꼭 확인해주세요.<span class="block">이외의 품목은 추가 과금됩니다.</span></h4>
-                            	<img src="/images/dry_only_box.png" style="width:50%;" alt="드라이 온리 상세설명" >
+                            	<img src="images/dry_only_box.png" style="width:50%;" alt="드라이 온리 상세설명" >
                             </div>
                         </div>
                     </div>
@@ -482,7 +482,7 @@
                     <div class="modal-body">
                         <div class="row m-b-20">
                             <div class="col-md-12 text-center p-t-30">
-                            	<img src="/images/laun_only_box.png" style="width:50%;" alt="런드리 온리 상세설명" >
+                            	<img src="images/laun_only_box.png" style="width:50%;" alt="런드리 온리 상세설명" >
                             </div>
                         </div>
                     </div>
@@ -504,7 +504,7 @@
                     <div class="modal-body">
                         <div class="row m-b-20">
                             <div class="col-md-12 text-center p-t-30">
-                            	<img src="/images/laun_dry_box.png" style="width:50%;" alt="드라이,런드리 상세설명" >
+                            	<img src="images/laun_dry_box.png" style="width:50%;" alt="드라이,런드리 상세설명" >
                             </div>
                         </div>
                     </div>

@@ -50,7 +50,7 @@
 				</h4>
 				<div class="row">
 					<div class="col-lg-11">
-						<img src="/images/home_step2.png">
+						<img src="images/home_step2.png">
 					</div>
 					<!-- 수거신청 버튼 -->
 					<div class="col-lg-1"
@@ -199,7 +199,7 @@
 						<div class="modal-body ">
 							<div class="row m-b-20">
 								<div class="m-auto">
-									<img src="/images/howTo.gif" style="width: 100%; height: auto;">
+									<img src="images/howTo.gif" style="width: 100%; height: auto;">
 								</div>
 							</div>
 						</div>

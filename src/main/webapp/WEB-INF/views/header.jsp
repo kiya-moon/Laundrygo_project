@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.net.URLDecoder"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -52,9 +53,9 @@
 
                               <!-- 유섭 끝 -->
                               
-	                            <li><a href="https://blog.naver.com/laundrygo" target="_blank"><img src="/images/naver_logo.png"></a></li>
-	                            <li><a href="https://www.instagram.com/Laundrygo.life/" target="_blank"><img src="/images/in_logo.png"></a></li>
-	                            <li><a href="https://www.youtube.com/channel/UCi9dhmANTexQguWXHBgwwSg" target="_blank"><img src="/images/you_logo.png"></a></li>
+	                            <li><a href="https://blog.naver.com/laundrygo" target="_blank"><img src="images/naver_logo.png"></a></li>
+	                            <li><a href="https://www.instagram.com/Laundrygo.life/" target="_blank"><img src="images/in_logo.png"></a></li>
+	                            <li><a href="https://www.youtube.com/channel/UCi9dhmANTexQguWXHBgwwSg" target="_blank"><img src="images/you_logo.png"></a></li>
 	                        </ul>
 	                    </div>
 	                </div>
@@ -68,7 +69,7 @@
 	                    <!--Logo-->
 	                    <div class="row">
 		                    <div id="logo" class="col-lg-2">
-		                        <a href="#">
+		                        <a href="${pageContext.request.contextPath }/">
 		                            <img src="images/logo.png" class="logo-default">
 		                            <img src="images/logo-sticky.png" class="logo-sticky">
 		                        </a>
@@ -97,10 +98,10 @@
 	                        <div class="container">
 	                            <nav class="p-b-40">
 	                                <ul>
-	                                    <li><a href="#">런드리고</a></li>
-	                                    <li><a href="#">월정액</a></li>
-	                                    <li><a href="#">수거신청</a></li>
-	                                    <li><a href="#">고객센터</a></li>
+	                                    <li><a href="${pageContext.request.contextPath }/">런드리고</a></li>
+	                                    <li><a href="${pageContext.request.contextPath }/monthly">월정액</a></li>
+	                                    <li><a href="${pageContext.request.contextPath }/pickup">수거신청</a></li>
+	                                    <li><a href="${pageContext.request.contextPath }/cs">고객센터</a></li>
 	                                </ul>
 	                            </nav> 
 	                        </div>
@@ -180,71 +181,72 @@
 						
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">회원가입</h2>
 
-						<form action="" method="get" name="signUp" class="signUp" onsubmit="return validateSignUp();">
+						<form action="<c:url value="/member"/>" method="post" name="signUp" class="signUp" onsubmit="return validateSignUp();">
+
 							<div class="form-group mb-3">
 								<span>
-									<input type="text" name="sign_name" class="form-control" id="sign_name"
-										placeholder="이름">
-								</span>
-								<span class="error_next_box"></span>
-							</div>
-							<div class="form-group mb-3">
-								<span>
-									<input type="email" name="sign_email" class="form-control" id="sign_email"
+									<input type="email" name="email" class="form-control" id="sign_email"
 										placeholder="이메일">
 								</span>
 								<span class="error_next_box"></span>
 							</div>
 							<div class="form-group mb-3">
 								<span>
-									<input type="password" name="sign_password" id="sign_password"
+									<input type="text" name="name" class="form-control" id="sign_name"
+										   placeholder="이름">
+								</span>
+								<span class="error_next_box"></span>
+							</div>
+							<div class="form-group mb-3">
+								<span>
+									<input type="password" name="password" id="sign_password"
 										class="form-control" placeholder="비밀번호">
 								</span>
 								<span class="error_next_box"></span>
 							</div>
 							<div class="form-group mb-3">
 								<span>
-									<input type="password" name="sign_password_check" id="sign_password_check"
+									<input type="password" name="password_check" id="sign_password_check"
 										class="form-control" placeholder="비밀번호 확인">
 								</span>
 								<span class="error_next_box"></span>
 							</div>
 							<div class="form-group mb-3">
 								<span>
-									<input type="tel" name="sign_phone" class="form-control"
+									<input type="tel" name="phone" class="form-control"
 										id="sign_phone" placeholder="전화번호(ex 010-0000-0000)">
 								</span>
 								<span class="error_next_box"></span>
 							</div>
 							<div class="form-group mb-3">
 								<span>
-									<input type="text" name="sign_addr" class="form-control"
+									<input type="text" name="addr" class="form-control"
 										id="sign_addr" placeholder="주소(정확한 도로명주소를 입력해 주세요.)">
 								</span>
 								<span class="error_next_box"></span>
 							</div>
-							<div class="form-group mb-3">
-								<div class="row">
-									<div class="col-lg-3 p-r-10">
-										<select name="sign_account" id="sign_account">
-											<option value="">카드</option>
-										    <option value="삼성">삼성</option>
-										    <option value="NH농협">NH농협</option>
-										    <option value="롯데">롯데</option>
-										    <option value="비씨">비씨</option>
-										    <option value="신한">신한</option>
-										    <option value="현대">현대</option>
-										    <option value="하나">하나</option>
-										    <option value="그 외">그 외(계좌 번호 앞에 직접 기재)</option>
-										</select>
-									</div>
-									<div class="col-lg-9">
-										<input type="text" name="sign_account_num" class="form-control"
-											id="sign_account_num" placeholder="카드번호(ex 1111-2222-3333-4444)">
-									</div>
-								</div>
-								<span class="error_next_box"></span>
-							</div>
+<%--							<div class="form-group mb-3">--%>
+<%--								<div class="row">--%>
+<%--									<div class="col-lg-3 p-r-10">--%>
+<%--										<select name="sign_account" id="sign_account">--%>
+<%--											<option value="">카드</option>--%>
+<%--										    <option value="삼성">삼성</option>--%>
+<%--										    <option value="NH농협">NH농협</option>--%>
+<%--										    <option value="롯데">롯데</option>--%>
+<%--										    <option value="비씨">비씨</option>--%>
+<%--										    <option value="신한">신한</option>--%>
+<%--										    <option value="현대">현대</option>--%>
+<%--										    <option value="하나">하나</option>--%>
+<%--										    <option value="그 외">그 외(계좌 번호 앞에 직접 기재)</option>--%>
+<%--										</select>--%>
+<%--									</div>--%>
+<%--									<div class="col-lg-9">--%>
+<%--										<input type="text" name="sign_account_num" class="form-control"--%>
+<%--											id="sign_account_num" placeholder="카드번호(ex 1111-2222-3333-4444)">--%>
+<%--									</div>--%>
+<%--								</div>--%>
+<%--								<span class="error_next_box"></span>--%>
+<%--							</div>--%>
 
 							<div class="col-md-12 text-center">
 								<button type="submit" class="btn btn-block">회원가입</button>

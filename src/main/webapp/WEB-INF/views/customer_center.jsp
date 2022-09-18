@@ -350,7 +350,7 @@
 										<b>[책임보상 비율 테이블]</b>
 									</p>
 									<p>
-										<img src="/images/compensation.png"
+										<img src="images/compensation.png"
 											style="width: 600; height: 280">
 									</p>
 									<p>기사님 방문 시 문 앞에 세탁물이 없는 경우 수거가 불가하며, 배송비(3,500원)가 부과됩니다.</p>
@@ -474,7 +474,7 @@
 					</div>
 				</div>
 			</div>
-			<button type="button" id="btn_user" class="btn btn-block m-t-20 btn-outline text-dark" style="border-color:#13B383; font-size:13.5px !important;" onclick="location.href='/qna'">
+			<button type="button" id="btn_user" class="btn btn-block m-t-20 btn-outline text-dark" style="border-color:#13B383; font-size:13.5px !important;" onclick="location.href='${pageContext.request.contextPath }/qna'">
 				고객센터 1:1 문의하기
 			</button>
 		</div>

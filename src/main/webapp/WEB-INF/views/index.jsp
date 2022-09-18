@@ -31,12 +31,12 @@
                         </p>
                         <h3 data-animate="fadeInUp" data-animate-delay="600">배달원과 약속하는 번거로움도 시간을 방해받는 일도 없는 프라이빗한 일상<br>스마트 빨래 수거함 런드렛에 안전하고 편리하게 맡기세요.</h3>
                         <button type="button" class="btn btn-lg btn-reveal btn-outline btn-reveal-left m-t-30"  data-animate="fadeInUp" data-animate-delay="700"  data-target="#set1" data-toggle="modal">
-		                    <font style="vertical-align: inherit;"><span>런드렛 안내 <img src="/images/logo_w.png"></span></font>
+		                    <font style="vertical-align: inherit;"><span>런드렛 안내 <img src="images/logo_w.png"></span></font>
 		                    <i class="icon-chevron-right"></i>
                     	</button><br>
                     	<div class="p-t-20" data-animate="fadeInUp" data-animate-delay="1000" >
-	                        <a href="#"><img src="/images/icon_app1.png"></a>
-	                        <a href="#"><img src="/images/icon_app2.png"></a>
+	                        <a href="#"><img src="images/icon_app1.png"></a>
+	                        <a href="#"><img src="images/icon_app2.png"></a>
                     	</div>
                         <!-- end: Captions -->
                     </div>
@@ -55,7 +55,7 @@
                         </p>
                         <h3 data-animate="fadeInUp" data-animate-delay="600">내 라이프 스타일에 맞춰 최대 52% 할인된 가격으로 구독하는 월정액 서비스와,<br>안심 정찰 가격으로 원할 때마다 자유롭게 이용하는 자유 이용 서비스,<br><br>어떤 서비스를 선택하든 합리적인 세탁 생활을 경험하세요.</h3>
                         <button type="button" class="btn btn-lg btn-reveal btn-outline btn-reveal-left m-t-30"  data-animate="fadeInUp" data-animate-delay="700"  data-target="#set2" data-toggle="modal">
-		                    <font style="vertical-align: inherit;"><span>세탁요금제 안내 <img src="/images/logo_w.png"></span></font>
+		                    <font style="vertical-align: inherit;"><span>세탁요금제 안내 <img src="images/logo_w.png"></span></font>
 		                    <i class="icon-chevron-right"></i>
                     	</button><br>
                         <!-- end: Captions -->
@@ -117,7 +117,7 @@
 		                             <h1 class="text-md">Step 2.</h1>
 		                             <h3 class="font-weight-600 ">오늘 밤 10시 전 세탁물을 문 앞에 내놓고 수거 신청하세요.</h3>
 		                             <h4 class="font-weight-400 p-b-20">정확한 서비스를 위해 <span class="text-bold">런드리고 + 세탁물명</span>을 표기하여문 앞에 내놓아주세요. </h4>
-		                             <img src="/images/home_step2.png">
+		                             <img src="images/home_step2.png">
                                 </div>
                                 <div class="tab-pane fade" id="ch3" role="tabpanel" aria-labelledby="contact-tab">
                                 	<div class="row">
@@ -142,7 +142,7 @@
 		                                	 <p>수선을 맡기는 경우 <span class="text-bold">배송기간이 2일</span> 소요되며, 세탁과 수선을<br>함께 맡기는 경우는 <span class="text-bold">수선 완료 시</span> 함께 배송됩니다.</p>
 	                                	</div>
 	                                	<div class="col-lg-6 text-right post-image" >
-		                                		<img src="/images/home_step4.png">
+		                                		<img src="images/home_step4.png">
 	                                	</div>
                                 	</div>
                                 </div>
