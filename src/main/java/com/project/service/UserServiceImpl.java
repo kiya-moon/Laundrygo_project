@@ -15,5 +15,9 @@ public class UserServiceImpl implements UserService {
         return userDao.insert(user);
     }
 
+    @Override
+    public User selectUser(String login_email) throws Exception {
+        return userDao.selectUser(login_email);
+    }
 
 }
