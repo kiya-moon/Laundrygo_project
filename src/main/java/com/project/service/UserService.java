@@ -4,4 +4,7 @@ import com.project.dto.User;
 
 public interface UserService {
     int user_insert(User user) throws Exception;
+
+    int dupliChk(String email) throws Exception;
+
 }

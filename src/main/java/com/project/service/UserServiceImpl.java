@@ -15,5 +15,12 @@ public class UserServiceImpl implements UserService {
         return userDao.insert(user);
     }
 
+    @Override
+    public int dupliChk(String email) throws Exception{
+        int cnt = userDao.dupliChk(email);
+        System.out.println("cnt = " + cnt);
+        return cnt;
+    }
+
 
 }

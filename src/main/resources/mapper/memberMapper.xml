@@ -8,4 +8,7 @@
         VALUES
             (#{email}, #{name}, #{password}, #{phone}, #{addr})
     </insert>
+    <select id="dupliChk" parameterType="String" resultType="int">
+        select count(*) from user_info where email = #{email}
+    </select>
 </mapper>
