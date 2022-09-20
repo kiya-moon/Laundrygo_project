@@ -214,7 +214,7 @@
 							</div>
 							<div class="form-group mb-3">
 								<span>
-									<input type="tel" name="phone" class="form-control"
+									<input type="tel" oninput="autoHyphen(this)" name="phone" class="form-control"
 										id="sign_phone" placeholder="전화번호(ex 010-0000-0000)">
 								</span>
 								<span class="error_next_box"></span>
