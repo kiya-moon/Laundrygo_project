@@ -5,6 +5,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class UserDaoImpl implements UserDao {
     @Autowired
@@ -23,4 +25,10 @@ public class UserDaoImpl implements UserDao {
         System.out.println("cnt = " + cnt);
         return cnt;
     }
+
+    @Override
+    public User selectUser(String login_email) throws Exception {
+        return session.selectOne(namespace+"selectUser", login_email);
+    }
+
 }

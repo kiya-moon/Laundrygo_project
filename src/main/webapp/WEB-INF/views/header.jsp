@@ -3,6 +3,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.net.URLDecoder"%>
+<%--<%@ page session="false" %>--%>
+<%--<c:set var="loginId" value="${pageContext.request.getSession(false)==null ? '' : pageContext.request.sesson.getAttribute('email')}"/>--%>
+<%--<c:set var="loginOut" value="${loginId=='' ? '로그인' : 'ID='+=loginId}"/>--%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -29,8 +33,23 @@
 
 </head>
 <body class="p-r-0">
+	<%
+		String login_ch = (String)session.getAttribute("email");
+		if (login_ch!=null) {
+	%>
+	<script>
+		$(function(){										// 로그인 버튼 없어짐, 로그아웃, 마이페이지 버튼 생성
+			document.getElementById('login_btn').style.display = "none";
+			document.getElementById('logout_btn').style.display = "block";
+			document.getElementById('mypage_btn').style.display = "block";
+		});
+
+	</script>
+	<% } %>
+
  <!-- Body Inner -->
     <div class="body-inner">
+
 		<div id="topbar" class="d-xl-block d-lg-block topbar-fullwidth p-t-10 no-border ">
 	        	<div class="container">
 	                <div class="row">
@@ -41,13 +60,15 @@
 
                               <!-- 로그인 시작 -->
                               <!--Modal trigger button-->
-                              <li><a href="#" data-target="#login" data-toggle="modal" onclick="resetLogin()">로그인</a></li>
+                              <li><a href="#" data-target="#login" data-toggle="modal" onclick="resetLogin()" id="login_btn">로그인</a></li>
+                              <li><a href="<c:url value="/logout"/>" id="logout_btn" style="display:none;">로그아웃</a></li>
+                              <li><a href="${pageContext.request.contextPath }/mypage" id="mypage_btn" style="display:none;">마이페이지</a></li>
                               <!--End: Modal trigger button-->
 
                               <!-- 로그인 끝 -->
 
                               <!-- 회원가입 -->
-                              <li><a href="#" data-target="#user" data-toggle="modal" onclick="resetSignUp()">회원가입</a></li>
+                              <li><a href="#" data-target="#user" data-toggle="modal" onclick="resetSignUp()" id="join_btn">회원가입</a></li>
 
                               <!-- 회원가입 끝 -->
 
@@ -125,7 +146,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
 							type="button">×</button>
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">로그인</h2>
-						<form action="" method="get" name="login" class="login" onsubmit="return validateLogin();">
+						<form action="<c:url value="/login"/>" method="post" name="login" class="login" onsubmit="return validateLogin();">
 							<div class="form-group mb-3">
 								<span>
 									<input type="email" name="login_email" class="form-control" id="login_email"
@@ -354,9 +375,8 @@
 
  <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
  <!--Plugins-->
-<script type="text/javascript" src="js/sign.js"></script>
-<script>
+ <script type="text/javascript" src="js/sign.js"></script>
 
-</script>
+
 </body>
 </html>
