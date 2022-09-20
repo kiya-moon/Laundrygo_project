@@ -17,14 +17,14 @@
 </head>
 <body>
    <!-- Body Inner -->
-   <jsp:include page="header.jsp" />
     <div class="body-inner">
         
          <!-- Page title -->
-         <section id="page-title" class="page-title-left "  style="background-image:url(images/section1_bg.jpg); background-size: cover; background-position: center center;">
-            <div class="container m-t-100">
+         <section id="page-content" class="p-t-0" style="background-image:url(images/section1_bg.jpg); background-size: cover; background-position: center center;">
+             <jsp:include page="header.jsp" />
+             <div class="container m-t-50">
            		<div class="bg-overlay"></div>
-                    <div class="slide-captions text-center text-light p-t-50">
+                    <div class="slide-captions text-center text-light p-t-200">
                         <!-- Captions -->
                         <p class="text-medium text-shadow-dark" data-animate="fadeInUp" data-animate-delay="300">
                         	<font style="vertical-align: inherit;"><strong>비대면 안심 배송</strong></font>

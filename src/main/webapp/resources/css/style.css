@@ -255,7 +255,7 @@ section { padding: 80px 0; position: relative; width: 100%; overflow: hidden; z-
 /* ----------------------------------------------------------------
 Topbar
 -----------------------------------------------------------------*/
-#topbar { position: relative; top: 15px; z-index: 200; }
+#topbar { position: relative; z-index: 200; }
 #topbar .top-menu { list-style: outside none none; margin: 0; padding: 0; float: right; }
 #topbar .top-menu > li { display: inline-block; height: 40px; line-height: 40px; }
 #topbar .top-menu > li > a { color: #484848; display: block; font-size: 16px; font-weight: 500; height: 40px; margin-right: 16px; }
@@ -310,9 +310,9 @@ Topbar
   #topbar.topbar-transparent.dark .top-menu > li > a, #topbar.topbar-transparent.dark .social-icons li a { color: #484848 !important; } }
 /* ---------------------------------------------------------------- Header
 -----------------------------------------------------------------*/
-#header { position: relative; width: 100%; z-index: 199 !important; height: 80px; }
+#header { position: relative; top: -15px; width: 100%; z-index: 999 !important; }
 #header .container { position: relative; }
-#header .header-inner, #header #header-wrap { height: 80px; background-color: #fff; /*         backface-visibility: hidden;
+#header .header-inner, #header #header-wrap { height: 120px; background-color: #fff; /*         backface-visibility: hidden;
 -webkit-backface-visibility: hidden; */ left: 0; right: 0; -webkit-transition: all .4s ease-in-out; transition: all .4s ease-in-out; /*logo*/ }
 #header .header-inner #logo, #header #header-wrap #logo { float: left; font-size: 28px; position: relative; z-index: 1; -webkit-transition: all .4s ease-in-out; transition: all .4s ease-in-out; height: auto; }
 #header .header-inner #logo a > img, #header #header-wrap #logo a > img { vertical-align: middle; -webkit-transition: all .4s ease-in-out; transition: all .4s ease-in-out; height: auto; width: auto; }

@@ -50,12 +50,12 @@
  <!-- Body Inner -->
     <div class="body-inner">
 
-		<div id="topbar" class="d-xl-block d-lg-block topbar-fullwidth p-t-10 no-border ">
+		<div id="topbar" class="d-xl-block d-lg-block topbar-fullwidth no-border background-white">
 	        	<div class="container">
 	                <div class="row">
 	                    <div class="col-md-12">
 	                        <ul class="top-menu">
-                          
+
                               <!-- 유섭 시작 -->
 
                               <!-- 로그인 시작 -->
@@ -73,7 +73,7 @@
                               <!-- 회원가입 끝 -->
 
                               <!-- 유섭 끝 -->
-                              
+
 	                            <li><a href="https://blog.naver.com/laundrygo" target="_blank"><img src="images/naver_logo.png"></a></li>
 	                            <li><a href="https://www.instagram.com/Laundrygo.life/" target="_blank"><img src="images/in_logo.png"></a></li>
 	                            <li><a href="https://www.youtube.com/channel/UCi9dhmANTexQguWXHBgwwSg" target="_blank"><img src="images/you_logo.png"></a></li>
@@ -108,7 +108,7 @@
 	                        </form>
 	                    </div>
 	                    <!-- end: search -->
-	                  
+
 	                    <!--Navigation Resposnive Trigger-->
 	                    <div id="mainMenu-trigger">
 	                        <a class="lines-button x"><span class="lines"></span></a>
@@ -124,14 +124,14 @@
 	                                    <li><a href="${pageContext.request.contextPath }/pickup">수거신청</a></li>
 	                                    <li><a href="${pageContext.request.contextPath }/cs">고객센터</a></li>
 	                                </ul>
-	                            </nav> 
+	                            </nav>
 	                        </div>
 	                    </div>
 	              </div>
 	           </div>
            </header>
         <!-- end: header -->
-        
+
         <!-- 로그인 Modal -->
 		<div class="modal fade" id="login" tabindex="-1" role="modal"
 			aria-labelledby="modal-label" aria-hidden="true"
@@ -367,9 +367,9 @@
 
 		<!-- end: Modal -->
 
-        
+
     </div>
-   
+
     <!-- end: Body Inner -->
     <!-- Scroll top -->
 
