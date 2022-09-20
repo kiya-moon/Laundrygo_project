@@ -1,4 +1,6 @@
+
 var chk_dupli = 0;
+
 /* 로그인창 닫기 버튼 클릭 trigger */
 function hideLogin() {
     $("#login_close").trigger("click");
@@ -22,14 +24,17 @@ var error = document.querySelectorAll('.error_next_box');
 
 login_email.addEventListener("focusout", loginCheckEmail);
 login_password.addEventListener("focusout", loginCheckPassword);
+
 sign_email.addEventListener("focusout", signCheckEmail);
 sign_name.addEventListener("focusout", signCheckName);
 sign_password.addEventListener("focusout", signCheckPassword);
 sign_password_check.addEventListener("focusout", signCheckPassword2);
 sign_phone.addEventListener("focusout", signCheckPhone);
 sign_addr.addEventListener("focusout", signCheckAddr);
+
 // sign_account.addEventListener("focusout", signCheckAccount);
 // sign_account_num.addEventListener("focusout", signCheckAccountNum);
+
 
 /* 로그인 */
 
@@ -90,8 +95,6 @@ function signCheckEmail() {
         error[2].style.display = "block";
     }
 }
-
-
 
 function signCheckPassword() {
     /* 비밀번호 체크 */
@@ -206,6 +209,7 @@ function signCheckAddr() {
 //     }
 // }
 
+
 /* 모달창 닫을때 입력값 초기화 실패,, */
 //     	$('#login').on('hidden.bs.modal', function(e) {
 // 			document.forms['login'].reset();
@@ -251,6 +255,7 @@ function validateSignUp() {
     if(chk_dupli = 0){
         return false;
     }
+
     if( (!error[2].innerText == "" && error[2].style.color == 'red') || sign_name.value == '' ) {
         alert('이름을 입력하시거나 한글로만 입력해 주세요.');
         document.getElementById('sign_name').focus();
@@ -264,6 +269,7 @@ function validateSignUp() {
     }else if(chk_dupli = 0){
         alert('중복체크를 해주세요.');
         return false;
+
     }
 
     if( (!error[4].innerText == "" && error[4].style.color == "red") || sign_password.value == '' ) {
@@ -296,7 +302,6 @@ function validateSignUp() {
         return false;
     }
 
-
     return true;
 
 }
@@ -323,3 +328,4 @@ function validateSignUp() {
         });
 
     }
+

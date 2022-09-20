@@ -7,4 +7,6 @@ public interface UserService {
 
     int dupliChk(String email) throws Exception;
 
+    User selectUser(String login_email) throws Exception;
+
 }

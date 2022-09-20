@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="LaundryGo@localhost" uuid="3ae306d5-94f5-4ff6-a979-cb5e29981dc5">
+    <data-source source="LOCAL" name="laundrygo@localhost" uuid="b203959f-ddd5-4fcd-8da7-7c6470507922">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/Laundrygo</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/laundrygo</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
