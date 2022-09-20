@@ -18,10 +18,13 @@ public class UserDaoImpl implements UserDao {
         return session.insert(namespace+"insert", user);
     }
 
-//    @Override
-//    public String login(String login_email, String login_password) throws Exception {
-//        return session.selectOne(namespace+"select", login_email, login_password);
-//    }
+    @Override
+    public int dupliChk(String email) throws Exception{
+
+        int cnt = session.selectOne(namespace+"dupliChk", email);
+        System.out.println("cnt = " + cnt);
+        return cnt;
+    }
 
     @Override
     public User selectUser(String login_email) throws Exception {

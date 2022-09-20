@@ -2,20 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dao.MemberMapper">
+
     <insert id="insert" parameterType="User">
         INSERT INTO user_info
             (email, name, password, phone, addr)
         VALUES
             (#{email}, #{name}, #{password}, #{phone}, #{addr})
     </insert>
+    
+    <select id="dupliChk" parameterType="String" resultType="int">
+        select count(*) from user_info where email = #{email}
+
     <select id="select" parameterType="String" resultType="User">
         SELECT email, password
         FROM user_info
         WHERE email = #{email} AND password = #{password}
     </select>
+    
     <select id="selectUser" parameterType="String" resultType="User">
         SELECT *
         FROM user_info
         WHERE email = #{login_email}
+
     </select>
+    
 </mapper>

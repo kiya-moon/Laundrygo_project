@@ -1,3 +1,6 @@
+
+var chk_dupli = 0;
+
 /* 로그인창 닫기 버튼 클릭 trigger */
 function hideLogin() {
     $("#login_close").trigger("click");
@@ -8,8 +11,8 @@ function hideLogin() {
 var login_email = document.querySelector('#login_email');
 var login_password = document.querySelector('#login_password');
 
-var sign_name = document.querySelector('#sign_name');
 var sign_email = document.querySelector('#sign_email');
+var sign_name = document.querySelector('#sign_name');
 var sign_password = document.querySelector('#sign_password');
 var sign_password_check = document.querySelector('#sign_password_check');
 var sign_phone = document.querySelector('#sign_phone');
@@ -21,14 +24,17 @@ var error = document.querySelectorAll('.error_next_box');
 
 login_email.addEventListener("focusout", loginCheckEmail);
 login_password.addEventListener("focusout", loginCheckPassword);
-sign_name.addEventListener("focusout", signCheckName);
+
 sign_email.addEventListener("focusout", signCheckEmail);
+sign_name.addEventListener("focusout", signCheckName);
 sign_password.addEventListener("focusout", signCheckPassword);
 sign_password_check.addEventListener("focusout", signCheckPassword2);
 sign_phone.addEventListener("focusout", signCheckPhone);
 sign_addr.addEventListener("focusout", signCheckAddr);
-sign_account.addEventListener("focusout", signCheckAccount);
-sign_account_num.addEventListener("focusout", signCheckAccountNum);
+
+// sign_account.addEventListener("focusout", signCheckAccount);
+// sign_account_num.addEventListener("focusout", signCheckAccountNum);
+
 
 /* 로그인 */
 
@@ -58,17 +64,17 @@ function signCheckName() {
     /* 이름 체크 */
     var namePattern = /[가-힣]/;
     if(sign_name.value.length == 0) {
-        error[2].innerHTML = "이름을 입력해 주세요";
-        error[2].style.color = "red";
-        error[2].style.display = "block";
+        error[3].innerHTML = "이름을 입력해 주세요";
+        error[3].style.color = "red";
+        error[3].style.display = "block";
     } else if(!namePattern.test(sign_name.value)) {
-        error[2].innerHTML = "이름은 한글로만 입력해 주세요.";
-        error[2].style.color = "red";
-        error[2].style.display = "block";
+        error[3].innerHTML = "이름은 한글로만 입력해 주세요.";
+        error[3].style.color = "red";
+        error[3].style.display = "block";
     } else {
-        error[2].innerHTML = "허용되는 이름입니다.";
-        error[2].style.color = "#08A600";
-        error[2].style.display = "block";
+        error[3].innerHTML = "허용되는 이름입니다.";
+        error[3].style.color = "#08A600";
+        error[3].style.display = "block";
     }
 }
 
@@ -76,17 +82,17 @@ function signCheckEmail() {
     /* 이메일 체크 */
     var idPattern = /^[\w]+@[\w]+.[\.\w]{2,5}$/;
     if(sign_email.value.length==0) {
-        error[3].innerHTML = "이메일을 입력해 주세요";
-        error[3].style.color = "red";
-        error[3].style.display = "block";
+        error[2].innerHTML = "이메일을 입력해 주세요";
+        error[2].style.color = "red";
+        error[2].style.display = "block";
     } else if(!idPattern.test(sign_email.value)) {
-        error[3].innerHTML = "이메일 양식이 맞지 않습니다.";
-        error[3].style.color = "red";
-        error[3].style.display = "block";
+        error[2].innerHTML = "이메일 양식이 맞지 않습니다.";
+        error[2].style.color = "red";
+        error[2].style.display = "block";
     } else {
-        error[3].innerHTML = "이메일 양식이 맞습니다.";
-        error[3].style.color = "#08A600";
-        error[3].style.display = "block";
+        error[2].innerHTML = "이메일 양식이 맞습니다.";
+        error[2].style.color = "#08A600";
+        error[2].style.display = "block";
     }
 }
 
@@ -164,44 +170,45 @@ function signCheckAddr() {
     }
 }
 
-function signCheckAccount() {
-    /* 카드 종류 확인 체크 */
-    if(sign_account.value === "") {
-        error[8].innerHTML = "카드 종류를 선택해 주세요.";
-        error[8].style.color = "red";
-        error[8].style.display = "block";
-    } else if(sign_account.value === "그 외") {
-        error[8].innerHTML = "카드 번호 앞에 카드 종류를 기재해 주세요.";
-        error[8].style.color = "orange";
-        error[8].style.display = "block";
-    } else if((!sign_account.value == "" || sign_account.value == "그 외") && !sign_account_num.value == '') {
-        error[8].innerHTML = "카드번호를 반드시 확인해 주세요."
-        error[8].style.color = "#08A600";
-        error[8].style.display = "block";
-    } else {
-        error[8].innerHTML = "카드가 선택되었습니다."
-        error[8].style.color = "#08A600";
-        error[8].style.display = "block";
-    }
-}
+// function signCheckAccount() {
+//     /* 카드 종류 확인 체크 */
+//     if(sign_account.value === "") {
+//         error[8].innerHTML = "카드 종류를 선택해 주세요.";
+//         error[8].style.color = "red";
+//         error[8].style.display = "block";
+//     } else if(sign_account.value === "그 외") {
+//         error[8].innerHTML = "카드 번호 앞에 카드 종류를 기재해 주세요.";
+//         error[8].style.color = "orange";
+//         error[8].style.display = "block";
+//     } else if((!sign_account.value == "" || sign_account.value == "그 외") && !sign_account_num.value == '') {
+//         error[8].innerHTML = "카드번호를 반드시 확인해 주세요."
+//         error[8].style.color = "#08A600";
+//         error[8].style.display = "block";
+//     } else {
+//         error[8].innerHTML = "카드가 선택되었습니다."
+//         error[8].style.color = "#08A600";
+//         error[8].style.display = "block";
+//     }
+// }
 
-function signCheckAccountNum() {
-    /* 카드번호 확인 체크 */
-    var accountPattern = /^(\d{4})-(\d{4})-(\d{4})-(\d{4})$/;
-    if(sign_account.value === "") {
-        error[8].innerHTML = "카드 종류를 선택해 주세요.";
-        error[8].style.color = "red";
-        error[8].style.display = "block";
-    } else if(sign_account_num.value === "") {
-        error[8].innerHTML = "카드번호를 입력해 주세요.";
-        error[8].style.color = "red";
-        error[8].style.display = "block";
-    } else {
-        error[8].innerHTML = "카드번호를 반드시 확인해 주세요."
-        error[8].style.color = "#08A600";
-        error[8].style.display = "block";
-    }
-}
+// function signCheckAccountNum() {
+//     /* 카드번호 확인 체크 */
+//     var accountPattern = /^(\d{4})-(\d{4})-(\d{4})-(\d{4})$/;
+//     if(sign_account.value === "") {
+//         error[8].innerHTML = "카드 종류를 선택해 주세요.";
+//         error[8].style.color = "red";
+//         error[8].style.display = "block";
+//     } else if(sign_account_num.value === "") {
+//         error[8].innerHTML = "카드번호를 입력해 주세요.";
+//         error[8].style.color = "red";
+//         error[8].style.display = "block";
+//     } else {
+//         error[8].innerHTML = "카드번호를 반드시 확인해 주세요."
+//         error[8].style.color = "#08A600";
+//         error[8].style.display = "block";
+//     }
+// }
+
 
 /* 모달창 닫을때 입력값 초기화 실패,, */
 //     	$('#login').on('hidden.bs.modal', function(e) {
@@ -245,16 +252,24 @@ function validateLogin() {
 }
 
 function validateSignUp() {
+    if(chk_dupli = 0){
+        return false;
+    }
+
     if( (!error[2].innerText == "" && error[2].style.color == 'red') || sign_name.value == '' ) {
         alert('이름을 입력하시거나 한글로만 입력해 주세요.');
         document.getElementById('sign_name').focus();
         return false;
     }
 
-    if( (!error[3].innerText == "" && error[3].style.color == 'red') || sign_email.value == '' ) {
+    if( (!error[3].innerText == "" && error[3].style.color == 'red') || sign_email.value == ''){
         alert('이메일을 입력하시거나 이메일 양식을 확인해 주세요.');
         document.getElementById('sign_email').focus();
         return false;
+    }else if(chk_dupli = 0){
+        alert('중복체크를 해주세요.');
+        return false;
+
     }
 
     if( (!error[4].innerText == "" && error[4].style.color == "red") || sign_password.value == '' ) {
@@ -287,8 +302,30 @@ function validateSignUp() {
         return false;
     }
 
-
-
     return true;
 
 }
+    function dupliChk(){
+        const email = $('#sign_email').val();
+        $.ajax({
+            type: "GET",
+            url: "./dupliChk",
+            data: { "email": email },
+            success: function(data) {
+                if (data == 1) {
+                    error[2].innerHTML = "중복된 이메일입니다.";
+                    error[2].style.color = "red";
+                    error[2].style.display = "block";
+                    chk_dupli = 0;
+                    return false;
+                } else if(data == 0){
+                    error[2].innerHTML = "사용가능한 이메일입니다.";
+                    error[2].style.color = "#08A600";
+                    error[2].style.display = "block";
+                    chk_dupli = 1;
+                }
+            }
+        });
+
+    }
+
