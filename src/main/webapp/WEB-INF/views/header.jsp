@@ -78,7 +78,7 @@
  <!-- Body Inner -->
     <div class="body-inner">
 
-		<div id="topbar" class="d-xl-block d-lg-block topbar-fullwidth p-t-10 no-border ">
+		<div id="topbar" class="d-xl-block d-lg-block topbar-fullwidth no-border background-white">
 	        	<div class="container">
 	                <div class="row">
 	                    <div class="col-md-12">
@@ -145,7 +145,7 @@
 	                    <!--Navigation-->
 	                    <div id="mainMenu">
 	                        <div class="container">
-	                            <nav class="p-b-40">
+	                            <nav class="p-b-20">
 	                                <ul>
 	                                    <li><a href="${pageContext.request.contextPath }/">런드리고</a></li>
 	                                    <li><a href="${pageContext.request.contextPath }/monthly">월정액</a></li>
