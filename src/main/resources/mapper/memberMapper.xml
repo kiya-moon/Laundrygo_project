@@ -19,6 +19,10 @@
         FROM user_info
         WHERE email = #{email} AND password = #{password}
     </select>
+
+    <select id = "user_info" resultType="User">
+        select * from user_info where email = #{email}
+    </select>
     
     <select id="selectUser" parameterType="String" resultType="User">
         SELECT *
@@ -26,5 +30,13 @@
         WHERE email = #{login_email}
 
     </select>
-    
+
+    <select id="findId" parameterType="map" resultType="String">
+        Select email from user_info where name = #{name} and phone = #{phone}
+    </select>
+
+    <select id="findPw" parameterType="map" resultType="String">
+        Select password from user_info where email = #{email} and name = #{name} and phone = #{phone}
+    </select>
+
 </mapper>

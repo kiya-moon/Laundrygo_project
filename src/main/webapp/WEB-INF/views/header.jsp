@@ -47,6 +47,34 @@
 	</script>
 	<% } %>
 
+	<!-- 아이디 찾기 -->
+	<c:set var="message" value="${requestScope.message }" />
+	<c:if test="${check==1}">
+		<script>
+			alert("일치하는 정보가 없습니다.");
+		</script>
+	</c:if>
+	<c:if test="${check == 0}">
+		<script>
+			alert("${message}");
+		</script>
+	</c:if>
+	<!-- 아이디 찾기 끝-->
+
+	<!-- 비밀번호 찾기 -->
+	<c:set var="message_pw" value="${requestScope.message_pw }" />
+	<c:if test="${check_pw==1}">
+		<script>
+			alert("일치하는 정보가 없습니다.");
+		</script>
+	</c:if>
+	<c:if test="${check_pw == 0}">
+		<script>
+			alert("${message_pw}");
+		</script>
+	</c:if>
+	<!-- 비밀번호 찾기 끝-->
+
  <!-- Body Inner -->
     <div class="body-inner">
 
@@ -173,16 +201,16 @@
 							<div class="form-group mb-0">
 								<p class="text-center">
 									<a href="#" data-target="#find_email" data-toggle="modal" onclick="hideLogin()"><strong>아이디 찾기</strong></a>
-									  /  
+									  /
 									<a href="#" data-target="#find_pw" data-toggle="modal" onclick="hideLogin()"><strong>비밀번호 찾기</strong></a>
-									  /  
+									  /
 									<a href="#" data-target="#user" data-toggle="modal" onclick="hideLogin()"><strong>가입하기</strong></a>
 								</p>
 							</div>
 						</form>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 
@@ -191,7 +219,7 @@
 			aria-labelledby="modal-label" aria-hidden="true"
 			style="display: none;" data-backdrop="static">
 			<div class="modal-dialog" style="top: 15%">
-				
+
 				<div class="modal-content">
 					<div class="widget-form m-0 p-cb">
 						<button aria-hidden="true" data-dismiss="modal" class="close" id="sign_close"
@@ -199,7 +227,7 @@
 						<div style="text-align: center;">
 							<img src="images/logo.png" class="logo-default m-t-15 m-b-15" >
 						</div>
-						
+
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">회원가입</h2>
 
 						<form action="<c:url value="/member"/>" method="post" name="signUp" class="signUp" onsubmit="return validateSignUp();">
@@ -276,7 +304,7 @@
 						</form>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 
@@ -294,7 +322,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
 							type="button">×</button>
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">아이디 찾기</h2>
-						<form action="" method="get" name="login">
+						<form action="<c:url value="/findId"/>" method="post" name="login">
 							<div class="form-group mb-3">
 								<span>
 									<input type="text" name="find_email_name" class="form-control" id="find_email_name"
@@ -315,10 +343,10 @@
 						</form>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
-		
+
 		<!-- 비밀번호 찾기 Modal -->
 		<div class="modal fade" id="find_pw" tabindex="-1" role="modal"
 			aria-labelledby="modal-label" aria-hidden="true"
@@ -333,7 +361,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
 							type="button">×</button>
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">비밀번호 찾기</h2>
-						<form action="" method="get" name="login">
+						<form action="<c:url value="/findPw"/>" method="post" name="login">
 							<div class="form-group mb-3">
 								<span>
 									<input type="email" name="find_pw_email" class="form-control" id="find_pw_email"
@@ -361,7 +389,7 @@
 						</form>
 					</div>
 				</div>
-				
+
 			</div>
 		</div>
 

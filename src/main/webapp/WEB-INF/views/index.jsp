@@ -18,6 +18,7 @@
 <body>
    <!-- Body Inner -->
    <jsp:include page="header.jsp" />
+
    <div class="body-inner">
          <!-- Page title -->
          <section id="page-content" class="d-grid" style="background-image:url(images/section1_bg.jpg); background-size: cover; background-position: center center;">
@@ -42,7 +43,7 @@
             </div>
         </section>
         <!-- end: Page title -->
-        
+
         <!-- Content1 -->
         <section id="page-content" class="d-grid" style="background-image:url(images/section2_bg.jpg); background-size: cover; background-position: center center;">
             <div class="container">
@@ -60,9 +61,9 @@
                         <!-- end: Captions -->
                     </div>
             </div>
-        </section> 
+        </section>
         <!-- end: Content1 -->
-        
+
          <!-- Content2 -->
         <section id="page-content" style="background-color:#f1f1f1;">
             <div class="container">
@@ -72,6 +73,7 @@
                         	<font style="vertical-align: inherit;"><strong>세탁 없는 세탁 생활 시작하기</strong></font>
                         </p>
                     </div>
+
 
                     <div class="tabs p-t-50">
                             <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -148,9 +150,9 @@
                             </div>
                         </div>
             </div>
-        </section> 
+        </section>
         <!-- end: Content2 -->
-        
+
          <!-- Content3 -->
         <section id="page-content" class="no-sidebar" style="background-color:#fff; background-size: cover; background-position: center center;">
             <div class="container text-center">
@@ -167,9 +169,9 @@
                         <!-- end: Captions -->
 
             </div>
-        </section> 
+        </section>
         <!-- end: Content3 -->
-        
+
         <!-- Popup1 -->
         <div class="fullwidth">
         <div class="modal fade p-r-0" id="set1" tabindex="-1" role="modal" aria-labelledby="modal-label-3" aria-hidden="true">
@@ -193,7 +195,7 @@
         </div>
 		</div>
 		<!-- end: Popup1 -->
-		
+
 		<!-- Popup2 -->
         <div class="fullwidth">
         <div class="modal fade p-r-0" id="set2" tabindex="-1" role="modal" aria-labelledby="modal-label-3" aria-hidden="true">
@@ -209,10 +211,10 @@
                             <div class="m-auto">
 	                            <h3 class="text-bold p-t-30">드라이 온리</h3>
     	                        <img src="https://static.laundrygo.com/images/homepage/modal/brand/m1-2-tb-3.png" alt="드라이온리 요금표">
-                            	
+
                             	<h3 class="text-bold p-t-50">런드리 온리</h3>
-                            	<img src="https://static.laundrygo.com/images/homepage/modal/brand/m1-2-tb-5.png" alt="런드리온리 요금표">                            	
-                            	
+                            	<img src="https://static.laundrygo.com/images/homepage/modal/brand/m1-2-tb-5.png" alt="런드리온리 요금표">
+
                             	<h3 class="text-bold p-t-50">드라이&amp런드리</h3>
                             	<img src="https://static.laundrygo.com/images/homepage/modal/brand/m1-2-tb-4.png" alt="런드리&amp;드라이 요금표">
                             </div>
@@ -226,15 +228,15 @@
     </div>
    <!-- end: Body Inner -->
    <jsp:include page="footer.jsp" />
-   
+
    <!-- Scroll top -->
    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
-   
+
    <!--Plugins-->
    <script src="${pageContext.request.contextPath }/js/jquery.js"></script>
    <script src="${pageContext.request.contextPath }/js/plugins.js"></script>
    <script src="${pageContext.request.contextPath }/js/functions.js"></script>
    <script src="${pageContext.request.contextPath }/js/script.js"></script>
-   
+
 </body>
 </html>
