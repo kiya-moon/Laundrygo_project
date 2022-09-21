@@ -262,7 +262,6 @@ function validateSignUp() {
         return false;
     }
     if( (!error[3].innerText == "" && error[3].style.color == 'red') || sign_name.value == '' ) {
-
         alert('이름을 입력하시거나 한글로만 입력해 주세요.');
         document.getElementById('sign_name').focus();
         return false;
