@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -6,7 +6,7 @@
 <%@ page session="false"%>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, in itial-scale=1" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="author" content="INSPIRO" />
 <meta name="description" content="Themeforest Template Polo">
@@ -111,7 +111,7 @@
 									<h4>2회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>
@@ -140,7 +140,7 @@
 									<h4>2회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>
@@ -169,7 +169,7 @@
 									<h4>2회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20"onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>
@@ -198,7 +198,7 @@
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>
@@ -249,7 +249,7 @@
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>
@@ -278,7 +278,7 @@
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>
@@ -307,7 +307,7 @@
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>
@@ -364,7 +364,7 @@
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>
@@ -398,7 +398,7 @@
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>
@@ -432,7 +432,7 @@
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='/apply'">
+									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
 										신청하기 Click
 									</button>
 								</div>

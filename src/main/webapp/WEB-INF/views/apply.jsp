@@ -35,7 +35,7 @@
                                         <h4>수거/배송 주소</h4>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <input type="text" class="form-control" name="address" value="address" placeholder="주소 받아오는 곳">
+                                                <input type="text" class="form-control" name="address" value="${user.addr}" placeholder="주소 받아오는 곳">
                                             </div>
                                             <div class="form-group col-md-2">
                                                 <input type="button" class="form-control" name="button" value="수정" placeholder="수정 바로가기">
@@ -46,7 +46,7 @@
                                             <div class="form-group col-md-10">
                                                 <input type="text" class="form-control" name="card" value="cardnumber" placeholder="카드번호 받아오는 곳">
                                             </div>
-                                            <div class="form-group col-md-2">
+                                             <div class="form-group col-md-2">
                                                 <input type="button" class="form-control" name="button" value="카드 변경" placeholder="변경 바로가기">
                                             </div>
                                         </div>
@@ -65,7 +65,7 @@
 	                                            </div>
                                         	</div>
                                             <div class="form-group col-md-4 text-right">
-                                               <h4><!-- ${dto.point} -->0 P</h4>
+                                               <h4>${user.point} P</h4>
                                             </div>
                                         </div>
                                         <p>· 결제 시점에 보유 중인 포인트가 있다면 <span class="text-red">우선 차감</span>합니다.</p>
