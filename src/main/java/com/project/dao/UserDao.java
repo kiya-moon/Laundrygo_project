@@ -11,4 +11,10 @@ public interface UserDao {
 
     User selectUser(String login_email) throws Exception;
 
+    String findId(String name, String phone) throws Exception;
+
+    String findPw(String email, String name, String phone) throws Exception;
+
+    User userInfo(String email) throws Exception;
+
 }

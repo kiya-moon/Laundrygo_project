@@ -5,7 +5,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class UserDaoImpl implements UserDao {
@@ -31,4 +33,30 @@ public class UserDaoImpl implements UserDao {
         return session.selectOne(namespace+"selectUser", login_email);
     }
 
+    @Override
+    public String findId(String name, String phone) throws Exception {
+        System.out.println("id찾기Dao");
+        Map map = new HashMap();
+        map.put("name", name);
+        map.put("phone",phone);
+
+        return session.selectOne(namespace + "findId", map);
+    }
+
+    public String findPw(String email, String name, String phone) throws Exception {
+        System.out.println("pw찾기Dao");
+        Map map = new HashMap();
+        map.put("email", email);
+        map.put("name", name);
+        map.put("phone", phone);
+
+        return session.selectOne(namespace + "findPw", map);
+    }
+
+    @Override
+    public User userInfo(String email) throws Exception {
+        User user = session.selectOne(namespace+".readMember", email);
+
+        return user;
+    }
 }
