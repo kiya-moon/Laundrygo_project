@@ -117,7 +117,7 @@
 	                    <!--Navigation-->
 	                    <div id="mainMenu">
 	                        <div class="container">
-	                            <nav class="p-b-40">
+	                            <nav class="p-b-20">
 	                                <ul>
 	                                    <li><a href="${pageContext.request.contextPath }/">런드리고</a></li>
 	                                    <li><a href="${pageContext.request.contextPath }/monthly">월정액</a></li>

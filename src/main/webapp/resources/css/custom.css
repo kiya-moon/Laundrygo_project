@@ -14,9 +14,9 @@ body .body-inner-cs {
 
 body .page-title-cs{
 	text-align: center;
-	padding-top: 
 }
 
 .max-w { max-width: 100% !important; }
 .min-h { min-height: 0 !important; }
 .icon-alert-circle:hover { color:red !important; }
+.d-grid {display:grid; place-items: center;}
