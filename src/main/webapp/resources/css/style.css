@@ -9,24 +9,24 @@
 ************************************************************************/
 
 @font-face {
-    font-family: 'Happiness-Sans-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'Happiness-Sans-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Happiness-Sans-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
+  font-family: 'Happiness-Sans-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Happiness-Sans-Title';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Happiness-Sans-Title';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -54,7 +54,7 @@ section { padding: 80px 0; position: relative; width: 100%; overflow: hidden; z-
 
 @media (max-width: 768px) { section { padding: 40px 0; } }
 @media (max-width: 992px) { .container { padding: 0 30px; } }
- /* ---------------------------------------------------------------------- Page title
+/* ---------------------------------------------------------------------- Page title
 -------------------------------------------------------------------------*/
 #page-title { clear: both; height: 82%; padding: 80px 0; background-color: #f8f9fa; position: relative; /* page header left*/ /* page header right*/ }
 #page-title .page-title { text-align: center; padding: 0; }
@@ -244,12 +244,12 @@ section { padding: 80px 0; position: relative; width: 100%; overflow: hidden; z-
 .grid-loader:after { left: 3.5em; }
 
 @-webkit-keyframes load7 { 0%,
-    80%,
-    100% { -webkit-box-shadow: 0 2.5em 0 -1.3em; box-shadow: 0 2.5em 0 -1.3em; }
+80%,
+100% { -webkit-box-shadow: 0 2.5em 0 -1.3em; box-shadow: 0 2.5em 0 -1.3em; }
   40% { -webkit-box-shadow: 0 2.5em 0 0; box-shadow: 0 2.5em 0 0; } }
 @keyframes load7 { 0%,
-    80%,
-    100% { -webkit-box-shadow: 0 2.5em 0 -1.3em; box-shadow: 0 2.5em 0 -1.3em; }
+80%,
+100% { -webkit-box-shadow: 0 2.5em 0 -1.3em; box-shadow: 0 2.5em 0 -1.3em; }
   40% { -webkit-box-shadow: 0 2.5em 0 0; box-shadow: 0 2.5em 0 0; } }
 /*  Header */
 /* ----------------------------------------------------------------
@@ -1932,7 +1932,7 @@ Helpers
 
 /*Line height*/
 .lh80 { line-
- 80px !important; }
+80px !important; }
 
 .line { clear: both; position: relative; width: 100%; margin: 50px 0; border-top: 1px solid #e3e3e3; }
 
@@ -2321,14 +2321,14 @@ Scrolldown icon animation
 .scrolldown-animation { -webkit-animation: 1s ease-in-out 0s normal none infinite running scrolldown-keyframes; animation: 1s ease-in-out 0s normal none infinite running scrolldown-keyframes; bottom: 40px; height: 40px; left: 50%; margin-left: -20px; position: absolute; width: 45px; z-index: 60; }
 
 @-webkit-keyframes scrolldown-keyframes { 0%,
-    100% { -webkit-transform: translateY(-8px); transform: translateY(-8px); }
+100% { -webkit-transform: translateY(-8px); transform: translateY(-8px); }
   50% { -webkit-transform: translateY(0px); transform: translateY(0px); } }
 
 @keyframes scrolldown-keyframes { 0%,
-    100% { -webkit-transform: translateY(-8px); transform: translateY(-8px); }
+100% { -webkit-transform: translateY(-8px); transform: translateY(-8px); }
   50% { -webkit-transform: translateY(0px); transform: translateY(0px); } }
 @keyframes scrolldown-keyframes { 0%,
-    100% { -webkit-transform: translateY(-8px); transform: translateY(-8px); }
+100% { -webkit-transform: translateY(-8px); transform: translateY(-8px); }
   50% { -webkit-transform: translateY(0px); transform: translateY(0px); } }
 /*animated background*/
 .animated-background { -webkit-animation: 120s linear 0s normal none infinite running animatedBackground; animation: 120s linear 0s normal none infinite running animatedBackground; background-repeat: repeat-x; background-size: cover; }
@@ -4221,7 +4221,7 @@ input:not([type="checkbox"]):not([type="radio"]), select { line-height: 18px; pa
 }
 .form-transparent-light-fields .form-control { background-color: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.1); &:focus { background-color: rgba(255, 255, 255, 0.7); }
 } */
-/* 
+/*
 input[type="checkbox"].form-control { float: left; width: auto; margin-right: 13px; height: 24px; cursor: pointer; &.error { ~ label, ~ label a { color: #b71828 !important; } }
 } */
 input[type="color"] { width: 100%; height: 100%; min-height: 3px; padding: 0; border: 0px; cursor: pointer; }
@@ -4506,7 +4506,7 @@ a.list-group-item.active:hover, a.list-group-item.active.active { color: #ffffff
 .single-post .post-navigation .post-next { right: 0px; }
 
 @media (max-width: 991px) { .post-prev-title, .post-next-title { display: none; } }
- /* ---------------------------------------------------------------------- Breadcrumbs
+/* ---------------------------------------------------------------------- Breadcrumbs
 -------------------------------------------------------------------------*/
 .breadcrumb { background-color: transparent; font-size: 12px; font-weight: 400; letter-spacing: 0.5px; margin-bottom: 10px; display: block; }
 .breadcrumb ul, .breadcrumb ol { display: inline; margin: 0; padding: 0; }

@@ -5,6 +5,11 @@ var chk_dupli = 0;
 function hideLogin() {
     $("#login_close").trigger("click");
 }
+const autoHyphen = (target) => {
+    target.value = target.value
+        .replace(/[^0-9]/g, '')
+        .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
+}
 
 /* 로그인, 회원가입 validation */
 
@@ -252,10 +257,10 @@ function validateLogin() {
 }
 
 function validateSignUp() {
+    alert('회원가입이 완료되었습니다.');
     if(chk_dupli = 0){
         return false;
     }
-
     if( (!error[3].innerText == "" && error[3].style.color == 'red') || sign_name.value == '' ) {
         alert('이름을 입력하시거나 한글로만 입력해 주세요.');
         document.getElementById('sign_name').focus();
@@ -303,6 +308,7 @@ function validateSignUp() {
     }
 
     return true;
+
 
 }
     function dupliChk(){

@@ -17,6 +17,7 @@ import java.util.List;
 
 @Controller
 //@RequestMapping("/laundrygo")
+
 public class UserController {
     @Autowired
     private UserService userService;
