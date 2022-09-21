@@ -1931,8 +1931,7 @@ Helpers
 .fullwidth { width: 100% !important; }
 
 /*Line height*/
-.lh80 { line-
-80px !important; }
+.lh80 { line-height: 80px !important; }
 
 .line { clear: both; position: relative; width: 100%; margin: 50px 0; border-top: 1px solid #e3e3e3; }
 

@@ -234,9 +234,15 @@
 
 							<div class="form-group mb-3">
 								<span>
-									<input type="email" name="email" class="form-control" id="sign_email"
-										placeholder="이메일">
-									<button type="button" id="dupli_chk" onclick="dupliChk();">중복체크</button>
+									<div class="row">
+										<div class="col-lg-9 p-r-0">
+										<input type="email" name="email" class="form-control" id="sign_email"
+											placeholder="이메일">
+										</div>
+										<div class="col-lg-3 text-right">
+											<button type="button" id="dupli_chk" class="btn" onclick="dupliChk();">중복체크</button>
+										</div>
+									</div>
 								</span>
 								<span class="error_next_box"></span>
 							</div>
