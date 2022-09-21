@@ -76,7 +76,7 @@
 		<!--end: Slider list -->
 
 		<!-- Content1 -->
-		<section id="page-content">
+		<section id="page-content" class="no-sidebar">
 			<div class="container m-t-50">
 				<div class="slide-captions text-center">
 					<div class="heading-text heading-line text-center">
@@ -214,7 +214,7 @@
 		<!-- end: Content1 -->
 		<hr>
 		<!-- Content2 -->
-		<section id="page-content">
+		<section id="page-content" class="no-sidebar">
 			<div class="container m-t-50">
 				<div class="slide-captions text-center">
 					<div class="heading-text heading-line text-center">
@@ -324,7 +324,7 @@
 		
 		<hr>
 		<!-- Content3 -->
-		<section id="page-content">
+		<section id="page-content" class="no-sidebar">
 			<div class="container m-t-50">
 				<div class="slide-captions text-center">
 					<div class="heading-text heading-line text-center">

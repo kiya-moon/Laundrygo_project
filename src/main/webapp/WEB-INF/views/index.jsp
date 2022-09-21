@@ -18,13 +18,13 @@
 <body>
    <!-- Body Inner -->
    <jsp:include page="header.jsp" />
-    <div class="body-inner">
 
+   <div class="body-inner">
          <!-- Page title -->
-         <section id="page-title" class="page-title-left "  style="background-image:url(images/section1_bg.jpg); background-size: cover; background-position: center center;">
-            <div class="container m-t-100">
+         <section id="page-content" class="d-grid" style="background-image:url(images/section1_bg.jpg); background-size: cover; background-position: center center;">
+             <div class="container">
            		<div class="bg-overlay"></div>
-                    <div class="slide-captions text-center text-light p-t-50">
+                    <div class="text-center text-light">
                         <!-- Captions -->
                         <p class="text-medium text-shadow-dark" data-animate="fadeInUp" data-animate-delay="300">
                         	<font style="vertical-align: inherit;"><strong>비대면 안심 배송</strong></font>
@@ -45,12 +45,12 @@
         <!-- end: Page title -->
 
         <!-- Content1 -->
-        <section id="page-content" style="background-image:url(images/section2_bg.jpg); background-size: cover; background-position: center center;">
-            <div class="container m-t-100">
+        <section id="page-content" class="d-grid" style="background-image:url(images/section2_bg.jpg); background-size: cover; background-position: center center;">
+            <div class="container">
            		<div class="bg-overlay"></div>
-                    <div class="slide-captions text-center text-light p-t-100">
+                    <div class="slide-captions text-center text-light">
                         <!-- Captions -->
-                        <p class="text-medium text-shadow-dark p-t-50" data-animate="fadeInUp" data-animate-delay="300">
+                        <p class="text-medium text-shadow-dark" data-animate="fadeInUp" data-animate-delay="300">
                         	<font style="vertical-align: inherit;"><strong>합리적인 가격</strong></font>
                         </p>
                         <h3 data-animate="fadeInUp" data-animate-delay="600">내 라이프 스타일에 맞춰 최대 52% 할인된 가격으로 구독하는 월정액 서비스와,<br>안심 정찰 가격으로 원할 때마다 자유롭게 이용하는 자유 이용 서비스,<br><br>어떤 서비스를 선택하든 합리적인 세탁 생활을 경험하세요.</h3>
@@ -65,17 +65,18 @@
         <!-- end: Content1 -->
 
          <!-- Content2 -->
-        <section id="page-content" style="background-color:#f1f1f1;; background-size: cover; background-position: center center;">
-            <div class="container m-t-50">
+        <section id="page-content" style="background-color:#f1f1f1;">
+            <div class="container">
                     <div class="slide-captions text-center text-dark">
                         <!-- Captions -->
-                        <p class="text-medium text-shadow-light " data-animate="fadeInUp" data-animate-delay="300">
+                        <p class="text-medium text-shadow-light p-t-10" data-animate="fadeInUp" data-animate-delay="300">
                         	<font style="vertical-align: inherit;"><strong>세탁 없는 세탁 생활 시작하기</strong></font>
                         </p>
                     </div>
 
-                    <div class="tabs">
-                            <ul class="nav nav-tabs nav-justified m-t-50" id="myTab" role="tablist">
+
+                    <div class="tabs p-t-50">
+                            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#ch1" role="tab" aria-controls="ch1" aria-selected="true">1.서비스신청</a>
                                 </li>
@@ -89,9 +90,9 @@
                                     <a class="nav-link" id="contact-tab" data-toggle="tab" href="#ch4" role="tab" aria-controls="ch4" aria-selected="false">4.세탁 끝!</a>
                                 </li>
                             </ul>
-                            <div class="tab-content" id="myTabContent">
+                            <div class="tab-content" id="myTabContent" style="overflow-x: hidden; height: 100%;">
                                 <div class="tab-pane fade active show" id="ch1" role="tabpanel" aria-labelledby="home-tab">
-                                	<div class="row">
+                                	<div class="row m-b-200">
                                 		<div class="col-lg-5">
 		                                	<h1 class="text-md">Step 1.</h1>
 		                                	<h3>나에게 맞는 서비스를 신청하세요.</h3>
@@ -107,7 +108,7 @@
 		                                	</ul>
 	                                	</div>
 	                                	<div class="col-lg-7 text-right" >
-		                                	<div class="video-wrapper  right"  style="width:60%;">
+		                                	<div class="video-wrapper right" style="width:60%;">
 		                                		<video src="https://static.laundrygo.com/images/homepage/use/step01_motion_brandweb.mp4" autoplay muted loop playsinline></video>
 		                                	</div>
 	                                	</div>
@@ -117,10 +118,10 @@
 		                             <h1 class="text-md">Step 2.</h1>
 		                             <h3 class="font-weight-600 ">오늘 밤 10시 전 세탁물을 문 앞에 내놓고 수거 신청하세요.</h3>
 		                             <h4 class="font-weight-400 p-b-20">정확한 서비스를 위해 <span class="text-bold">런드리고 + 세탁물명</span>을 표기하여문 앞에 내놓아주세요. </h4>
-		                             <img src="images/home_step2.png">
+		                             <img src="images/home_step2.png" class="m-b-200">
                                 </div>
                                 <div class="tab-pane fade" id="ch3" role="tabpanel" aria-labelledby="contact-tab">
-                                	<div class="row">
+                                	<div class="row m-b-200">
                                 		<div class="col-lg-6">
 		                                	<h1 class="text-md">Step 3.</h1>
 		                                	 <h3 class="font-weight-600 ">내 옷의 진행 상황을 앱에서 확인할 수 있어요.</h3>
@@ -142,7 +143,7 @@
 		                                	 <p>수선을 맡기는 경우 <span class="text-bold">배송기간이 2일</span> 소요되며, 세탁과 수선을<br>함께 맡기는 경우는 <span class="text-bold">수선 완료 시</span> 함께 배송됩니다.</p>
 	                                	</div>
 	                                	<div class="col-lg-6 text-right post-image" >
-		                                		<img src="images/home_step4.png">
+		                                		<img src="images/home_step4.png" >
 	                                	</div>
                                 	</div>
                                 </div>
@@ -153,16 +154,20 @@
         <!-- end: Content2 -->
 
          <!-- Content3 -->
-        <section id="page-content" style="background-color:#fff; background-size: cover; background-position: center center;">
-            <div class="container m-t-50">
-                    <div class="slide-captions text-center text-dark">
+        <section id="page-content" class="no-sidebar" style="background-color:#fff; background-size: cover; background-position: center center;">
+            <div class="container text-center">
+
+                <div class="slide-captions text-dark">
+                    <!-- Captions -->
+                    <p class="text-medium text-shadow-light p-t-10" data-animate="fadeInUp" data-animate-delay="300">
+                        <font style="vertical-align: inherit;"><strong>서비스 지역 확인</strong></font>
+                    </p>
+                </div>
                         <!-- Captions -->
-                         <p class="text-medium text-shadow-light p-b-50 " data-animate="fadeInUp" data-animate-delay="300">
-                        	<font style="vertical-align: inherit;"><strong>서비스 지역 확인</strong></font>
-                        </p>
-                        <img src="images/map.png" style="width:80%;">
+
+                <img src="images/map.png" class="d-grid center p-t-20" style="width:80%;">
                         <!-- end: Captions -->
-                    </div>
+
             </div>
         </section>
         <!-- end: Content3 -->
