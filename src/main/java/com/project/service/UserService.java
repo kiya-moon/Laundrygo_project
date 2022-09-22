@@ -16,6 +16,5 @@ public interface UserService {
 
     String findPw(String email, String name, String phone) throws Exception;
 
-    User userInfo(String email) throws Exception;
-
+    int pwdChk(String email, String mod_password) throws Exception;
 }

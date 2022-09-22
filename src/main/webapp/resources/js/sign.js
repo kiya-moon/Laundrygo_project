@@ -22,8 +22,6 @@ var sign_password = document.querySelector('#sign_password');
 var sign_password_check = document.querySelector('#sign_password_check');
 var sign_phone = document.querySelector('#sign_phone');
 var sign_addr = document.querySelector('#sign_addr');
-var sign_account = document.querySelector('#sign_account');
-var sign_account_num = document.querySelector('#sign_account_num');
 
 var error = document.querySelectorAll('.error_next_box');
 
@@ -223,6 +221,9 @@ function signCheckAddr() {
 // 		$('#user').on('hidden.bs.modal', function(e) {
 // 			document.forms['signUp'].reset();
 // 		})
+function resetDupli(){
+    chk_dupli=0;
+}
 
 function resetLogin() {
     $(".login")[0].reset();
@@ -257,10 +258,7 @@ function validateLogin() {
 }
 
 function validateSignUp() {
-    alert('회원가입이 완료되었습니다.');
-    if(chk_dupli = 0){
-        return false;
-    }
+
     if( (!error[3].innerText == "" && error[3].style.color == 'red') || sign_name.value == '' ) {
         alert('이름을 입력하시거나 한글로만 입력해 주세요.');
         document.getElementById('sign_name').focus();
@@ -271,7 +269,7 @@ function validateSignUp() {
         alert('이메일을 입력하시거나 이메일 양식을 확인해 주세요.');
         document.getElementById('sign_email').focus();
         return false;
-    }else if(chk_dupli = 0){
+    }else if(chk_dupli == 0){
         alert('중복체크를 해주세요.');
         return false;
 
@@ -301,37 +299,30 @@ function validateSignUp() {
         return false;
     }
 
-    if( (!error[8].innerText == "" && error[8].style.color == "red") ) {
-        alert('카드종류 또는 카드번호를 선택해 주세요.');
-        document.getElementById('sign_account').focus();
-        return false;
-    }
-
-    return true;
-
+    return alert('회원가입이 완료되었습니다.');
 
 }
-    function dupliChk(){
-        const email = $('#sign_email').val();
-        $.ajax({
-            type: "GET",
-            url: "./dupliChk",
-            data: { "email": email },
-            success: function(data) {
-                if (data == 1) {
-                    error[2].innerHTML = "중복된 이메일입니다.";
-                    error[2].style.color = "red";
-                    error[2].style.display = "block";
-                    chk_dupli = 0;
-                    return false;
-                } else if(data == 0){
-                    error[2].innerHTML = "사용가능한 이메일입니다.";
-                    error[2].style.color = "#08A600";
-                    error[2].style.display = "block";
-                    chk_dupli = 1;
-                }
+function dupliChk(){
+    const email = $('#sign_email').val();
+    $.ajax({
+        type: "GET",
+        url: "./dupliChk",
+        data: { "email": email },
+        success: function(data) {
+            if (data == 1) {
+                error[2].innerHTML = "중복된 이메일입니다.";
+                error[2].style.color = "red";
+                error[2].style.display = "block";
+                chk_dupli = 0;
+                return false;
+            } else if(data == 0){
+                error[2].innerHTML = "사용가능한 이메일입니다.";
+                error[2].style.color = "#08A600";
+                error[2].style.display = "block";
+                chk_dupli = 1;
             }
-        });
+        }
+    });
 
-    }
+}
 

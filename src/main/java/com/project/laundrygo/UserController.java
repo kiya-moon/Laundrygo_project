@@ -57,6 +57,7 @@ public class UserController {
         // 세션 저장
         HttpSession session = request.getSession();
         session.setAttribute("email", login_email);
+        session.setAttribute("user", userService.selectUser(login_email));
         // 로그인 완료 시???
         return "index";
     }
@@ -123,14 +124,6 @@ public class UserController {
         }
         return "index";
 
-    }
-
-    @RequestMapping(value = "/mypage", method = RequestMethod.GET)
-    public void userInfo(String login_email, String login_password, HttpSession session, Model model)throws Exception {
-        if(loginCheck(login_email, login_password)){
-            String email = (String)session.getAttribute("email");
-            model.addAttribute("username",userService.userInfo(email));
-        }
     }
 
 }
