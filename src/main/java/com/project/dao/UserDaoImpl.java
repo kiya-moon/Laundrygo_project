@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -54,9 +53,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User userInfo(String email) throws Exception {
-        User user = session.selectOne(namespace+".readMember", email);
+    public String pwdChk(String email) throws Exception {
+        String pwd = session.selectOne(namespace+"mod_findPwd", email);
 
-        return user;
+        return pwd;
     }
 }

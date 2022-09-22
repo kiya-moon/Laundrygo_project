@@ -5,9 +5,6 @@ import com.project.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -45,17 +42,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User userInfo(String email) throws Exception {
-        User user = null;
+    public int pwdChk(String email, String mod_password) throws Exception {
+        String pwd = userDao.pwdChk(email);
+        System.out.println("pwd = " + pwd);
+        int cnt = 0;
 
-        try {
-            user = userDao.userInfo(email);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if( pwd.equals(mod_password) ) {
+            cnt = 1;
         }
-
-        return user;
-
+        return cnt;
     }
 
 }
