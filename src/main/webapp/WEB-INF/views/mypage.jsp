@@ -42,7 +42,7 @@
 				<div class="p-20 p-l-50 p-r-50">
 					<p class="p-t-20 m-b-5">
 						<font
-							style="vertical-align: inherit; color: #000000; font-size: 25px;"><strong style="font-size: 40px">${username.email}</strong> 님,
+							style="vertical-align: inherit; color: #000000; font-size: 25px;"><strong style="font-size: 40px">${user.name}</strong> 님,
 							런드리고와 함께</font>
 					</p>
 					<p class="">
@@ -83,7 +83,7 @@
 						<div class="modal-body">
 							<div>
 								<h3 class="m-t-30 m-b-0" style="text-align:left;">
-									<strong>OOO님,</strong> 결제 내역
+									<strong>${user.name}님</strong> 결제 내역
 								</h3>
 							</div>
 							<div class="m-t-10">

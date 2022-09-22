@@ -236,7 +236,7 @@
 								<span>
 									<div class="row">
 										<div class="col-lg-9 p-r-0">
-										<input type="email" name="email" class="form-control" id="sign_email"
+										<input type="email" name="email" class="form-control" id="sign_email" onchange="resetDupli()"
 											placeholder="이메일">
 										</div>
 										<div class="col-lg-3 text-right">
@@ -325,7 +325,7 @@
 							type="button">×</button>
 					</div> -->
 					<div class="widget-form m-0 p-cb" >
-						<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
+						<button aria-hidden="true" data-dismiss="modal" class="close" id="find_email_close"
 							type="button">×</button>
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">아이디 찾기</h2>
 						<form action="<c:url value="/findId"/>" method="post" name="login">
@@ -364,7 +364,7 @@
 							type="button">×</button>
 					</div> -->
 					<div class="widget-form m-0 p-cb" >
-						<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
+						<button aria-hidden="true" data-dismiss="modal" class="close" id="find_pw_close"
 							type="button">×</button>
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">비밀번호 찾기</h2>
 						<form action="<c:url value="/findPw"/>" method="post" name="login">

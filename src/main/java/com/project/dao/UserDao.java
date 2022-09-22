@@ -15,6 +15,5 @@ public interface UserDao {
 
     String findPw(String email, String name, String phone) throws Exception;
 
-    User userInfo(String email) throws Exception;
 
 }

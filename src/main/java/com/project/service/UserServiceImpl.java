@@ -44,18 +44,4 @@ public class UserServiceImpl implements UserService {
         return userDao.findPw(email, name, phone);
     }
 
-    @Override
-    public User userInfo(String email) throws Exception {
-        User user = null;
-
-        try {
-            user = userDao.userInfo(email);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return user;
-
-    }
-
 }

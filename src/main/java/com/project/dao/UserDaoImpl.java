@@ -53,10 +53,4 @@ public class UserDaoImpl implements UserDao {
         return session.selectOne(namespace + "findPw", map);
     }
 
-    @Override
-    public User userInfo(String email) throws Exception {
-        User user = session.selectOne(namespace+".readMember", email);
-
-        return user;
-    }
 }
