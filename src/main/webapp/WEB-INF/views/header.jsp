@@ -3,63 +3,66 @@
 		 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.net.URLDecoder"%>
-<%--<%@ page session="false" %>--%>
-<%--<c:set var="loginId" value="${pageContext.request.getSession(false)==null ? '' : pageContext.request.sesson.getAttribute('email')}"/>--%>
-<%--<c:set var="loginOut" value="${loginId=='' ? '로그인' : 'ID='+=loginId}"/>--%>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<!-- jQuery 선언부 -->
-	<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="INSPIRO" />
-	<meta name="description" content="Themeforest Template Polo">
-	<!-- Document title -->
-	<title>nav</title>
-	<!-- Stylesheets & Fonts -->
-	<link href="${pageContext.request.contextPath }/CSS/plugins.css"
-		  type="text/css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath }/CSS/style.css"
-		  type="text/css" rel="stylesheet">
-	<link href="${pageContext.request.contextPath }/css/custom_ys.css"
-		  type="text/css" rel="stylesheet">
 
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Pension Reservation</title>
+<meta charset="UTF-8">
+<!-- jQuery 선언부 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="author" content="INSPIRO" />
+<meta name="description" content="Themeforest Template Polo">
+<!-- Document title -->
+<title>nav</title>
+<!-- Stylesheets & Fonts -->
+<link href="${pageContext.request.contextPath }/CSS/plugins.css"
+	type="text/css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/CSS/style.css"
+	type="text/css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/custom_ys.css"
+	type="text/css" rel="stylesheet">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pension Reservation</title>
 
 </head>
 <body class="p-r-0">
-<%
-	String login_ch = (String)session.getAttribute("email");
-	if (login_ch!=null) {
-%>
-<script>
-	$(function(){										// 로그인 버튼 없어짐, 로그아웃, 마이페이지 버튼 생성
-		document.getElementById('login_btn').style.display = "none";
-		document.getElementById('logout_btn').style.display = "block";
-		document.getElementById('mypage_btn').style.display = "block";
-	});
-
-</script>
-<% } %>
-
-<!-- 아이디 찾기 -->
-<c:set var="message" value="${requestScope.message }" />
-<c:if test="${check==1}">
 	<script>
-		alert("일치하는 정보가 없습니다.");
+		let msg = "${msg}";
+		if (msg == "login_err") alert("이메일 또는 비밀번호가 일치하지 않습니다.");
+
 	</script>
-</c:if>
-<c:if test="${check == 0}">
+
+	<%
+		String login_ch = (String)session.getAttribute("email");
+		if (login_ch!=null) {
+	%>
 	<script>
-		alert("${message}");
+		$(function(){										// 로그인 버튼 없어짐, 로그아웃, 마이페이지 버튼 생성
+			document.getElementById('login_btn').style.display = "none";
+			document.getElementById('logout_btn').style.display = "block";
+			document.getElementById('mypage_btn').style.display = "block";
+		});
+
 	</script>
-</c:if>
-<!-- 아이디 찾기 끝-->
+	<% } %>
+
+	<!-- 아이디 찾기 -->
+	<c:set var="message" value="${requestScope.message }" />
+	<c:if test="${check==1}">
+		<script>
+			alert("일치하는 정보가 없습니다.");
+		</script>
+	</c:if>
+	<c:if test="${check == 0}">
+		<script>
+			alert("${message}");
+		</script>
+	</c:if>
+	<!-- 아이디 찾기 끝-->
 
 <!-- 비밀번호 찾기 -->
 <c:set var="message_pw" value="${requestScope.message_pw }" />
@@ -171,8 +174,7 @@
                         type="button">×</button>
                 </div> -->
 				<div class="widget-form m-0 p-cb" >
-					<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
-							type="button">×</button>
+					<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"type="button">×</button>
 					<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">로그인</h2>
 					<form action="<c:url value="/login"/>" method="post" name="login" class="login" onsubmit="return validateLogin();">
 						<div class="form-group mb-3">
@@ -224,9 +226,10 @@
 				<div class="widget-form m-0 p-cb">
 					<button aria-hidden="true" data-dismiss="modal" class="close" id="sign_close"
 							type="button">×</button>
-					<div style="text-align: center;">
-						<img src="images/logo.png" class="logo-default m-t-15 m-b-15" >
-					</div>
+
+						<div style="text-align: center;">
+							<img src="${pageContext.request.contextPath}/images/logo.png" class="logo-default m-t-15 m-b-15" >
+						</div>
 
 					<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">회원가입</h2>
 

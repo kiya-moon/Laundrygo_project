@@ -11,12 +11,39 @@
     <meta name="author" content="INSPIRO" />
     <meta name="description" content="Themeforest Template Polo">
 	<title>Laundrygo</title>
+    <!-- jQuery 선언부 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link href="${pageContext.request.contextPath }/css/plugins.css" type="text/css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath }/css/style.css" type="text/css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath }/css/custom.css" type="text/css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath }/css/jquery.steps.css" rel="stylesheet">
 </head>
 <body>
+<script>
+    $(document).ready(function(){
+        var price = document.getElementById("price_in").value;
+        var point = document.getElementById("point_in").value;
+        var zero = 0;
+        var a;
+        var total = price-point;
+
+        // $("#changePoint").html(point+" P");
+        $("#Pointcheck1").on("click",function (){
+            if($(this).prop('checked')){
+                $("#changePoint").html(point+" P");
+                a = point;
+                var b = price - a;
+                $("#pay_total").html(b+" 원");
+            }else {
+                $("#changePoint").html(zero+" P");
+                a = zero;
+                $("#pay_total").html(price+" 원");
+            }
+
+        });
+
+    });
+</script>
    <!-- Body Inner -->
    <jsp:include page="header.jsp" />
     <div class="body-inner">
@@ -67,22 +94,25 @@
                                             <div class="form-group col-md-4 text-right">
                                                <h4>${user.point} P</h4>
                                             </div>
+                                            <input type="hidden" id="point_in" value="${user.point}" >
                                         </div>
                                         <p>· 결제 시점에 보유 중인 포인트가 있다면 <span class="text-red">우선 차감</span>합니다.</p>
                                    		<hr>
                                    		<h3 class="text-bold p-t-20">최종 결제 금액</h3>
                                         <div class="form-row">
                                             <div class="form-group col-md-8">
-                                                <h4><!-- ${dto.payList} -->드라이온리 기본금액</h4>
+                                                <h4>${monthly.m_name}</h4>
                                             </div>
                                             <div class="form-group col-md-4 text-right">
-                                                <h4><!-- ${dto.pay} -->28,700원</h4>
+                                                <h4>${monthly.m_price} 원</h4>
                                             </div>
+<%--                                            여기에 포인트 사용여부 체크되는 if문 필요...?--%>
+                                            <input type="hidden" id="price_in" value="${monthly.m_price}" >
                                             <div class="form-group col-md-8 h4">
                                                포인트 사용
                                             </div>
                                             <div class="form-group col-md-4 text-right">
-                                               <h4><!-- ${dto.pointok} -->0 P</h4>
+                                               <h4 id="changePoint">0 P</h4>
                                             </div>
                                         </div>
                                         <hr color="black">
@@ -91,7 +121,7 @@
                                                 <h4>총 결제금액(4주)</h4>
                                             </div>
                                             <div class="form-group col-md-4 text-right">
-                                                <h4 class="text-red"><!-- ${dto.Allpay}-->28,700원</h4>
+                                                <h4 class="text-red" id="pay_total">${monthly.m_price} 원</h4>
                                             </div>
                                             <p>· <span class="text-bold">4주(28일)</span> 마다 등록하신 카드로 자동 결제됩니다.<span class="block">· 사용한 포인트에 따라 매월 <span class="text-bold">결제금액이 변동</span>됩니다.</span></p>
                                         	<div class="form-group col-md-12">
