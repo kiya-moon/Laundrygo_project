@@ -57,10 +57,10 @@
 				
 				<!-- 마이페이지 메뉴 -->
 				<div class="p-b-40">
-					<a href="#" data-target="#login" data-toggle="modal"><img src="images/point.png" class="p-l-30 p-r-30 myicon icon_point"></a>
-					<a href="#" data-target="#login" data-toggle="modal"><img src="images/payList.png" class="p-l-30 p-r-30 myicon icon_payList"></a>
-					<a href="#" data-target="#login" data-toggle="modal"><img src="images/info.png" class="p-l-30 p-r-30 myicon icon_info"></a>
-					<a href="#" data-target="#login" data-toggle="modal"><img src="images/using.png" class="p-l-30 p-r-30 myicon icon_using"></a>
+					<a href="#" data-target="#login" data-toggle="modal"><img src="${pageContext.request.contextPath }/images/point.png" class="p-l-30 p-r-30 myicon icon_point"></a>
+					<a href="#" data-target="#login" data-toggle="modal"><img src="${pageContext.request.contextPath }/images/payList.png" class="p-l-30 p-r-30 myicon icon_payList"></a>
+					<a href="#" data-target="#login" data-toggle="modal"><img src="${pageContext.request.contextPath }/images/info.png" class="p-l-30 p-r-30 myicon icon_info"></a>
+					<a href="#" data-target="#login" data-toggle="modal"><img src="${pageContext.request.contextPath }/images/using.png" class="p-l-30 p-r-30 myicon icon_using"></a>
 				</div>
 			</div>
 		</div>

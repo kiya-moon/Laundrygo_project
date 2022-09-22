@@ -3,8 +3,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.project.dao.MonthlyMapper">
 
-    <select id="apply" parameterType="String" resultType="User">
+    <select id="userInfo" parameterType="String" resultType="User">
         SELECT * FROM user_info WHERE email = #{email}
+    </select>
+
+    <select id="monthlyInfo" parameterType="String" resultType="Monthly">
+        SELECT * FROM monthly_type WHERE m_name = #{name}
     </select>
 
 </mapper>

@@ -45,13 +45,13 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(String login_email, String login_password, HttpServletRequest request) throws Exception{
+    public String login(String login_email, String login_password, HttpServletRequest request, Model m) throws Exception{
 //        userService.user_select(login_email, login_password);
 
         if(!loginCheck(login_email, login_password)) {
-            String msg = URLEncoder.encode("id 또는 pwd가 일치하지 않습니다.", "utf-8");
+            m.addAttribute("msg", "login_err");
 
-            return "redirect:/?msg="+msg;
+            return "index";
         }
 
         // 세션 저장

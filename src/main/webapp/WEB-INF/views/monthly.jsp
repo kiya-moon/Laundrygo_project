@@ -6,11 +6,13 @@
 <%@ page session="false"%>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, in itial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="author" content="INSPIRO" />
 <meta name="description" content="Themeforest Template Polo">
 <title>Laundrygo</title>
+<!-- jQuery 선언부 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link href="${pageContext.request.contextPath }/css/plugins.css"
 	type="text/css" rel="stylesheet">
 <link href="${pageContext.request.contextPath }/css/style.css"
@@ -19,6 +21,17 @@
 	type="text/css" rel="stylesheet">
 </head>
 <body>
+	<script>
+		/* 신청하기 버튼의 각 value값 가져오기 */
+		$(document).ready(function(){
+			$("#apply_click").on("click", function(){
+				let name = $(this).val();
+
+				location.href = "/laundrygo/monthly/" + name; /* <c:url value='/monthly/monthly.jsp'/> + name */
+			});
+		});
+
+	</script>
 	<!-- Body Inner -->
 	<jsp:include page="header.jsp" />
 	<div class="body-inner">
@@ -89,35 +102,35 @@
 						</h4>
 					</div>
 					<div class="row team-members team-members-left team-members-shadow m-b-40 m-t-50">
-						<div class="col-lg-6 m-b-30">
-							<div class="team-member text-dark row p-10 m-0">
-								<div class=" col-lg-6 p-t-10">
-									<h3>드라이 온리 Light</h3>
-								</div>
-								<div class="col-lg-6 text-right">
+							<div class="col-lg-6 m-b-30">
+								<div class="team-member text-dark row p-10 m-0">
+									<div class=" col-lg-6 p-t-10">
+										<h3>드라이 온리 Light</h3>
+									</div>
+									<div class="col-lg-6 text-right">
 									<span><span class="highlight highlight-colored">28&#37;</span>
 										<del class="text-grey">55,000원</del></span>
-									<h3>39,400원</h3>
-								</div>
-								<div class="col-lg-12 border-bottom"></div>
-								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="images/dry_icon.png">
-									<p>개별클리닝</p>
-									<h4>8장</h4>
-								</div>
-								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
-									<p>무료수거배송</p>
-									<h4>2회</h4>
-								</div>
-								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
-										신청하기 Click
-									</button>
+										<h3>39,400원</h3>
+									</div>
+									<div class="col-lg-12 border-bottom"></div>
+									<div class=" col-lg-6 text-center p-t-30 p-l-60">
+										<img src="${pageContext.request.contextPath}/images/dry_icon.png">
+										<p>개별클리닝</p>
+										<h4>8장</h4>
+									</div>
+									<div class="col-lg-6 text-center p-t-30 p-r-60">
+										<img src="${pageContext.request.contextPath}/images/free_icon.png">
+										<p>무료수거배송</p>
+										<h4>2회</h4>
+									</div>
+									<div class="col-lg-12 text-center p-t-20">
+										<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="DryLight" >
+											신청하기 Click
+										</button>
+									</div>
 								</div>
 							</div>
-						</div>
-						
+
 						<div class="col-lg-6 m-b-30">
 							<div class="team-member text-dark row p-10 m-0">
 								<div class=" col-lg-6 p-t-10">
@@ -130,23 +143,23 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="images/dry_icon.png">
+									<img src="${pageContext.request.contextPath}/images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>12장</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
+									<img src="${pageContext.request.contextPath}/images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>2회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
+									<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="Dry58" >
 										신청하기 Click
 									</button>
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-lg-6">
 							<div class="team-member text-dark row p-10 m-0">
 								<div class=" col-lg-6 p-t-10">
@@ -159,23 +172,23 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="images/dry_icon.png">
+									<img src="${pageContext.request.contextPath}/images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>15장</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
+									<img src="${pageContext.request.contextPath}/images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>2회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20"onclick="location.href='${pageContext.request.contextPath }/apply'">
+									<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="Dry68" >
 										신청하기 Click
 									</button>
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-lg-6">
 							<div class="team-member text-dark row p-10 m-0">
 								<div class=" col-lg-6 p-t-10">
@@ -188,17 +201,17 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="images/dry_icon.png">
+									<img src="${pageContext.request.contextPath}/images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>18장</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
+									<img src="${pageContext.request.contextPath}/images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
+									<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="Dry84" >
 										신청하기 Click
 									</button>
 								</div>
@@ -239,17 +252,17 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="images/laun_icon.png">
+									<img src="${pageContext.request.contextPath}/images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>8개</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
+									<img src="${pageContext.request.contextPath}/images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
+									<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="Luandry70" >
 										신청하기 Click
 									</button>
 								</div>
@@ -268,17 +281,17 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="images/laun_icon.png">
+									<img src="${pageContext.request.contextPath}/images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>4개</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
+									<img src="${pageContext.request.contextPath}/images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
+									<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="Luandry50" >
 										신청하기 Click
 									</button>
 								</div>
@@ -297,17 +310,17 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-6 text-center p-t-30 p-l-60">
-									<img src="images/laun_icon.png">
+									<img src="${pageContext.request.contextPath}/images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>3개</h4>
 								</div>
 								<div class="col-lg-6 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
+									<img src="${pageContext.request.contextPath}/images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
+									<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="Luandry38" >
 										신청하기 Click
 									</button>
 								</div>
@@ -349,22 +362,22 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-4 text-center p-t-30 p-l-60">
-									<img src="images/laun_icon.png">
+									<img src="${pageContext.request.contextPath}/images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>8개</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30">
-									<img src="images/dry_icon.png">
+									<img src="${pageContext.request.contextPath}/images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
+									<img src="${pageContext.request.contextPath}/images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
+									<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="DnL78" >
 										신청하기 Click
 									</button>
 								</div>
@@ -383,22 +396,22 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-4 text-center p-t-30 p-l-60">
-									<img src="images/laun_icon.png">
+									<img src="${pageContext.request.contextPath}/images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>4개</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30 ">
-									<img src="images/dry_icon.png">
+									<img src="${pageContext.request.contextPath}/images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
+									<img src="${pageContext.request.contextPath}/images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>4회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
+									<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="DnL59" >
 										신청하기 Click
 									</button>
 								</div>
@@ -408,7 +421,7 @@
 						<div class="col-lg-6">
 							<div class="team-member text-dark row p-10 m-0">
 								<div class=" col-lg-6 p-t-10">
-									<h3>드라이&amp; 런드리 47</h3>
+									<h3>드라이&amp;런드리 47</h3>
 								</div>
 								<div class="col-lg-6 text-right">
 									<span><span class="highlight highlight-colored">29&#37;</span>
@@ -417,22 +430,22 @@
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-4 text-center p-t-30 p-l-60">
-									<img src="images/laun_icon.png">
+									<img src="${pageContext.request.contextPath}/images/laun_icon.png">
 									<p>생활빨래</p>
 									<h4>3개</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30">
-									<img src="images/dry_icon.png">
+									<img src="${pageContext.request.contextPath}/images/dry_icon.png">
 									<p>개별클리닝</p>
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-4 text-center p-t-30 p-r-60">
-									<img src="images/free_icon.png">
+									<img src="${pageContext.request.contextPath}/images/free_icon.png">
 									<p>무료수거배송</p>
 									<h4>3회</h4>
 								</div>
 								<div class="col-lg-12 text-center p-t-20">
-									<button type="button"  class="btn btn-block text-small p-20" onclick="location.href='${pageContext.request.contextPath }/apply'">
+									<button type="button" id="apply_click" class="btn btn-block text-small p-20" value="DnL47" >
 										신청하기 Click
 									</button>
 								</div>
@@ -460,7 +473,7 @@
                         <div class="row m-b-20">
                             <div class="col-md-12 text-center p-t-30">
                             	<h4>하단의 지정품목을 꼭 확인해주세요.<span class="block">이외의 품목은 추가 과금됩니다.</span></h4>
-                            	<img src="images/dry_only_box.png" style="width:50%;" alt="드라이 온리 상세설명" >
+                            	<img src="${pageContext.request.contextPath}/images/dry_only_box.png" style="width:50%;" alt="드라이 온리 상세설명" >
                             </div>
                         </div>
                     </div>
@@ -482,7 +495,7 @@
                     <div class="modal-body">
                         <div class="row m-b-20">
                             <div class="col-md-12 text-center p-t-30">
-                            	<img src="images/laun_only_box.png" style="width:50%;" alt="런드리 온리 상세설명" >
+                            	<img src="${pageContext.request.contextPath}/images/laun_only_box.png" style="width:50%;" alt="런드리 온리 상세설명" >
                             </div>
                         </div>
                     </div>
@@ -504,7 +517,7 @@
                     <div class="modal-body">
                         <div class="row m-b-20">
                             <div class="col-md-12 text-center p-t-30">
-                            	<img src="images/laun_dry_box.png" style="width:50%;" alt="드라이,런드리 상세설명" >
+                            	<img src="${pageContext.request.contextPath}/images/laun_dry_box.png" style="width:50%;" alt="드라이,런드리 상세설명" >
                             </div>
                         </div>
                     </div>
@@ -528,6 +541,7 @@
 	<script src="${pageContext.request.contextPath }/js/plugins.js"></script>
 	<script src="${pageContext.request.contextPath }/js/functions.js"></script>
 	<script src="${pageContext.request.contextPath }/js/custom.js"></script>
+
 
 </body>
 </html>

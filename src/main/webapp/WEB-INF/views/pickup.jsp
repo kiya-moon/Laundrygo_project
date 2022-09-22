@@ -50,7 +50,7 @@
 				</h4>
 				<div class="row">
 					<div class="col-lg-11">
-						<img src="images/home_step2.png">
+						<img src="${pageContext.request.contextPath}/images/home_step2.png">
 					</div>
 					<!-- 수거신청 버튼 -->
 					<div class="col-lg-1"
@@ -83,7 +83,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close"
 							id="sign_close" type="button">×</button>
 						<div style="text-align: center;">
-							<img src="images/logo.png" class="logo-default m-t-15 m-b-15">
+							<img src="${pageContext.request.contextPath}/images/logo.png" class="logo-default m-t-15 m-b-15">
 						</div>
 
 						<div>
@@ -192,14 +192,14 @@
 							<button aria-hidden="true" data-dismiss="modal" class="close"
 								type="button">×</button>
 							<div style="text-align: center;">
-								<img src="images/logo.png" class="logo-default m-t-15 m-b-15">
+								<img src="${pageContext.request.contextPath}/images/logo.png" class="logo-default m-t-15 m-b-15">
 							</div>
 						</div>
 
 						<div class="modal-body ">
 							<div class="row m-b-20">
 								<div class="m-auto">
-									<img src="images/howTo.gif" style="width: 100%; height: auto;">
+									<img src="${pageContext.request.contextPath}/images/howTo.gif" style="width: 100%; height: auto;">
 								</div>
 							</div>
 						</div>
