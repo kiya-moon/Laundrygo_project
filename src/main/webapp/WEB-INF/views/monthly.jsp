@@ -24,10 +24,11 @@
 	<script>
 		/* 신청하기 버튼의 각 value값 가져오기 */
 		$(document).ready(function(){
-			$("#apply_click").on("click", function(){
-				let name = $(this).val();
+			$("[id='apply_click']").click(function() {
+				var name = $(this).val();
 
-				location.href = "/laundrygo/monthly/" + name; /* <c:url value='/monthly/monthly.jsp'/> + name */
+				location.href = "/laundrygo/monthly/" + name; /* <c:url value='/laundrygo/monthly/'/> + name */
+				console.log(name);
 			});
 		});
 

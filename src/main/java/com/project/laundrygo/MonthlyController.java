@@ -1,6 +1,7 @@
 package com.project.laundrygo;
 
 import com.project.dao.UserDao;
+import com.project.dto.Card;
 import com.project.dto.Monthly;
 import com.project.dto.User;
 import com.project.service.MonthlyService;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +19,7 @@ import java.io.PrintWriter;
 
 //@RequestMapping("/laundrygo")
 @Controller
-public class Monthly_Controller {
+public class MonthlyController {
 	@Autowired
 	private MonthlyService monthlyService;
 
@@ -49,6 +51,9 @@ public class Monthly_Controller {
 		Monthly monthly = monthlyService.monthlyInfo(name);
 		m.addAttribute(monthly);
 
+		Card card = monthlyService.cardInfo(email);
+		m.addAttribute(card);
+
 		return "apply";
 	}
 
@@ -57,4 +62,10 @@ public class Monthly_Controller {
 		HttpSession session = request.getSession();
 		return session.getAttribute("email")!=null;
 	}
+
+	@PostMapping("/monthly/{email}")
+	public String applyfinish (@PathVariable("email") String email){
+		return "index";
+	}
+
 }

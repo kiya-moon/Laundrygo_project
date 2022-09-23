@@ -1,5 +1,6 @@
 package com.project.dao;
 
+import com.project.dto.Card;
 import com.project.dto.Monthly;
 import com.project.dto.User;
 import org.apache.ibatis.session.SqlSession;
@@ -20,5 +21,10 @@ public class MonthlyDaoImpl implements MonthlyDao {
     @Override
     public Monthly monthlyInfo(String name) throws Exception {
         return session.selectOne(namespace+"monthlyInfo", name);
+    }
+
+    @Override
+    public Card cardInfo(String email) throws Exception {
+        return session.selectOne(namespace+"cardInfo", email);
     }
 }

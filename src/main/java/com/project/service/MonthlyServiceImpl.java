@@ -1,6 +1,7 @@
 package com.project.service;
 
 import com.project.dao.MonthlyDao;
+import com.project.dto.Card;
 import com.project.dto.Monthly;
 import com.project.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,10 @@ public class MonthlyServiceImpl implements MonthlyService {
     @Override
     public Monthly monthlyInfo(String name) throws Exception {
         return monthlyDao.monthlyInfo(name);
+    }
+
+    @Override
+    public Card cardInfo(String email) throws Exception {
+        return monthlyDao.cardInfo(email);
     }
 }

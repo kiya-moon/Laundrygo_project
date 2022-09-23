@@ -11,4 +11,8 @@
         SELECT * FROM monthly_type WHERE m_name = #{name}
     </select>
 
+    <select id="cardInfo" parameterType="String" resultType="Card">
+        SELECT * FROM credit_info WHERE email = #{email}
+    </select>
+
 </mapper>
