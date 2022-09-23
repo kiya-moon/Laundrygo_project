@@ -1,9 +1,9 @@
 
-// const autoHyphen = (target) => {
-//     target.value = target.value
-//         .replace(/[^0-9]/g, '')
-//         .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
-// }
+const autoHyphen2 = (target) => {
+    target.value = target.value
+        .replace(/[^0-9]/g, '')
+        .replace(/^(\d{0,4})(\d{0,4})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3-$4").replace(/(\-{1,3})$/g, "");
+}
 
 /* 회원정보 수정 validation */
 
@@ -12,13 +12,17 @@ var pwd_mod = document.querySelector('#pwd_mod');
 var pwd_mod_check = document.querySelector('#pwd_mod_check');
 var phone_mod = document.querySelector('#phone_mod');
 var addr_mod = document.querySelector('#addr_mod');
+var account_mod = document.querySelector('#account_mod');
+var account_num_mod = document.querySelector('#account_num_mod');
 
 var mod_error = document.querySelectorAll('.mod_error_next_box');
 
-pwd_mod.addEventListener("focusout", modCheckPassword);
-pwd_mod_check.addEventListener("focusout", modCheckPassword2);
-phone_mod.addEventListener("focusout", modCheckPhone);
-addr_mod.addEventListener("focusout", modCheckAddr);
+account_mod.addEventListener("focusout", modAccountType);
+
+// pwd_mod.addEventListener("onkeyup", modCheckPassword);
+// pwd_mod_check.addEventListener("onkeyup", modCheckPassword2);
+// phone_mod.addEventListener("onkeyup", modCheckPhone);
+// addr_mod.addEventListener("onkeyup", modCheckAddr);
 
 /* 회원정보 수정 */
 
@@ -80,7 +84,7 @@ function modCheckPhone() {
 
 function modCheckAddr() {
     /* 새 주소 확인 체크 */
-    var namePattern = /[가-힣]/;
+    var namePattern = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
     if(addr_mod.value === "") {
         mod_error[4].innerHTML = "새로운 주소를 입력해 주세요.";
         mod_error[4].style.color = "red";
@@ -96,11 +100,57 @@ function modCheckAddr() {
     }
 }
 
+function modAccountType() {
+    /* 카드 종류 확인 체크 */
+    if(account_mod.value === "" && account_num_mod.value === "") {
+        mod_error[5].innerHTML = "";
+        mod_error[5].style.display = "none";
+    } else if(account_num_mod.value != '' && account_mod.value === "") {
+        mod_error[5].innerHTML = "카드 종류를 선택해 주세요.";
+        mod_error[5].style.color = "red";
+        mod_error[5].style.display = "block";
+    } else if(account_mod.value != "" && !account_mod.value == '') {
+        mod_error[5].innerHTML = "카드번호를 반드시 확인해 주세요."
+        mod_error[5].style.color = "#08A600";
+        mod_error[5].style.display = "block";
+    } else {
+        mod_error[5].innerHTML = "카드가 선택되었습니다."
+        mod_error[5].style.color = "#08A600";
+        mod_error[5].style.display = "block";
+    }
+}
+
+function modAddAccount() {
+    /* 카드번호 확인 체크 */
+    var accountPattern = /^(\d{4})-(\d{4})-(\d{4})-(\d{4})$/;
+    if(account_mod.value === "" && account_num_mod.value === "") {
+        mod_error[5].innerHTML = "";
+        mod_error[5].style.display = "none";
+    } else if(account_mod.value === "") {
+        mod_error[5].innerHTML = "카드 종류를 선택해 주세요.";
+        mod_error[5].style.color = "red";
+        mod_error[5].style.display = "block";
+    } else if(account_mod.value != "" && account_num_mod.value == "") {
+        mod_error[5].innerHTML = "카드번호를 입력해 주세요.";
+        mod_error[5].style.color = "red";
+        mod_error[5].style.display = "block";
+    } else if(!accountPattern.test(account_num_mod.value)) {
+        mod_error[5].innerHTML = "카드번호를 정확하게 입력해 주세요.";
+        mod_error[5].style.color = "red";
+        mod_error[5].style.display = "block";
+    } else {
+        mod_error[5].innerHTML = "카드번호를 반드시 확인해 주세요."
+        mod_error[5].style.color = "#08A600";
+        mod_error[5].style.display = "block";
+    }
+}
+
 function validateModify() {
 
     if( pwd_mod.getAttribute('hidden') != null &&
         phone_mod.getAttribute('readonly') != null &&
-        addr_mod.getAttribute('readonly') != null ) {
+        addr_mod.getAttribute('readonly') != null &&
+        account_num_mod.value == '') {
 
         alert('수정할 내용이 없습니다.');
         return false;
@@ -135,6 +185,13 @@ function validateModify() {
             return false;
         }
     }
+
+    if( (!mod_error[5].innerText == "" && mod_error[5].style.color == "red") ) {
+        alert('카드정보를 정확하게 입력해 주세요.');
+        document.getElementById('account_num_mod').focus();
+        return false;
+    }
+
     return true;
 }
 
@@ -180,6 +237,7 @@ function resetMod() {
     mod_error[2].innerHTML = "";
     mod_error[3].innerHTML = "";
     mod_error[4].innerHTML = "";
+    mod_error[5].innerHTML = "";
     mod_password.removeAttribute("readonly");
     pwd_mod.setAttribute("hidden", true);
     pwd_mod_check.setAttribute("hidden", true);

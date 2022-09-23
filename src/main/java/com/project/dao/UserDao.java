@@ -1,5 +1,6 @@
 package com.project.dao;
 
+import com.project.dto.Credit;
 import com.project.dto.User;
 
 import java.util.List;
@@ -17,4 +18,13 @@ public interface UserDao {
 
     String pwdChk(String email) throws Exception;
 
+    int modify(String email, String password, String phone, String addr) throws Exception;
+
+    Credit selectCredit(String email) throws Exception;
+
+    int card_insert(String card_num, String card_type, String email) throws Exception;
+
+    int card_modify(String card_num, String card_type, String email) throws Exception;
+
+    int delete(String email) throws Exception;
 }

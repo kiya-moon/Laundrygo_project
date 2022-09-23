@@ -19,31 +19,7 @@
 	<link href="${pageContext.request.contextPath }/css/jquery.steps.css" rel="stylesheet">
 </head>
 <body>
-<script>
-    $(document).ready(function(){
-        var price = document.getElementById("price_in").value;
-        var point = document.getElementById("point_in").value;
-        var zero = 0;
-        var a;
-        var total = price-point;
 
-        // $("#changePoint").html(point+" P");
-        $("#Pointcheck1").on("click",function (){
-            if($(this).prop('checked')){
-                $("#changePoint").html(point+" P");
-                a = point;
-                var b = price - a;
-                $("#pay_total").html(b+" 원");
-            }else {
-                $("#changePoint").html(zero+" P");
-                a = zero;
-                $("#pay_total").html(price+" 원");
-            }
-
-        });
-
-    });
-</script>
    <!-- Body Inner -->
    <jsp:include page="header.jsp" />
     <div class="body-inner">
@@ -54,7 +30,7 @@
         				<div class="card">
                             <div class="card-body">
                                 <!--Wizard 1-->
-                                <form id="wizard1" class="wizard">
+                                <form id="wizard1" class="wizard" method="post" action="/laundrygo/monthly/${user.email}";>
                                     <!--Step 1-->
                                     <h3>결제 정보</h3>
                                     <div class="wizard-content">
@@ -71,7 +47,10 @@
                                         <h4>결제 정보</h4>
                                         <div class="form-row">
                                             <div class="form-group col-md-10">
-                                                <input type="text" class="form-control" name="card" value="cardnumber" placeholder="카드번호 받아오는 곳">
+                                                <input type="text" class="form-control" name="card" value="${card.card_type}" placeholder="카드사 받아오는 곳">
+                                            </div>
+                                            <div class="form-group col-md-10">
+                                                <input type="text" class="form-control" name="card" value="${card.card_num}" placeholder="카드번호 받아오는 곳">
                                             </div>
                                              <div class="form-group col-md-2">
                                                 <input type="button" class="form-control" name="button" value="카드 변경" placeholder="변경 바로가기">
@@ -181,25 +160,11 @@
    
    <!--Plugins-->
    <script src="${pageContext.request.contextPath }/js/jquery.js"></script>
+   <script src="${pageContext.request.contextPath }/js/apply.js"></script>
    <script src="${pageContext.request.contextPath }/js/plugins.js"></script>
    <script src="${pageContext.request.contextPath }/js/functions.js"></script>
    <script src="${pageContext.request.contextPath }/js/script.js"></script>
    <script src="${pageContext.request.contextPath }/js/jquery.steps.min.js"></script>
-   
-   <script>
-        $('#wizard1').steps({
-            headerTag: 'h3',
-            bodyTag: '.wizard-content',
-            autoFocus: true,
-            enableAllSteps: true,
-            titleTemplate: '<span class="number">#index#</span><span class="title">#title#</span>',
-            onFinished: function (event, currentIndex) {
-                INSPIRO.elements.notification("결제성공",
-                    "감사합니다. 결제가 완료되었습니다.", "success");
-            }
-        });
 
-        $('.wizard').find(".actions ul > li > a").addClass("btn");
-    </script>
 </body>
 </html>

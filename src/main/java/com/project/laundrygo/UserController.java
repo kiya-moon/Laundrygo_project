@@ -57,7 +57,7 @@ public class UserController {
         // 세션 저장
         HttpSession session = request.getSession();
         session.setAttribute("email", login_email);
-        session.setAttribute("user", userService.selectUser(login_email));
+//        session.setAttribute("user", userService.selectUser(login_email));
         // 로그인 완료 시???
         return "index";
     }

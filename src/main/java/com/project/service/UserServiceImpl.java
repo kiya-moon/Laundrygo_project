@@ -1,6 +1,7 @@
 package com.project.service;
 
 import com.project.dao.UserDao;
+import com.project.dto.Credit;
 import com.project.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,36 @@ public class UserServiceImpl implements UserService {
             cnt = 1;
         }
         return cnt;
+    }
+
+    @Override
+    public int modify(String email, String password, String phone, String addr) throws Exception {
+        System.out.println("회원정보 수정");
+
+        return userDao.modify(email, password, phone, addr);
+    }
+
+    @Override
+    public Credit selectCredit(String email) throws Exception {
+        return userDao.selectCredit(email);
+    }
+
+    @Override
+    public int card_insert(String card_num, String card_type, String email) throws Exception {
+        System.out.println("카드 새로 등록");
+        return userDao.card_insert(card_num, card_type, email);
+    }
+
+    @Override
+    public int card_modify(String card_num, String card_type, String email) throws Exception {
+        System.out.println("카드정보 수정");
+        return userDao.card_modify(card_num, card_type, email);
+    }
+
+    @Override
+    public int delete(String email) throws Exception {
+
+        return userDao.delete(email);
     }
 
 }

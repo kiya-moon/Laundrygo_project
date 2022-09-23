@@ -1,5 +1,6 @@
 package com.project.dao;
 
+import com.project.dto.Credit;
 import com.project.dto.User;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,50 @@ public class UserDaoImpl implements UserDao {
         String pwd = session.selectOne(namespace+"mod_findPwd", email);
 
         return pwd;
+    }
+
+    @Override
+    public int modify(String email, String password, String phone, String addr) throws Exception {
+        System.out.println("회원정보 수정 Dao");
+        Map map = new HashMap();
+        map.put("email", email);
+        map.put("password", password);
+        map.put("phone", phone);
+        map.put("addr", addr);
+
+        return session.update(namespace + "modify", map);
+    }
+
+    @Override
+    public Credit selectCredit(String email) throws Exception {
+        return session.selectOne(namespace+"selectCredit", email);
+    }
+
+    @Override
+    public int card_insert(String card_num, String card_type, String email) throws Exception {
+        System.out.println("카드 등록 Dao");
+        Map map = new HashMap();
+        map.put("card_num", card_num);
+        map.put("card_type", card_type);
+        map.put("email", email);
+
+        return session.insert(namespace+"insertCredit", map);
+    }
+
+    @Override
+    public int card_modify(String card_num, String card_type, String email) throws Exception {
+        System.out.println("카드정보 수정 Dao");
+        Map map = new HashMap();
+        map.put("card_num", card_num);
+        map.put("card_type", card_type);
+        map.put("email", email);
+
+        return session.update(namespace+"modifyCredit", map);
+    }
+
+    @Override
+    public int delete(String email) throws Exception {
+
+        return session.delete(namespace + "delete", email);
     }
 }
