@@ -16,6 +16,14 @@
 	<link href="${pageContext.request.contextPath }/css/custom.css" type="text/css" rel="stylesheet">
 </head>
 <body>
+
+    <script>
+        let del_msg = "${del_msg}"
+        if(del_msg=="DEL_OK"){
+            alert('회원탈퇴가 완료되었습니다.');
+        }
+    </script>
+
    <!-- Body Inner -->
    <jsp:include page="header.jsp" />
 

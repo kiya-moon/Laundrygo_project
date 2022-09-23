@@ -38,6 +38,11 @@
 
 	</script>
 
+<%--	<script>--%>
+<%--		let mod_result = "${mod_result}";--%>
+<%--		if( mod_result == "mod_ok" ) alert('회원정보 수정에 성공하였습니다. 다시 로그인해 주세요.');--%>
+<%--	</script>--%>
+
 	<%
 		String login_ch = (String)session.getAttribute("email");
 		if (login_ch!=null) {
