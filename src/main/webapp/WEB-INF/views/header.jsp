@@ -12,7 +12,8 @@
 <head>
 <meta charset="UTF-8">
 <!-- jQuery 선언부 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="author" content="INSPIRO" />
@@ -32,12 +33,6 @@
 
 </head>
 <body class="p-r-0">
-	<script>
-		let msg = "${msg}";
-		if (msg == "login_err") alert("이메일 또는 비밀번호가 일치하지 않습니다.");
-
-	</script>
-
 	<%
 		String login_ch = (String)session.getAttribute("email");
 		if (login_ch!=null) {
@@ -107,9 +102,9 @@
 
                               <!-- 유섭 끝 -->
 
-	                            <li><a href="https://blog.naver.com/laundrygo" target="_blank"><img src="${pageContext.request.contextPath}/images/naver_logo.png"></a></li>
-	                            <li><a href="https://www.instagram.com/Laundrygo.life/" target="_blank"><img src="${pageContext.request.contextPath}/images/in_logo.png"></a></li>
-	                            <li><a href="https://www.youtube.com/channel/UCi9dhmANTexQguWXHBgwwSg" target="_blank"><img src="${pageContext.request.contextPath}/images/you_logo.png"></a></li>
+	                            <li><a href="https://blog.naver.com/laundrygo" target="_blank"><img src="images/naver_logo.png"></a></li>
+	                            <li><a href="https://www.instagram.com/Laundrygo.life/" target="_blank"><img src="images/in_logo.png"></a></li>
+	                            <li><a href="https://www.youtube.com/channel/UCi9dhmANTexQguWXHBgwwSg" target="_blank"><img src="images/you_logo.png"></a></li>
 	                        </ul>
 	                    </div>
 	                </div>
@@ -124,8 +119,8 @@
 	                    <div class="row">
 		                    <div id="logo" class="col-lg-2">
 		                        <a href="${pageContext.request.contextPath }/">
-		                            <img src="${pageContext.request.contextPath}/images/logo.png" class="logo-default">
-		                            <img src="${pageContext.request.contextPath}/images/logo-sticky.png" class="logo-sticky">
+		                            <img src="images/logo.png" class="logo-default">
+		                            <img src="images/logo-sticky.png" class="logo-sticky">
 		                        </a>
 		                    </div>
 		                    <div class="col-lg-10 p-t-10">
@@ -230,7 +225,7 @@
 						<button aria-hidden="true" data-dismiss="modal" class="close" id="sign_close"
 							type="button">×</button>
 						<div style="text-align: center;">
-							<img src="${pageContext.request.contextPath}/images/logo.png" class="logo-default m-t-15 m-b-15" >
+							<img src="images/logo.png" class="logo-default m-t-15 m-b-15" >
 						</div>
 
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">회원가입</h2>
@@ -241,8 +236,8 @@
 								<span>
 									<div class="row">
 										<div class="col-lg-9 p-r-0">
-										<input type="email" name="email" class="form-control" id="sign_email" onchange="resetDupli()"
-											   placeholder="이메일">
+										<input type="email" name="email" class="form-control" id="sign_email"
+											placeholder="이메일">
 										</div>
 										<div class="col-lg-3 text-right">
 											<button type="button" id="dupli_chk" class="btn" onclick="dupliChk();">중복체크</button>
@@ -330,7 +325,7 @@
 							type="button">×</button>
 					</div> -->
 					<div class="widget-form m-0 p-cb" >
-						<button aria-hidden="true" data-dismiss="modal" class="close" id="find_email_close"
+						<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
 							type="button">×</button>
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">아이디 찾기</h2>
 						<form action="<c:url value="/findId"/>" method="post" name="login">
@@ -369,7 +364,7 @@
 							type="button">×</button>
 					</div> -->
 					<div class="widget-form m-0 p-cb" >
-						<button aria-hidden="true" data-dismiss="modal" class="close" id="find_pw_close"
+						<button aria-hidden="true" data-dismiss="modal" class="close" id="login_close"
 							type="button">×</button>
 						<h2 style="text-align: center; font-weight: bold; margin-bottom: 30px;">비밀번호 찾기</h2>
 						<form action="<c:url value="/findPw"/>" method="post" name="login">
