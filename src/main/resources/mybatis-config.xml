@@ -6,5 +6,6 @@
     <typeAliases>
         <typeAlias alias="User" type="com.project.dto.User"/>
         <typeAlias alias="Monthly" type="com.project.dto.Monthly"/>
+        <typeAlias alias="Card" type="com.project.dto.Card"/>
     </typeAliases>
 </configuration>
