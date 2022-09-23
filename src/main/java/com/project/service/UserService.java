@@ -1,5 +1,6 @@
 package com.project.service;
 
+import com.project.dto.Credit;
 import com.project.dto.User;
 
 import java.util.ArrayList;
@@ -17,4 +18,14 @@ public interface UserService {
     String findPw(String email, String name, String phone) throws Exception;
 
     int pwdChk(String email, String mod_password) throws Exception;
+
+    int modify(String email, String password, String phone, String addr) throws Exception;
+
+    Credit selectCredit(String email) throws Exception;
+
+    int card_insert(String card_num, String card_type, String email) throws Exception;
+
+    int card_modify(String card_num, String card_type, String email) throws Exception;
+
+    int delete(String email) throws Exception;
 }

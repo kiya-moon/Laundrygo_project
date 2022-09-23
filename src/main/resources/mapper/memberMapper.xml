@@ -43,4 +43,36 @@
         select password from user_info where email = #{email}
     </select>
 
+    <update id="modify" parameterType="map">
+        UPDATE user_info
+        SET password = #{password}
+            , phone = #{phone}
+            , addr = #{addr}
+        WHERE email = #{email}
+    </update>
+
+    <select id="selectCredit" parameterType="String" resultType="Credit">
+        SELECT *
+        FROM credit_info
+        WHERE email = #{email}
+    </select>
+
+    <insert id="insertCredit" parameterType="map">
+        INSERT INTO credit_info
+            (card_num, card_type, email)
+        VALUES
+            (#{card_num}, #{card_type}, #{email})
+    </insert>
+
+    <update id="modifyCredit" parameterType="map">
+        UPDATE credit_info
+        SET card_num = #{card_num}
+          , card_type = #{card_type}
+        WHERE email = #{email}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        DELETE from user_info where email=#{email}
+    </delete>
+
 </mapper>
