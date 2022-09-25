@@ -100,7 +100,7 @@
 									<h3 class="text-bold">수거/배송 주소</h3>
 									<div>
 										<input type="text" name="sign_name" class="form-control"
-											id="sign_name" placeholder="수거/배송 주소">
+											id="pickup_addr" placeholder="수거/배송 주소">
 									</div>
 									<div>
 										<h4 class="text-bold m-t-20 m-b-10">알람 메시지 전송 시간</h4>

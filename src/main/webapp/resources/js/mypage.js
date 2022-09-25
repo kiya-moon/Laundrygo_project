@@ -252,3 +252,5 @@ function removeRD_phone() {
 function removeRD_addr() {
     addr_mod.removeAttribute("readonly");
 }
+
+
