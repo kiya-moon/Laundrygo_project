@@ -2,6 +2,7 @@ package com.project.dao;
 
 import com.project.dto.Card;
 import com.project.dto.Monthly;
+import com.project.dto.MonthlyPayList;
 import com.project.dto.User;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,10 @@ public class MonthlyDaoImpl implements MonthlyDao {
     @Override
     public Card cardInfo(String email) throws Exception {
         return session.selectOne(namespace+"cardInfo", email);
+    }
+
+    @Override
+    public int payment(MonthlyPayList monthlyPayList) throws Exception {
+        return session.insert(namespace+"paymentInsert", monthlyPayList);
     }
 }
