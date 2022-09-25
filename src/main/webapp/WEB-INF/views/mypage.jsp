@@ -301,7 +301,7 @@
 						</form>
 						<form id="deleteForm" action="">
 							<div class="col-md-12 text-center">
-								<button type="button" id="deleteBtn" class="btn btn-block" style="background-color: red; border-color: red;" onclick="deleteUser();">탈퇴하기</button>
+								<button type="button" id="deleteBtn" class="btn btn-red btn-block" onclick="deleteUser();">탈퇴하기</button>
 							</div>
 						</form>
 					</div>

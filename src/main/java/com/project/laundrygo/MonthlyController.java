@@ -63,8 +63,10 @@ public class MonthlyController {
 		return session.getAttribute("email")!=null;
 	}
 
-	@PostMapping("/monthly/{email}")
-	public String applyfinish (@PathVariable("email") String email){
+	@PostMapping("/monthly")
+	public String applyfinish (MonthlyPayList monthlyPayList){
+
+		System.out.println(monthlyPayList.getM_price());
 		return "index";
 	}
 

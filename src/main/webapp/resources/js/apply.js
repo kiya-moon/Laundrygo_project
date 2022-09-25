@@ -1,42 +1,25 @@
 $(document).ready(function(){
-    /* 결제페이지 포인트 사용여부 */
     var price = document.getElementById("price_in").value;
     var point = document.getElementById("point_in").value;
     var zero = 0;
     var a;
     var total = price-point;
 
-    // $("#changePoint").html(point+" P");
-    $("#Pointcheck1").on("click",function (){
+    $("#Pointcheck1").click(function (){
+
         if($(this).prop('checked')){
-            $("#changePoint").html(point+" P");
+            $("input[name=m_point]").attr("value",point);
             a = point;
             var b = price - a;
-            $("#pay_total").html(b+" 원");
+            $("input[name=m_price]").attr("value", b);
         }else {
-            $("#changePoint").html(zero+" P");
+            $("input[name=m_point]").attr("value", zero);
             a = zero;
-            $("#pay_total").html(price+" 원");
+            $("input[name=m_price]").attr("value", price);
         }
 
     });
-
-    /* END 결제페이지 포인트 사용여부 */
-
-
-    $('#wizard1').steps({
-        headerTag: 'h3',
-        bodyTag: '.wizard-content',
-        autoFocus: false,
-        enableAllSteps: true,
-        titleTemplate: '<span class="number">#index#</span><span class="title">#title#</span>',
-
-    });
-
-    $('.wizard').find(".actions ul > li > a").addClass("btn");
-
     /* 체크박스 체크 확인 */
-
     $("a[href$='#finish']").click(function(){
         if ($("input:checkbox[id='Paycheck1']").is(":checked") != true){
             alert("결제 정보 저장 및 자동결제에 동의해주세요.")
@@ -55,13 +38,12 @@ $(document).ready(function(){
             return false;
 
         } else {
-            INSPIRO.elements.notification("결제성공",
-                "감사합니다. 결제가 완료되었습니다.", "success");
+            alert("결제성공,\n감사합니다. 결제가 완료되었습니다.");
             $("#wizard1").submit()
             // location.href = "/laundrygo/monthly/" + email;
         }
     });
-
     /* END 체크박스 체크 확인 */
 
 });
+
