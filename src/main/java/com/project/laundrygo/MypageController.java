@@ -29,7 +29,11 @@ public class MypageController {
 		User user = userService.selectUser(email);
 		Credit credit = userService.selectCredit(email);
 		model.addAttribute(user);
-		model.addAttribute(credit);
+
+		if( credit != null ) {
+			model.addAttribute(credit);
+		}
+
 
 		return "mypage";
 	}
