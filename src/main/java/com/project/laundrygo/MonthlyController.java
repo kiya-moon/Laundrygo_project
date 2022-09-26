@@ -55,22 +55,16 @@ public class MonthlyController {
 		Monthly monthly = monthlyService.monthlyInfo(name);
 		m.addAttribute(monthly);
 
-		System.out.println("무사통과 test1");
 		Card card = monthlyService.cardInfo(email);
-		System.out.println("무사통과 test2");
-		System.out.println(card);
 
 		if(card==null){
-			System.out.println("여길 들어오긴 하는구나?");
 			Card temp = new Card();
 			temp.setCard_num("카드를 등록해주세요");
 			temp.setCard_type("정보없음");
 			temp.setEmail("");
-			System.out.println(temp.getCard_num() + ", " + temp.getCard_type());
 
 			m.addAttribute(temp);
 		} else{
-			System.out.println("여기는 왜 안들어와?");
 			m.addAttribute(card);
 		}
 		return "apply";
@@ -83,18 +77,23 @@ public class MonthlyController {
 	}
 
 	@PostMapping("/monthly")
-	public String applyfinish (MonthlyPayList monthlyPayList, int m_point, HttpSession httpSession) throws Exception{
-		System.out.println("컨트롤러 도착");
-		LocalDateTime date = LocalDateTime.now().withNano(0);
+	public String applyfinish (MonthlyPayList monthlyPayList, int point_in, int m_point, HttpSession httpSession) throws Exception{
+		// 세션 받아오기
 		String email = (String)httpSession.getAttribute("email");
+
+		// monthlyPayList 저장
+		LocalDateTime date = LocalDateTime.now().withNano(0);
 		monthlyPayList.setEmail(email);
-		System.out.println(email);
-		System.out.println(m_point);
 		monthlyPayList.setStart_date(date);
 		monthlyPayList.setEnd_date(date.plusMonths(1));
-		System.out.println("start" + monthlyPayList.getStart_date() + ", end" + monthlyPayList.getEnd_date());
 
 		monthlyService.payment(monthlyPayList);
+
+		// point 업데이트
+		int c_point = point_in - m_point;
+		System.out.println(c_point);
+		monthlyService.pointUpdate(email, c_point);
+
 
 		return "index";
 	}
