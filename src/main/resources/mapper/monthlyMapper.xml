@@ -15,4 +15,18 @@
         SELECT * FROM credit_info WHERE email = #{email}
     </select>
 
+    <insert id="paymentInsert" parameterType="monthlyPayList">
+        INSERT INTO monthly_list
+            (email,
+             m_name,
+             m_price,
+             life_cnt,
+             cleaning_cnt,
+             free_cnt,
+             start_date,
+             end_date)
+        VALUES
+            (#{email}, #{m_name}, #{m_price}, #{life_cnt}, #{cleaning_cnt}, #{free_cnt}, #{start_date}, #{end_date})
+    </insert>
+
 </mapper>
