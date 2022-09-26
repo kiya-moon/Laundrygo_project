@@ -32,12 +32,16 @@
 
 </head>
 <body class="p-r-0">
+
 	<script>
 		let msg = "${msg}";
 		if (msg == "login_err") alert("이메일 또는 비밀번호가 일치하지 않습니다.");
 
 		let msg_pickup = "${login_pickup_msg}";
 		if (msg_pickup == "login_pickup") alert("로그인 후 이용해주세요.");
+
+		let qna_login = "${qna_login}";
+		if( qna_login == "not" ) alert("1:1 문의는 로그인 후 이용해주세요.")
 	</script>
 
 <%--	<script>--%>

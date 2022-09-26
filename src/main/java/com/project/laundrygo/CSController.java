@@ -29,8 +29,14 @@ public class CSController {
 	}
 	
 	@RequestMapping("/qna")
-	public String qna( Model model, HttpSession session ) throws Exception {
+	public String qna( Model model, HttpSession session, RedirectAttributes rattr ) throws Exception {
 		String email = (String)session.getAttribute("email");
+
+		if( email == null ) {
+			rattr.addFlashAttribute("qna_login", "not");
+
+			return "redirect:/cs";
+		}
 
 		List<Cs> css = csService.selectCs(email);
 		System.out.println("css = " + css);
