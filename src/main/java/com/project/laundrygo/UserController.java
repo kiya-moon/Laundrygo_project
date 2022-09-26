@@ -29,7 +29,7 @@ public class UserController {
     public String member(User user) throws Exception {
         userService.user_insert(user);
 
-        return "index";
+        return "redirect:/";
     }
     @GetMapping("/login")
     public String loginForm() {

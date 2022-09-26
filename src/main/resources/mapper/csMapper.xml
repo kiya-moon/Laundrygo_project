@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.dao.CsMapper">
+
+    <insert id="insert" parameterType="Cs">
+        INSERT INTO cs
+            (email, cs_type, cs_title, cs_content, cs_img, cs_date)
+        VALUES
+            (#{email}, #{cs_type}, #{cs_title}, #{cs_content}, #{cs_img}, now())
+    </insert>
+
+    <select id="selectCs" parameterType="String" resultType="Cs">
+        SELECT *
+        FROM cs
+        WHERE email = #{email}
+        ORDER BY cs_num DESC
+    </select>
+    
+</mapper>

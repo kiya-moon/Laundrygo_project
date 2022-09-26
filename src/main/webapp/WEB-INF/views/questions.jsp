@@ -21,6 +21,15 @@
 	<link href="${pageContext.request.contextPath }/css/dropzone.css" rel="stylesheet">
 </head>
 <body>
+	<script>
+		let qna_insert_result = "${qna_insert_result}";
+		if( qna_insert_result == "insert_ok" ) {
+			alert('1:1 문의가 등록되었습니다.');
+		} else if( qna_insert_result == "insert_error" ) {
+			alert('1:1 문의 등록에 실패하였습니다. 다시 시도해 주세요.')
+		}
+	</script>
+
 <jsp:include page="header.jsp" />
 <!-- Body Inner -->
 	<div class="body-inner-cs">
@@ -57,13 +66,13 @@
 							<p>평일 9시 ~ 18시, 주말/휴일 11시 ~ 18시</p>
 							<br>
 							<hr>
-							<form method="post" class="cs-contents" name="csForm">
+							<form action="<c:url value="/qna"/>" method="post" class="cs-contents" name="csForm" id="csForm">
 								<!-- Select box -->
 								<%--@declare id="cs-contents"--%><div class="select-box-area p-t-50 p-b-50">
-								<label class="select-box-area-label p-b-10" for=""
+								<label class="select-box-area-label p-b-10" for="cs_type"
 									   style="font-size: 18px">문의 유형 선택 <span
 										style="color: red">*</span></label>
-								<select id="cs_type" name="cs">
+								<select id="cs_type" name="cs_type">
 									<option class="option" value="">문의 유형을 알려주세요</option>
 									<option class="option" value="요금제 문의">요금제 문의</option>
 									<option class="option" value="결제 문의">결제 문의</option>
@@ -72,7 +81,7 @@
 									<option class="option" value="세탁 문의">세탁 문의</option>
 									<option class="option" value="서비스/회원 문의">서비스/회원 문의</option>
 								</select>
-							</div>
+								</div>
 								<!-- end: Select box -->
 								<!-- Contents -->
 								<label class="cs-contents-label p-b-10"
@@ -82,8 +91,8 @@
 									더 빠른 도움을 위해 어떤 상황인지 자세히 알려주세요.<br>세탁물의 파손이나 훼손 등 문제가 발생한
 									부분의 사진을 첨부해주시면, 문제 해결에 많은 도움이 됩니다.
 								</p>
-								<textarea id="csText" name="csText" class="cs-contents-textarea" maxlength="300"
-										  form="cs-contents"></textarea>
+								<textarea id="cs_content" name="cs_content" class="cs-contents-textarea" maxlength="300"
+										  form="csForm"></textarea>
 								<!-- 								<div class="textLengthWrap"> -->
 								<!-- 									<p class="textCount">0자</p> -->
 								<!-- 									<p class="textTotal">/300자</p> -->
@@ -92,13 +101,13 @@
 								<!--File upload 1-->
 								<div id="fileUpload1" class="dropzone m-t-20">
 									<div class="fallback">
-										<input name="file" type="file" multiple />
+										<input name="cs_img" type="file" multiple />
 									</div>
 								</div>
 								<small id="dropzoneHelp" class="form-text text-muted">Max file size is 2MB and max number of files is 10.</small>
 								<!--end: File upload 1-->
 
-								<button type="button" id="btn_user"
+								<button type="button" id="btn_cs"
 										class="btn btn-block m-t-20 btn-outline text-dark"
 										onclick="sendCs()"
 										style="border-color: #13B383; font-size: 13.5px !important;">문의 하기</button>
@@ -111,22 +120,17 @@
 						 aria-labelledby="myqna">
 						<!-- for문 돌려서 데이터 뿌려줘야 함... -->
 						<div class="accordion toggle fancy radius clean">
-							<div class="ac-item">
-								<h5 class="ac-title">
-									<i class="fa fa-question-circle"></i><b>문의내역 제목 가져오기</b>
-								</h5>
-								<div class="ac-content">
-									<p>문의내역 내용 가져오기</p>
-								</div>
-							</div>
-							<div class="ac-item">
-								<h5 class="ac-title">
-									<i class="fa fa-question-circle"></i><b>문의내역 제목 가져오기</b>
-								</h5>
-								<div class="ac-content">
-									<p>문의내역 내용 가져오기</p>
-								</div>
-							</div>
+                            <c:forEach var="css" items="${css}">
+                                <div class="ac-item">
+                                    <h5 class="ac-title">
+                                        <i class="fa fa-question-circle"></i><b>${css.cs_title}</b>
+                                    </h5>
+                                    <div class="ac-content">
+                                        <p>${css.cs_content}</p>
+                                    </div>
+                                </div>
+							</c:forEach>
+
 						</div>
 					</div>
 				</div>

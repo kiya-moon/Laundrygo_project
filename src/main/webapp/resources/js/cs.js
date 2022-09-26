@@ -8,7 +8,7 @@ function sendCs() {
         return false;
     }
 
-    if($('textarea[name=csText]').val() == ""){
+    if($('textarea[name=cs_content]').val() == ""){
         alert('문의내용을 입력해주세요.');
 
         return false;
