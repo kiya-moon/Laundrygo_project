@@ -38,6 +38,8 @@ public class PickupController {
 		m.addAttribute(user);
 
 		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
+
+
 		m.addAttribute(monthlyPayList);
 
 		return "pickup";
