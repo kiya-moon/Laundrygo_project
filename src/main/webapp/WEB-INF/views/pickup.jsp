@@ -99,7 +99,7 @@
 								<div class="border-box b-r-3 m-b-20">
 									<h3 class="text-bold">수거/배송 주소</h3>
 									<div>
-										<input type="text" name="sign_name" class="form-control" value="${user.addr}"
+										<input type="text" name="p_addr" class="form-control" value="${user.addr}"
 											id="pickup_addr" placeholder="수거/배송 주소" readonly="readonly">
 									</div>
 								</div>

@@ -319,7 +319,7 @@
 				 aria-labelledby="modal-label-3" aria-hidden="true">
 				<div class="modal-dialog m-t-40 m-b-40"
 					 style="max-width: 60% !important; margin: 0 auto;">
-					<div class="modal-content h-75">
+					<div class="modal-content">
 						<div class="modal-header text-center">
 							<button aria-hidden="true" data-dismiss="modal" class="close"
 									type="button">×</button>

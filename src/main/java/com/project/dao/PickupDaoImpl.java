@@ -6,6 +6,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Repository
 public class PickupDaoImpl implements PickupDao {
     @Autowired
@@ -13,12 +16,26 @@ public class PickupDaoImpl implements PickupDao {
     private static String namespace = "com.project.dao.pickupMapper.";
 
     @Override
-    public int pickupInsert(Pickup pickup) throws Exception {
-        return session.insert(namespace+"pickupInsert", pickup);
+    public MonthlyPayList monthlyList(String email) throws Exception{
+        return session.selectOne(namespace+"monthlyList", email);
     }
 
     @Override
-    public MonthlyPayList monthlyList(String email) {
-        return session.selectOne(namespace+"monthlyList", email);
+    public int pickupInsert(String p_addr, String m_name, String email) throws Exception{
+        Map map = new HashMap();
+        map.put("p_addr", p_addr);
+        map.put("laundry_type", m_name);
+        map.put("email", email);
+        return session.update(namespace+"pickupInsert", map);
+    }
+
+    @Override
+    public int cntUpdate(int new_lifeCnt, int new_cleaningCnt, int new_freeCnt, String email) throws Exception{
+        Map map = new HashMap();
+        map.put("life_cnt",new_lifeCnt);
+        map.put("cleaning_cnt",new_cleaningCnt);
+        map.put("free_cnt",new_freeCnt);
+        map.put("email",email);
+        return session.update(namespace+"cntUpdate", map);
     }
 }

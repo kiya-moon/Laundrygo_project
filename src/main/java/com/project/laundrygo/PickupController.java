@@ -43,9 +43,35 @@ public class PickupController {
 		return "pickup";
 	}
 
-	@PostMapping("/pickup")
-	public String pickupdate(String laundry) throws Exception{
 
+	@PostMapping("/pickup")
+	public String pickupdate(MonthlyPayList monthlyPayList, String laundry, String p_addr , HttpSession httpSession) throws Exception{
+		// 세션 받아오기
+		String email = (String)httpSession.getAttribute("email");
+
+		// 월정액 이름 넘기기
+		String m_name = monthlyPayList.getM_name();
+
+		// 픽업 내역 저장
+		pickupService.pickupInsert(p_addr, m_name, email);
+
+		// MonthlytPayList cnt 차감
+		int lifeCnt = monthlyPayList.getLife_cnt();
+		int cleaningCnt = monthlyPayList.getCleaning_cnt();
+
+		int new_lifeCnt = 0;
+		int new_cleaningCnt = 0;
+
+		if (laundry.equals("living") ) {
+			new_lifeCnt = lifeCnt-1;
+		}
+		if (laundry.equals("each") ) {
+			new_cleaningCnt = cleaningCnt-1;
+		}
+
+		int new_freeCnt = monthlyPayList.getFree_cnt()-1;
+
+		pickupService.cntUpdate(new_lifeCnt,new_cleaningCnt,new_freeCnt, email);
 
 		return "index";
 	}
