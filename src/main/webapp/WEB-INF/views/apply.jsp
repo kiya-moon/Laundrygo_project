@@ -20,6 +20,7 @@
 </head>
 <body>
 
+
 <!-- Body Inner -->
 <jsp:include page="header.jsp" />
 <div class="body-inner">
@@ -180,5 +181,6 @@
 
     $('.wizard').find(".actions ul > li > a").addClass("btn");
 </script>
+
 </body>
 </html>
