@@ -27,7 +27,9 @@ public class MypageController {
 		System.out.println(email);
 
 		User user = userService.selectUser(email);
+		Credit credit = userService.selectCredit(email);
 		model.addAttribute(user);
+		model.addAttribute(credit);
 
 		return "mypage";
 	}
@@ -86,7 +88,9 @@ public class MypageController {
 			rattr.addFlashAttribute("mod_result", "mod_ok");
 //			session.invalidate();
 			user = userService.selectUser(email);
+			credit = userService.selectCredit(email);
 			model.addAttribute(user);
+			model.addAttribute(credit);
 
 			return "redirect:/mypage";
 		} else {
@@ -127,6 +131,5 @@ public class MypageController {
 		rattr.addFlashAttribute("del_msg", "DEL_OK");
 		return "redirect:/";
 	}
-
 
 }
