@@ -337,23 +337,24 @@
 							<div class="center team-members team-members-left team-members-shadow">
 								<div class="team-member text-dark row p-10 m-0">
 									<div class="text-left col-lg-12 p-t-10">
-										<h3>드라이&amp; 런드리 47</h3>
+										<h3>${monthlyPayList.m_name eq null? temp.m_name : monthlyPayList.m_name}</h3>
 									</div>
 									<div class="col-lg-12 border-bottom"></div>
 									<div class=" col-lg-4 text-center p-t-30 p-l-60">
 										<img src="images/laun_icon.png">
 										<p>생활빨래</p>
-										<h4>3개</h4>
+										<h4>${monthlyPayList.life_cnt eq null? temp.life_cnt : monthlyPayList.life_cnt}</h4>
+<%--										<input type="text" class="form-control" name="life_cnt" value="${monthlyPayList.life_cnt eq null? temp.life_cnt : monthlyPayList.life_cnt}">--%>
 									</div>
 									<div class="col-lg-4 text-center p-t-30">
 										<img src="images/dry_icon.png">
 										<p>개별클리닝</p>
-										<h4>3회</h4>
+										<h4>${monthlyPayList.cleaning_cnt eq null? temp.cleaning_cnt : monthlyPayList.cleaning_cnt}</h4>
 									</div>
 									<div class="col-lg-4 text-center p-t-30 p-r-60">
 										<img src="images/free_icon.png">
 										<p>무료수거배송</p>
-										<h4>3회</h4>
+										<h4>${monthlyPayList.free_cnt eq null? temp.free_cnt : monthlyPayList.free_cnt}</h4>
 									</div>
 								</div>
 
