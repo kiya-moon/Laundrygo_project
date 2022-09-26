@@ -32,4 +32,9 @@ public class MonthlyServiceImpl implements MonthlyService {
     public int payment(MonthlyPayList monthlyPayList) throws Exception {
         return monthlyDao.payment(monthlyPayList);
     }
+
+    @Override
+    public int pointUpdate(String email, int m_point) throws Exception {
+        return monthlyDao.pointUpdate(email, m_point);
+    }
 }

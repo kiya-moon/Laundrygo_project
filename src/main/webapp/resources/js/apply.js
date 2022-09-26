@@ -3,7 +3,6 @@ $(document).ready(function(){
     var point = document.getElementById("point_in").value;
     var zero = 0;
     var a;
-    var total = price-point;
 
     $("#Pointcheck1").click(function (){
 
