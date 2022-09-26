@@ -36,6 +36,8 @@
 		let msg = "${msg}";
 		if (msg == "login_err") alert("이메일 또는 비밀번호가 일치하지 않습니다.");
 
+		let msg_pickup = "${login_pickup_msg}";
+		if (msg_pickup == "login_pickup") alert("로그인 후 이용해주세요.");
 	</script>
 
 <%--	<script>--%>
@@ -48,7 +50,8 @@
 		if (login_ch!=null) {
 	%>
 	<script>
-		$(function(){										// 로그인 버튼 없어짐, 로그아웃, 마이페이지 버튼 생성
+		$(function(){										// 로그인,회원가입 버튼 없어짐, 로그아웃, 마이페이지 버튼 생성
+			document.getElementById('join_btn').style.display = "none";
 			document.getElementById('login_btn').style.display = "none";
 			document.getElementById('logout_btn').style.display = "block";
 			document.getElementById('mypage_btn').style.display = "block";

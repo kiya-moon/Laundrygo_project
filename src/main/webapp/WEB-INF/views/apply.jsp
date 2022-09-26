@@ -31,7 +31,7 @@
                     <div class="card">
                         <div class="card-body">
                             <!--Wizard 1-->
-                            <form id="wizard1" class="wizard" method="post" action="/laundrygo/monthly";>
+                            <form id="wizard1" class="wizard" method="post" action="/laundrygo/monthly">
                                 <!--Step 1-->
                                 <h3>결제 정보</h3>
                                 <div class="wizard-content">
