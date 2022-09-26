@@ -8,5 +8,8 @@
         <typeAlias alias="Monthly" type="com.project.dto.Monthly"/>
         <typeAlias alias="Credit" type="com.project.dto.Credit"/>
         <typeAlias alias="Card" type="com.project.dto.Card"/>
+        <typeAlias alias="MonthlyPayList" type="com.project.dto.MonthlyPayList"/>
+        <typeAlias alias="Cs" type="com.project.dto.Cs"/>
+        <typeAlias alias="Pickup" type="com.project.dto.Pickup"/>
     </typeAliases>
 </configuration>

@@ -29,7 +29,7 @@ public class UserController {
     public String member(User user) throws Exception {
         userService.user_insert(user);
 
-        return "index";
+        return "redirect:/";
     }
     @GetMapping("/login")
     public String loginForm() {
@@ -47,11 +47,13 @@ public class UserController {
     @PostMapping("/login")
     public String login(String login_email, String login_password, HttpServletRequest request, Model m) throws Exception{
 //        userService.user_select(login_email, login_password);
+        String uri = request.getHeader("REFERER");
+        System.out.println("uri = " + uri);
 
         if(!loginCheck(login_email, login_password)) {
             m.addAttribute("msg", "login_err");
 
-            return "index";
+            return "redirect:"+uri;
         }
 
         // 세션 저장
@@ -59,7 +61,7 @@ public class UserController {
         session.setAttribute("email", login_email);
 //        session.setAttribute("user", userService.selectUser(login_email));
         // 로그인 완료 시???
-        return "index";
+        return "redirect:"+uri;
     }
     private boolean loginCheck(String login_email, String login_password) {
         User user = null;

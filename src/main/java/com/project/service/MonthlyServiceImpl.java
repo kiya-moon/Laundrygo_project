@@ -3,6 +3,7 @@ package com.project.service;
 import com.project.dao.MonthlyDao;
 import com.project.dto.Card;
 import com.project.dto.Monthly;
+import com.project.dto.MonthlyPayList;
 import com.project.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,15 @@ public class MonthlyServiceImpl implements MonthlyService {
     @Override
     public Card cardInfo(String email) throws Exception {
         return monthlyDao.cardInfo(email);
+    }
+
+    @Override
+    public int payment(MonthlyPayList monthlyPayList) throws Exception {
+        return monthlyDao.payment(monthlyPayList);
+    }
+
+    @Override
+    public int pointUpdate(String email, int m_point) throws Exception {
+        return monthlyDao.pointUpdate(email, m_point);
     }
 }

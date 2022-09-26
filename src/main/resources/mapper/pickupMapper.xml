@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.dao.pickupMapper">
+
+    <insert id="pickupInsert" parameterType="Pickup">
+        INSERT INTO pickup
+            (email, p_addr, laundry_type)
+        VALUES
+            (#{email}, #{p_addr}, #{laundry_type})
+    </insert>
+
+    <select id="monthlyList" parameterType="String" resultType="MonthlyPayList">
+        SELECT * FROM monthly_list WHERE email = #{email}
+    </select>
+
+</mapper>

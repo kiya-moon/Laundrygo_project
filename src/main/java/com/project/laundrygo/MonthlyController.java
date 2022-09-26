@@ -3,6 +3,7 @@ package com.project.laundrygo;
 import com.project.dao.UserDao;
 import com.project.dto.Card;
 import com.project.dto.Monthly;
+import com.project.dto.MonthlyPayList;
 import com.project.dto.User;
 import com.project.service.MonthlyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 //@RequestMapping("/laundrygo")
 @Controller
@@ -46,14 +49,24 @@ public class MonthlyController {
 		String email = (String)httpSession.getAttribute("email");
 		System.out.println(httpSession.getAttribute("email"));
 		User user = monthlyService.userInfo(email);
+		System.out.println(user);
 		m.addAttribute(user);
 
 		Monthly monthly = monthlyService.monthlyInfo(name);
 		m.addAttribute(monthly);
 
 		Card card = monthlyService.cardInfo(email);
-		m.addAttribute(card);
 
+		if(card==null){
+			Card temp = new Card();
+			temp.setCard_num("카드를 등록해주세요");
+			temp.setCard_type("정보없음");
+			temp.setEmail("");
+
+			m.addAttribute(temp);
+		} else{
+			m.addAttribute(card);
+		}
 		return "apply";
 	}
 
@@ -63,8 +76,25 @@ public class MonthlyController {
 		return session.getAttribute("email")!=null;
 	}
 
-	@PostMapping("/monthly/{email}")
-	public String applyfinish (@PathVariable("email") String email){
+	@PostMapping("/monthly")
+	public String applyfinish (MonthlyPayList monthlyPayList, int point_in, int m_point, HttpSession httpSession) throws Exception{
+		// 세션 받아오기
+		String email = (String)httpSession.getAttribute("email");
+
+		// monthlyPayList 저장
+		LocalDateTime date = LocalDateTime.now().withNano(0);
+		monthlyPayList.setEmail(email);
+		monthlyPayList.setStart_date(date);
+		monthlyPayList.setEnd_date(date.plusMonths(1));
+
+		monthlyService.payment(monthlyPayList);
+
+		// point 업데이트
+		int c_point = point_in - m_point;
+		System.out.println(c_point);
+		monthlyService.pointUpdate(email, c_point);
+
+
 		return "index";
 	}
 

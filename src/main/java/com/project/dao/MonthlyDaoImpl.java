@@ -2,10 +2,14 @@ package com.project.dao;
 
 import com.project.dto.Card;
 import com.project.dto.Monthly;
+import com.project.dto.MonthlyPayList;
 import com.project.dto.User;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Repository
 public class MonthlyDaoImpl implements MonthlyDao {
@@ -26,5 +30,18 @@ public class MonthlyDaoImpl implements MonthlyDao {
     @Override
     public Card cardInfo(String email) throws Exception {
         return session.selectOne(namespace+"cardInfo", email);
+    }
+
+    @Override
+    public int payment(MonthlyPayList monthlyPayList) throws Exception {
+        return session.insert(namespace+"paymentInsert", monthlyPayList);
+    }
+
+    @Override
+    public int pointUpdate(String email, int m_point) throws Exception {
+        Map map = new HashMap();
+        map.put("email", email);
+        map.put("point", m_point);
+        return session.update(namespace+"pointUpdate", map);
     }
 }

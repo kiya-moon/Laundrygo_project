@@ -31,6 +31,7 @@
 <!-- Body Inner -->
 <jsp:include page="header.jsp" />
 	<c:set var="user" value="${requestScope.user}" />
+    <c:set var="credit" value="${requestScope.credit}" />
 
 	<div class="body-inner">
 
@@ -276,7 +277,7 @@
 							<div class="form-group mb-3">
 								<div class="row">
 									<div class="col-lg-3 p-r-10">
-										<select name="account_mod" id="account_mod">
+										<select name="account_mod" id="account_mod" onselect="${credit.card_type}">
 											<option value="">카드</option>
 										    <option value="삼성">삼성</option>
 										    <option value="NH농협">NH농협</option>
@@ -289,7 +290,8 @@
 									</div>
 									<div class="col-lg-9">
 										<input type="text" oninput="autoHyphen2(this)" name="account_num_mod" class="form-control"
-											id="account_num_mod" placeholder="카드번호(ex 1111-2222-3333-4444)" onkeyup="modAddAccount()">
+											id="account_num_mod" placeholder="카드번호(ex 1111-2222-3333-4444)" onkeyup="modAddAccount()"
+                                               value="${credit.card_num}">
 									</div>
 								</div>
 								<span class="mod_error_next_box"></span>
@@ -301,7 +303,7 @@
 						</form>
 						<form id="deleteForm" action="">
 							<div class="col-md-12 text-center">
-								<button type="button" id="deleteBtn" class="btn btn-block" style="background-color: red; border-color: red;" onclick="deleteUser();">탈퇴하기</button>
+								<button type="button" id="deleteBtn" class="btn btn-red btn-block" onclick="deleteUser();">탈퇴하기</button>
 							</div>
 						</form>
 					</div>
@@ -406,6 +408,13 @@
 	<script src="${pageContext.request.contextPath }/js/mypage.js"></script>
 
 	<script>
+
+		$(document).ready(function() {
+			let card_type = '${credit.card_type}';
+
+			$('#account_mod').val(card_type).prop("selected", true);
+		});
+
 		function deleteUser() {
 
 			let mod_password = $('#mod_password').val();

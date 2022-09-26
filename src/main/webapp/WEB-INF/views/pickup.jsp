@@ -19,6 +19,7 @@
 	type="text/css" rel="stylesheet">
 </head>
 <body>
+
 	<!-- Body Inner -->
 	<jsp:include page="header.jsp" />
 	<div class="body-inner">
@@ -53,10 +54,9 @@
 						<img src="${pageContext.request.contextPath}/images/home_step2.png">
 					</div>
 					<!-- 수거신청 버튼 -->
-					<div class="col-lg-1"
-						style="margin-top: auto; margin-bottom: auto; font-size: 5rem;">
-						<a href="#" data-target="#pickup" data-toggle="modal"><i
-							class="icon-arrow-right-circle"></i></a>
+					<div class="col-lg-1" style="margin-top: auto; margin-bottom: auto; font-size: 5rem;">
+						<a href="#" data-target="#pickup" data-toggle="modal">
+							<i class="icon-arrow-right-circle"></i></a>
 					</div>
 					<!-- 의류 받기는 방법 -->
 					<div class="col-lg-12">
@@ -88,27 +88,19 @@
 
 						<div>
 							<h3 class="m-t-30 m-b-0">
-								<strong>OOO님,</strong> 오늘 밤
+								<strong>${user.name}님,</strong> 오늘 밤
 							</h3>
 							<h3 class="m-b-20">문 앞의 세탁물을 수거하러 갑니다.</h3>
 						</div>
 
-						<form action="" method="get" name="signUp" class="signUp"
-							onsubmit="return validateSignUp();">
+						<form action="/laundrygo/pickup" method="post" name="PickUp" class="PickUp"
+							onsubmit="return pickupvalid();">
 							<div class="form-group mb-3">
 								<div class="border-box b-r-3 m-b-20">
 									<h3 class="text-bold">수거/배송 주소</h3>
 									<div>
-										<input type="text" name="sign_name" class="form-control"
-											id="sign_name" placeholder="수거/배송 주소">
-									</div>
-									<div>
-										<h4 class="text-bold m-t-20 m-b-10">알람 메시지 전송 시간</h4>
-										<label class="m-r-10"><input type="checkbox"
-											name="msg" value="7am" onclick='checkOnlyOne(this)'>
-											오전7시 이후</label> <label><input type="checkbox" name="msg"
-											value="immediately" onclick='checkOnlyOne(this)'>
-											수거/배송 즉시</label>
+										<input type="text" name="sign_name" class="form-control" value="${user.addr}"
+											id="pickup_addr" placeholder="수거/배송 주소" readonly="readonly">
 									</div>
 								</div>
 							</div>
@@ -119,16 +111,14 @@
 
 									<div class="m-b-30 v-t">
 										<label class="v-t"><input type="checkbox"
-											name="laundry" value="living" style="zoom: 2.0;"
-											onclick='checkOnlyOne2(this)'> <span
+											name="laundry" value="living" style="zoom: 2.0;"> <span
 											class="m-l-10 text-bold text-dark" style="font-size: 20px;">생활빨래</span></label>
 										<span><h5 class="text-bold m-l-40">티셔츠, 수건과 같은
 												세탁기에 돌리는 빨래입니다.</h5></span>
 									</div>
 									<div class="v-t">
 										<label class="v-t"><input type="checkbox"
-											name="laundry" value="each" style="zoom: 2.0;"
-											onclick='checkOnlyOne2(this)'> <span
+											name="laundry" value="each" style="zoom: 2.0;"> <span
 											class="m-l-10 text-bold text-dark" style="font-size: 20px;">개별클리닝</span></label>
 										<span><h5 class="text-bold m-l-40">드라이클리닝, 신발, 이불
 												등의</h5></span> <span><h5 class="text-bold m-l-40">개별로 과금되는
@@ -140,26 +130,7 @@
 							<div class="form-group mb-3">
 								<div class="border-box b-r-3 m-b-20 p-b-10">
 									<div class="v-t">
-										<div class="form-row">
-											<div class="form-group col-md-8">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" name="Pointcheck" id="Pointcheck1"
-														class="custom-control-input"> <label class="custom-control-label text-dark" for="Pointcheck1"
-														style="font-size: 18px;">보유 포인트 우선 차감</label>
-												</div>
-											</div>
-											<div class="form-group col-md-4 text-right">
-												<h4>
-													<!-- ${dto.point} -->
-													0 P
-												</h4>
-											</div>
-										</div>
-										<p>
-											· 결제 시점에 보유 중인 포인트가 있다면 <span class="text-red">우선 차감</span>합니다.
-										</p>
-										<hr>
-										<div class="form-group m-t-20">
+										<div class="form-group">
 											<div class="custom-control custom-checkbox">
 												<input type="checkbox" name="laundryCheck" id="laundryCheck1"
 													class="custom-control-input"> 
@@ -170,6 +141,10 @@
 									</div>
 								</div>
 							</div>
+							<input type="hidden" id="m_name" name="m_name" value="${monthlyPayList.m_name}">
+							<input type="hidden" id="life_cnt" name="life_cnt" value="${monthlyPayList.life_cnt}">
+							<input type="hidden" id="cleaning_cnt" name="cleaning_cnt" value="${monthlyPayList.cleaning_cnt}">
+							<input type="hidden" id="free_cnt" name="free_cnt" value="${monthlyPayList.free_cnt}">
 
 							<div class="col-md-12 text-center">
 								<button type="submit" class="btn btn-block">수거신청하기</button>
@@ -218,29 +193,6 @@
 		class="icon-chevron-up"></i></a>
 
 	<!--Plugins-->
-	<script>
-		function checkOnlyOne(target) {
-			const checkboxes = document.getElementsByName("msg");
-			
-			checkboxes.forEach((cb) => {
-				cb.checked = false;
-			})
-			
-			target.checked = true;
-			
-		}
-		
-		function checkOnlyOne2(target) {
-			const checkboxes = document.getElementsByName("laundry");
-			
-			checkboxes.forEach((cb) => {
-				cb.checked = false;
-			})
-			
-			target.checked = true;
-			
-		}
-	</script>
 
 
 
@@ -248,6 +200,7 @@
 	<script src="${pageContext.request.contextPath }/js/plugins.js"></script>
 	<script src="${pageContext.request.contextPath }/js/functions.js"></script>
 	<script src="${pageContext.request.contextPath }/js/script.js"></script>
+	<script src="${pageContext.request.contextPath }/js/pickup.js"></script>
 
 </body>
 </html>
