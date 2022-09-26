@@ -2,7 +2,9 @@ package com.project.laundrygo;
 
 import com.project.dao.UserDao;
 import com.project.dto.Credit;
+import com.project.dto.MonthlyPayList;
 import com.project.dto.User;
+import com.project.service.PickupService;
 import com.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,9 @@ public class MypageController {
 	private UserService userService;
 
 	@Autowired
+	private PickupService pickupService;
+
+	@Autowired
 	UserDao userDao;
 
 	@GetMapping("/mypage")
@@ -29,6 +34,18 @@ public class MypageController {
 		User user = userService.selectUser(email);
 		Credit credit = userService.selectCredit(email);
 		model.addAttribute(user);
+		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
+		if( monthlyPayList != null){
+			model.addAttribute(monthlyPayList);
+		} else{
+			MonthlyPayList temp = new MonthlyPayList();
+			temp.setM_name("이용중인 상품이 없습니다.");
+			temp.setCleaning_cnt(0);
+			temp.setFree_cnt(0);
+			temp.setLife_cnt(0);
+
+			model.addAttribute(temp);
+		}
 
 		if( credit != null ) {
 			model.addAttribute(credit);
@@ -135,5 +152,6 @@ public class MypageController {
 		rattr.addFlashAttribute("del_msg", "DEL_OK");
 		return "redirect:/";
 	}
+
 
 }
