@@ -31,7 +31,7 @@
                     <div class="card">
                         <div class="card-body">
                             <!--Wizard 1-->
-                            <form id="wizard1" class="wizard" method="post" action="/laundrygo/monthly";>
+                            <form id="wizard1" class="wizard" method="post" action="/laundrygo/monthly">
                                 <!--Step 1-->
                                 <h3>결제 정보</h3>
                                 <div class="wizard-content">
@@ -74,7 +74,7 @@
                                         <div class="form-group col-md-4 text-right">
                                             <h4>${user.point} P</h4>
                                         </div>
-                                        <input type="hidden" id="point_in" value="${user.point}" >
+                                        <input type="hidden" id="point_in" name="point_in" value="${user.point}" >
                                     </div>
                                     <p>· 결제 시점에 보유 중인 포인트가 있다면 <span class="text-red">우선 차감</span>합니다.</p>
                                     <hr>
@@ -86,7 +86,6 @@
                                         <div class="form-group col-md-4 text-right">
                                             <h4>${monthly.m_price} 원</h4>
                                         </div>
-                                        <%--                                            여기에 포인트 사용여부 체크되는 if문 필요...?--%>
                                         <input type="hidden" id="price_in" value="${monthly.m_price}" >
                                         <div class="form-group col-md-7 h4">
                                             포인트 사용
