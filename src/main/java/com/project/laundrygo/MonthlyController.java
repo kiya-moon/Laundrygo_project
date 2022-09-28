@@ -1,10 +1,7 @@
 package com.project.laundrygo;
 
 import com.project.dao.UserDao;
-import com.project.dto.Card;
-import com.project.dto.Monthly;
-import com.project.dto.MonthlyPayList;
-import com.project.dto.User;
+import com.project.dto.*;
 import com.project.service.MonthlyService;
 import com.project.service.PickupService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +22,7 @@ import java.util.Date;
 //@RequestMapping("/laundrygo")
 @Controller
 public class MonthlyController {
+
 	@Autowired
 	private MonthlyService monthlyService;
 
@@ -97,7 +95,7 @@ public class MonthlyController {
 	}
 
 	@PostMapping("/monthly")
-	public String applyfinish (MonthlyPayList monthlyPayList, int point_in, int m_point, HttpSession httpSession) throws Exception{
+	public String applyfinish (MonthlyPayList monthlyPayList, PayList payList, int point_in, int m_point, HttpSession httpSession) throws Exception{
 		// 세션 받아오기
 		String email = (String)httpSession.getAttribute("email");
 
@@ -111,6 +109,12 @@ public class MonthlyController {
 
 		monthlyService.payment(monthlyPayList);
 
+		// payList 저장
+		payList.setEmail(email);
+		payList.setPay_date(date);
+
+		monthlyService.payListInsert(payList);
+
 		// point 업데이트
 		int c_point = point_in - m_point;
 		System.out.println(c_point);
@@ -120,9 +124,6 @@ public class MonthlyController {
 		if( c_point == 0 ) {
 			monthlyService.usePointInsert(email, m_name, m_point);
 		}
-
-		// payList 저장
-
 
 
 		return "index";

@@ -19,28 +19,35 @@ $(document).ready(function(){
 
     });
     /* 체크박스 체크 확인 */
+
+    let card_type_ch = $('#card_type').val();
+    let card_num_ch = $('#card_num').val();
+
     $("a[href$='#finish']").click(function(){
 
+        if (card_type_ch == '정보없음' || card_num_ch == '카드를 등록해주세요'){
+            alert("카드를 등록해주세요.");
+            return false;
 
-        if ($("input:checkbox[id='Paycheck1']").is(":checked") != true){
-            alert("결제 정보 저장 및 자동결제에 동의해주세요.")
+        } else if ($("input:checkbox[id='Paycheck1']").is(":checked") != true){
+            alert("결제 정보 저장 및 자동결제에 동의해주세요.");
             return false;
 
         } else if ($("input:checkbox[id='agree1']").is(":checked") != true){
-            alert("이용약관에 동의해주세요.")
+            alert("이용약관에 동의해주세요.");
             return false;
 
         } else if ($("input:checkbox[id='agree2']").is(":checked") != true){
-            alert("개인정보 수집 및 이용에 동의해주세요.")
+            alert("개인정보 수집 및 이용에 동의해주세요.");
             return false;
 
         } else if ($("input:checkbox[id='agree3']").is(":checked") != true){
-            alert("아래 서비스 이용사항에 동의해주세요.")
+            alert("아래 서비스 이용사항에 동의해주세요.");
             return false;
 
         } else {
             alert("결제성공,\n감사합니다. 결제가 완료되었습니다.");
-            $("#wizard1").submit()
+            $("#wizard1").submit();
             // location.href = "/laundrygo/monthly/" + email;
         }
     });
