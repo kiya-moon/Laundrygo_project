@@ -42,7 +42,7 @@
                                             <input type="text" class="form-control" name="address" value="${user.addr}" placeholder="주소 받아오는 곳">
                                         </div>
                                         <div class="form-group col-md-2">
-                                            <input type="button" class="form-control" name="button" value="수정" placeholder="수정 바로가기">
+                                            <input type="button" class="form-control" name="button" value="수정" placeholder="수정 바로가기" onclick="applyModAddr()">
                                         </div>
                                     </div>
                                     <h4>결제 정보</h4>
@@ -54,7 +54,7 @@
                                             <input type="text" class="form-control" name="card_num" id="card_num" value="${card.card_num eq null? temp.card_num : card.card_num}" placeholder="카드번호 받아오는 곳">
                                         </div>
                                         <div class="form-group col-md-2">
-                                            <input type="button" class="form-control" name="button" value="카드 변경" placeholder="변경 바로가기">
+                                            <input type="button" class="form-control" name="button" value="카드 변경" placeholder="변경 바로가기" onclick="applyModAccount()">
                                         </div>
                                     </div>
                                     <p>· 선택하신 카드로 결제 금액이 자동결제 됩니다.</p>

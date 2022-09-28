@@ -33,4 +33,11 @@
         UPDATE user_info SET point = #{point} WHERE email = #{email}
     </update>
 
+    <insert id="usePointInsert" parameterType="map">
+        INSERT INTO use_point
+            (email, m_name, use_point, use_date)
+        VALUES
+            (#{email}, #{m_name}, #{use_point}, now())
+    </insert>
+
 </mapper>

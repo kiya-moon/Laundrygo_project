@@ -14,4 +14,6 @@ public interface MonthlyService {
     int payListInsert(PayList payList) throws Exception;
 
     int pointUpdate(String email, int m_point) throws Exception;
+
+    int usePointInsert(String email, String m_name, int use_point) throws Exception;
 }

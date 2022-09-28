@@ -11,6 +11,7 @@
         <typeAlias alias="MonthlyPayList" type="com.project.dto.MonthlyPayList"/>
         <typeAlias alias="Cs" type="com.project.dto.Cs"/>
         <typeAlias alias="Pickup" type="com.project.dto.Pickup"/>
+        <typeAlias alias="Point" type="com.project.dto.Point"/>
         <typeAlias alias="PayList" type="com.project.dto.PayList"/>
     </typeAliases>
 </configuration>

@@ -1,6 +1,7 @@
 package com.project.service;
 
 import com.project.dto.Credit;
+import com.project.dto.Point;
 import com.project.dto.User;
 
 import java.util.ArrayList;
@@ -28,4 +29,6 @@ public interface UserService {
     int card_modify(String card_num, String card_type, String email) throws Exception;
 
     int delete(String email) throws Exception;
+
+    List<Point> usePointList(String email) throws Exception;
 }

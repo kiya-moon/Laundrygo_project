@@ -55,3 +55,13 @@ $(document).ready(function(){
 
 });
 
+function applyModAddr() {
+    alert('마이페이지 > 내정보에서 주소를 수정해 주세요.');
+    location.href = "/laundrygo/mypage";
+}
+
+function applyModAccount() {
+    alert('마이페이지 > 내정보에서 카드정보를 수정해 주세요.');
+    location.href = "/laundrygo/mypage";
+}
+

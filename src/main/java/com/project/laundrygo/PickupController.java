@@ -67,6 +67,8 @@ public class PickupController {
 
 		// 월정액 이름 넘기기
 		String m_name = monthlyPayList.getM_name();
+		System.out.println("m_name = " + m_name);
+		System.out.println("laundry = " + laundry);
 
 		// O, X 체크용 변수
 		String p_life;

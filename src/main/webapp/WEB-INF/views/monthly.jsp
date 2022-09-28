@@ -21,18 +21,26 @@
 		  type="text/css" rel="stylesheet">
 </head>
 <body>
-<script>
-	/* 신청하기 버튼의 각 value값 가져오기 */
-	$(document).ready(function(){
-		$("[id='apply_click']").click(function() {
-			var name = $(this).val();
+	<script>
+		/* 신청하기 버튼의 각 value값 가져오기 */
+		$(document).ready(function(){
+			$("[id='apply_click']").click(function() {
+				var name = $(this).val();
 
-			location.href = "/laundrygo/monthly/" + name; /* <c:url value='/laundrygo/monthly/'/> + name */
-			console.log(name);
+				location.href = "/laundrygo/monthly/" + name; /* <c:url value='/laundrygo/monthly/'/> + name */
+				console.log(name);
+			});
 		});
-	});
 
-</script>
+	</script>
+
+	<script>
+		let exist_M = "${exist_M}";
+		if( exist_M == "exist_M" ) {
+			alert('이미 월정액을 구매하셨습니다. 해지 후 새로운 월정액을 구매하실 수 있습니다.');
+		}
+	</script>
+
 <!-- Body Inner -->
 <jsp:include page="header.jsp" />
 <div class="body-inner">

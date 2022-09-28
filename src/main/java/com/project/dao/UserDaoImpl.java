@@ -1,12 +1,14 @@
 package com.project.dao;
 
 import com.project.dto.Credit;
+import com.project.dto.Point;
 import com.project.dto.User;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Repository
@@ -103,6 +105,11 @@ public class UserDaoImpl implements UserDao {
     public int delete(String email) throws Exception {
 
         return session.delete(namespace + "delete", email);
+    }
+
+    @Override
+    public List<Point> usePointList(String email) throws Exception {
+        return session.selectList(namespace+"usePointList", email);
     }
 
 }

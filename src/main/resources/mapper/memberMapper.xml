@@ -75,4 +75,11 @@
         DELETE from user_info where email=#{email}
     </delete>
 
+    <select id="usePointList" parameterType="String" resultType="Point">
+        SELECT *
+        FROM use_point
+        WHERE email = #{email}
+        ORDER BY point_num DESC
+    </select>
+
 </mapper>
