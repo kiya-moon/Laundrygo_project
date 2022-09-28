@@ -6,12 +6,14 @@ import com.project.dto.Monthly;
 import com.project.dto.MonthlyPayList;
 import com.project.dto.User;
 import com.project.service.MonthlyService;
+import com.project.service.PickupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,6 +29,9 @@ public class MonthlyController {
 	private MonthlyService monthlyService;
 
 	@Autowired
+	private PickupService pickupService;
+
+	@Autowired
 	UserDao userDao;
 
 	@GetMapping("/monthly")
@@ -35,7 +40,9 @@ public class MonthlyController {
 	}
 
 	@GetMapping("monthly/{name}")
-	public String apply(@PathVariable("name") String name, Model m, HttpSession httpSession, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public String apply(@PathVariable("name") String name, Model m, HttpSession httpSession,
+						HttpServletRequest request, HttpServletResponse response,
+						RedirectAttributes rattr) throws Exception {
 		if(!emailCheck(request)) {
 //			m.addAttribute("login_ch_msg", "login_ch");
 			response.setContentType("text/html;charset=euc-kr");
@@ -47,6 +54,14 @@ public class MonthlyController {
 		}
 
 		String email = (String)httpSession.getAttribute("email");
+
+		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
+
+		if( monthlyPayList != null ) {
+			rattr.addFlashAttribute("exist_M", "exist_M");
+			return "redirect:/monthly";
+		}
+
 		System.out.println(httpSession.getAttribute("email"));
 		User user = monthlyService.userInfo(email);
 		System.out.println(user);
@@ -92,12 +107,19 @@ public class MonthlyController {
 		monthlyPayList.setStart_date(date);
 		monthlyPayList.setEnd_date(date.plusMonths(1));
 
+		String m_name = monthlyPayList.getM_name();
+
 		monthlyService.payment(monthlyPayList);
 
 		// point 업데이트
 		int c_point = point_in - m_point;
 		System.out.println(c_point);
 		monthlyService.pointUpdate(email, c_point);
+
+		// use_point 저장
+		if( c_point == 0 ) {
+			monthlyService.usePointInsert(email, m_name, m_point);
+		}
 
 		// payList 저장
 

@@ -37,4 +37,9 @@ public class MonthlyServiceImpl implements MonthlyService {
     public int pointUpdate(String email, int m_point) throws Exception {
         return monthlyDao.pointUpdate(email, m_point);
     }
+
+    @Override
+    public int usePointInsert(String email, String m_name, int use_point) throws Exception {
+        return monthlyDao.usePointInsert(email, m_name, use_point);
+    }
 }

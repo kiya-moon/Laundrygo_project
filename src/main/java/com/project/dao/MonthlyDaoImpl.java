@@ -44,4 +44,14 @@ public class MonthlyDaoImpl implements MonthlyDao {
         map.put("point", m_point);
         return session.update(namespace+"pointUpdate", map);
     }
+
+    @Override
+    public int usePointInsert(String email, String m_name, int use_point) throws Exception {
+       Map map = new HashMap();
+       map.put("email", email);
+       map.put("m_name", m_name);
+       map.put("use_point", use_point);
+
+        return session.insert(namespace+"usePointInsert", map);
+    }
 }

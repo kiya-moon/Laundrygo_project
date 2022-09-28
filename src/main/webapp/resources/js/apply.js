@@ -20,6 +20,8 @@ $(document).ready(function(){
     });
     /* 체크박스 체크 확인 */
     $("a[href$='#finish']").click(function(){
+
+
         if ($("input:checkbox[id='Paycheck1']").is(":checked") != true){
             alert("결제 정보 저장 및 자동결제에 동의해주세요.")
             return false;
@@ -45,4 +47,14 @@ $(document).ready(function(){
     /* END 체크박스 체크 확인 */
 
 });
+
+function applyModAddr() {
+    alert('마이페이지 > 내정보에서 주소를 수정해 주세요.');
+    location.href = "/laundrygo/mypage";
+}
+
+function applyModAccount() {
+    alert('마이페이지 > 내정보에서 카드정보를 수정해 주세요.');
+    location.href = "/laundrygo/mypage";
+}
 

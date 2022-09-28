@@ -2,9 +2,12 @@ package com.project.service;
 
 import com.project.dao.UserDao;
 import com.project.dto.Credit;
+import com.project.dto.Point;
 import com.project.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -82,6 +85,11 @@ public class UserServiceImpl implements UserService {
     public int delete(String email) throws Exception {
 
         return userDao.delete(email);
+    }
+
+    @Override
+    public List<Point> usePointList(String email) throws Exception {
+        return userDao.usePointList(email);
     }
 
 }

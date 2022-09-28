@@ -360,20 +360,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="ac-item">
-								<h5 class="ac-title">
-									<i class="fa fa-question-circle"></i><b>매번 동일한 런드렛이 배송되나요?</b>
-								</h5>
-								<div style="display: none;" class="ac-content">
-									<p>
-										주기적으로 깨끗하게 관리된 런드렛을 받아볼 수 있도록, 2022년 6월 3일부터 런드렛이 <span
-											style="color: red">공용 런드렛</span>으로 변경되었습니다.
-									</p>
-									<p>정기적인 살균/소독, 더러워진 커버의 세탁 및 교체, 고장 부위 수리 등을 통해 더욱 세심하게 관리된
-										런드렛을 받아볼 수 있고,</p>
-									<p>배송 시 마다 새로 부여되는 비밀번호로 더욱 안전하게 이용하실 수 있습니다.</p>
-								</div>
-							</div>
+
 							<div class="ac-item">
 								<h5 class="ac-title">
 									<i class="fa fa-question-circle"></i><b>웰컴키트는 언제, 어떻게

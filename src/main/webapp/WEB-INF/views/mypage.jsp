@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.*"
 		 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -96,7 +96,7 @@
 
 							<div class="text-center" style="text-align: center;">
 								<h3 class="m-t-30 m-b-0">
-									<strong>OOO님</strong>의 보유 포인트 : <strong>5000P</strong>
+									<strong>${user.name}님</strong>의 보유 포인트 : <strong>${user.point}</strong>
 								</h3>
 							</div>
 
@@ -105,18 +105,21 @@
 									<thead>
 									<tr class="blockquote-color">
 										<th scope="col">순번</th>
-										<th scope="col">수거 종류</th>
+										<th scope="col">월정액 종류</th>
 										<th scope="col">사용 포인트</th>
 										<th scope="col">사용 날짜</th>
 									</tr>
 									</thead>
 									<tbody>
-									<tr>
-										<th scope="row">1</th>
-										<td>Mark</td>
-										<td>used-point</td>
-										<td>@mdo</td>
-									</tr>
+									<c:forEach var="point" varStatus="status" items="${point}">
+										<fmt:formatDate var="point_date" value="${point.use_date}" pattern="yyyy.MM.dd HH:mm:ss"/>
+										<tr>
+											<th scope="row">${point_length - status.index}</th>
+											<td>${point.m_name}</td>
+											<td>${point.use_point}</td>
+											<td>${point_date}</td>
+										</tr>
+									</c:forEach>
 									</tbody>
 								</table>
 							</div>

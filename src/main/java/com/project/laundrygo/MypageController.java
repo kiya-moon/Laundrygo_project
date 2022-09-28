@@ -1,10 +1,8 @@
 package com.project.laundrygo;
 
 import com.project.dao.UserDao;
-import com.project.dto.Credit;
-import com.project.dto.MonthlyPayList;
-import com.project.dto.Pickup;
-import com.project.dto.User;
+import com.project.dto.*;
+import com.project.service.MonthlyService;
 import com.project.service.PickupService;
 import com.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +32,17 @@ public class MypageController {
 		System.out.println(email);
 
 		List<Pickup> pickup = pickupService.pickupList(email);
+		List<Point> point = userService.usePointList(email);
+
+		System.out.println("point = " + point);
+
 		model.addAttribute("pickup",pickup);
+
+		if( point != null ) {
+			model.addAttribute("point", point);
+			model.addAttribute("point_length", point.size());
+		}
+
 		User user = userService.selectUser(email);
 		Credit credit = userService.selectCredit(email);
 		model.addAttribute(user);
