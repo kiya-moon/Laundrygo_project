@@ -1,9 +1,6 @@
 package com.project.service;
 
-import com.project.dto.Card;
-import com.project.dto.Monthly;
-import com.project.dto.MonthlyPayList;
-import com.project.dto.User;
+import com.project.dto.*;
 
 public interface MonthlyService {
     User userInfo(String email) throws Exception;
@@ -13,6 +10,8 @@ public interface MonthlyService {
     Card cardInfo(String email) throws Exception;
 
     int payment(MonthlyPayList monthlyPayList) throws Exception;
+
+    int payListInsert(PayList payList) throws Exception;
 
     int pointUpdate(String email, int m_point) throws Exception;
 }

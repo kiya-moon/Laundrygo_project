@@ -1,10 +1,12 @@
 package com.project.laundrygo;
 
 import com.project.dao.UserDao;
+import com.project.dto.Credit;
 import com.project.dto.MonthlyPayList;
 import com.project.dto.User;
 import com.project.service.MonthlyService;
 import com.project.service.PickupService;
+import com.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,9 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class PickupController {
+
+	@Autowired
+	private UserService userService;
 
 	@Autowired
 	private PickupService pickupService;
@@ -34,13 +39,22 @@ public class PickupController {
 			return "index";
 		}
 		String email = (String)httpSession.getAttribute("email");
-		User user = monthlyService.userInfo(email);
-		m.addAttribute(user);
 
+		User user = monthlyService.userInfo(email);
+		Credit credit = userService.selectCredit(email);
+		m.addAttribute(user);
 		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
 
+		if( monthlyPayList != null){
+			m.addAttribute(monthlyPayList);
+		} else{
+			m.addAttribute("monthly_arr_msg", "monthly_arr");
+			return "monthly";
+		}
 
-		m.addAttribute(monthlyPayList);
+		if( credit != null ) {
+			m.addAttribute(credit);
+		}
 
 		return "pickup";
 	}

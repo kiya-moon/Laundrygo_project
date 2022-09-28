@@ -22,6 +22,13 @@
             (#{email}, #{m_name}, #{m_price}, #{life_cnt}, #{cleaning_cnt}, #{free_cnt}, #{start_date}, #{end_date}, #{card_num}, #{card_type})
     </insert>
 
+    <insert id="payListInsert" parameterType="PayList">
+        INSERT INTO paylist
+        (email, m_name, m_price, pay_date, card_num, card_type)
+        VALUES
+            (#{email}, #{m_name}, #{m_price}, #{pay_date}, #{card_num}, #{card_type})
+    </insert>
+
     <update id="pointUpdate" parameterType="map">
         UPDATE user_info SET point = #{point} WHERE email = #{email}
     </update>

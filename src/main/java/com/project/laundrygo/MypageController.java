@@ -39,6 +39,7 @@ public class MypageController {
 		Credit credit = userService.selectCredit(email);
 		model.addAttribute(user);
 		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
+
 		if( monthlyPayList != null){
 			if(monthlyPayList.getLife_cnt()<0){
 				monthlyPayList.setLife_cnt(0);
