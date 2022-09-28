@@ -43,7 +43,7 @@ public class MonthlyController {
 			out.println("<script>alert('로그인 후 이용 가능합니다.'); location.href='/laundrygo/monthly'; </script>");
 
 			out.flush();
-			 // 로그인이 안돼어있으면 월정액페이지로 이동
+			// 로그인이 안돼어있으면 월정액페이지로 이동
 		}
 
 		String email = (String)httpSession.getAttribute("email");
@@ -51,9 +51,12 @@ public class MonthlyController {
 		User user = monthlyService.userInfo(email);
 		System.out.println(user);
 		m.addAttribute(user);
+		System.out.println(user);
 
+		System.out.println(name);
 		Monthly monthly = monthlyService.monthlyInfo(name);
 		m.addAttribute(monthly);
+		System.out.println(monthly);
 
 		Card card = monthlyService.cardInfo(email);
 
@@ -64,8 +67,10 @@ public class MonthlyController {
 			temp.setEmail("");
 
 			m.addAttribute(temp);
+			System.out.println(temp);
 		} else{
 			m.addAttribute(card);
+			System.out.println(card);
 		}
 		return "apply";
 	}
@@ -93,6 +98,9 @@ public class MonthlyController {
 		int c_point = point_in - m_point;
 		System.out.println(c_point);
 		monthlyService.pointUpdate(email, c_point);
+
+		// payList 저장
+
 
 
 		return "index";

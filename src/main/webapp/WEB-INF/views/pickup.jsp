@@ -118,7 +118,7 @@
 									</div>
 									<div class="v-t">
 										<label class="v-t"><input type="checkbox"
-											name="laundry" value="each" style="zoom: 2.0;"> <span
+											name="laundry2" value="each" style="zoom: 2.0;"> <span
 											class="m-l-10 text-bold text-dark" style="font-size: 20px;">개별클리닝</span></label>
 										<span><h5 class="text-bold m-l-40">드라이클리닝, 신발, 이불
 												등의</h5></span> <span><h5 class="text-bold m-l-40">개별로 과금되는

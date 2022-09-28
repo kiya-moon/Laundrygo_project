@@ -104,4 +104,5 @@ public class UserDaoImpl implements UserDao {
 
         return session.delete(namespace + "delete", email);
     }
+
 }

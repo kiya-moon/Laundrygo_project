@@ -6,6 +6,8 @@ import com.project.service.CsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -23,12 +25,12 @@ public class CSController {
 	@Autowired
 	private CsDao csDao;
 
-	@RequestMapping("/cs")
+	@GetMapping("/cs")
 	public String cs() {
 		return "customer_center";
 	}
-	
-	@RequestMapping("/qna")
+
+	@GetMapping("/qna")
 	public String qna( Model model, HttpSession session, RedirectAttributes rattr ) throws Exception {
 		String email = (String)session.getAttribute("email");
 

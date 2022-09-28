@@ -158,6 +158,7 @@
 										<th scope="col">결제 카드</th>
 										<th scope="col">결제일</th>
 										<th scope="col">추가 금액</th>
+										<th scope="col">총 금액</th>
 									</tr>
 									</thead>
 									<tbody>
@@ -167,6 +168,7 @@
 										<td>Otto</td>
 										<td>@mdo</td>
 										<td>extra-price</td>
+										<td>total-price</td>
 									</tr>
 									</tbody>
 								</table>
@@ -368,7 +370,7 @@
 								<table class="table table-hover">
 									<thead>
 									<tr class="blockquote-color">
-										<th scope="col">주소</th>
+										<th scope="col">번호</th>
 										<th scope="col">생활 빨래</th>
 										<th scope="col">개별 클리닝</th>
 										<th scope="col">무료수거/배송</th>
@@ -376,13 +378,15 @@
 									</tr>
 									</thead>
 									<tbody>
+									<c:forEach var="pickup" items="${pickup}">
 									<tr>
-										<th scope="row"></th>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-										<td>extra-price</td>
+										<td>${pickup.pickup_num}</td>
+										<td>${pickup.p_life}</td>
+										<td>${pickup.p_cleaning}</td>
+										<td>${pickup.p_free}</td>
+										<td>${pickup.going}</td>
 									</tr>
+									</c:forEach>
 									</tbody>
 								</table>
 							</div>

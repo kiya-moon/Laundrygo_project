@@ -48,10 +48,10 @@
                                     <h4>결제 정보</h4>
                                     <div class="form-row">
                                         <div class="form-group col-md-10">
-                                            <input type="text" class="form-control" name="card" value="${card.card_type eq null ? temp.card_type : card.card_type}" placeholder="카드사 받아오는 곳">
+                                            <input type="text" class="form-control" name="card_type" id="card_type" value="${card.card_type eq null ? temp.card_type : card.card_type}" placeholder="카드사 받아오는 곳">
                                         </div>
                                         <div class="form-group col-md-10">
-                                            <input type="text" class="form-control" name="card" value="${card.card_num eq null? temp.card_num : card.card_num}" placeholder="카드번호 받아오는 곳">
+                                            <input type="text" class="form-control" name="card_num" id="card_num" value="${card.card_num eq null? temp.card_num : card.card_num}" placeholder="카드번호 받아오는 곳">
                                         </div>
                                         <div class="form-group col-md-2">
                                             <input type="button" class="form-control" name="button" value="카드 변경" placeholder="변경 바로가기">

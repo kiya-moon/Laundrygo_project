@@ -5,9 +5,9 @@
 
     <insert id="pickupInsert" parameterType="map">
         INSERT INTO pickup
-            (email, p_addr, laundry_type)
+            (email, p_addr, p_life, p_cleaning, p_free)
         VALUES
-            (#{email}, #{p_addr}, #{laundry_type})
+            (#{email}, #{p_addr}, #{p_life}, #{p_cleaning}, #{p_free})
     </insert>
 
     <select id="monthlyList" parameterType="String" resultType="MonthlyPayList">
@@ -15,7 +15,10 @@
     </select>
 
     <update id="cntUpdate" parameterType="map">
-        UPDATE monthly_list SET life_cnt = #{life_cnt}, cleaning_cnt = #{cleaning_cnt}, free_cnt = #{free_cnt} WHERE email = #{email}
+        UPDATE monthly_list SET life_cnt = #{life_cnt}, cleaning_cnt = #{cleaning_cnt}, free_cnt = #{free_cnt}, extra_charge = #{extra_charge} WHERE email = #{email}
     </update>
 
+    <select id="pickupList" parameterType="String" resultType="map">
+        SELECT * from pickup where email = #{email}
+    </select>
 </mapper>

@@ -3,6 +3,7 @@ package com.project.laundrygo;
 import com.project.dao.UserDao;
 import com.project.dto.Credit;
 import com.project.dto.MonthlyPayList;
+import com.project.dto.Pickup;
 import com.project.dto.User;
 import com.project.service.PickupService;
 import com.project.service.UserService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 public class MypageController {
@@ -31,11 +33,22 @@ public class MypageController {
 		String email = (String)session.getAttribute("email");
 		System.out.println(email);
 
+		List<Pickup> pickup = pickupService.pickupList(email);
+		model.addAttribute("pickup",pickup);
 		User user = userService.selectUser(email);
 		Credit credit = userService.selectCredit(email);
 		model.addAttribute(user);
 		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
 		if( monthlyPayList != null){
+			if(monthlyPayList.getLife_cnt()<0){
+				monthlyPayList.setLife_cnt(0);
+			}
+			if(monthlyPayList.getCleaning_cnt()<0){
+				monthlyPayList.setCleaning_cnt(0);
+			}
+			if(monthlyPayList.getFree_cnt()<0){
+				monthlyPayList.setFree_cnt(0);
+			}
 			model.addAttribute(monthlyPayList);
 		} else{
 			MonthlyPayList temp = new MonthlyPayList();
@@ -43,7 +56,6 @@ public class MypageController {
 			temp.setCleaning_cnt(0);
 			temp.setFree_cnt(0);
 			temp.setLife_cnt(0);
-
 			model.addAttribute(temp);
 		}
 

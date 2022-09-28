@@ -18,11 +18,13 @@ public class MonthlyPayList {
     private LocalDateTime end_date;
     private int extra_charge;
     private int keep;
+    private String card_num;
+    private String card_type;
 
     public MonthlyPayList() {
     }
 
-    public MonthlyPayList(int monthly_num, String email, String m_name, int m_price, int life_cnt, int cleaning_cnt, int free_cnt, int extra_charge, int keep) {
+    public MonthlyPayList(int monthly_num, String email, String m_name, int m_price, int life_cnt, int cleaning_cnt, int free_cnt, int extra_charge, int keep, String card_num, String card_type) {
         this.monthly_num = monthly_num;
         this.email = email;
         this.m_name = m_name;
@@ -32,6 +34,8 @@ public class MonthlyPayList {
         this.free_cnt = free_cnt;
         this.extra_charge = extra_charge;
         this.keep = keep;
+        this.card_num = card_num;
+        this.card_type = card_type;
     }
 
     public int getMonthly_num() {
@@ -122,16 +126,24 @@ public class MonthlyPayList {
         this.keep = keep;
     }
 
+    public String getCard_num() { return card_num; }
+
+    public void setCard_num(String card_num) { this.card_num = card_num; }
+
+    public String getCard_type() { return card_type; }
+
+    public void setCard_type(String card_type) { this.card_type = card_type; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        MonthlyPayList that = (MonthlyPayList) o;
-        return monthly_num == that.monthly_num && m_price == that.m_price && life_cnt == that.life_cnt && cleaning_cnt == that.cleaning_cnt && free_cnt == that.free_cnt && extra_charge == that.extra_charge && keep == that.keep && Objects.equals(email, that.email) && Objects.equals(m_name, that.m_name);
+        MonthlyPayList payList = (MonthlyPayList) o;
+        return monthly_num == payList.monthly_num && m_price == payList.m_price && life_cnt == payList.life_cnt && cleaning_cnt == payList.cleaning_cnt && free_cnt == payList.free_cnt && extra_charge == payList.extra_charge && keep == payList.keep && Objects.equals(email, payList.email) && Objects.equals(m_name, payList.m_name) && Objects.equals(card_num, payList.card_num) && Objects.equals(card_type, payList.card_type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(monthly_num, email, m_name, m_price, life_cnt, cleaning_cnt, free_cnt, extra_charge, keep);
+        return Objects.hash(monthly_num, email, m_name, m_price, life_cnt, cleaning_cnt, free_cnt, extra_charge, keep, card_num, card_type);
     }
 }
