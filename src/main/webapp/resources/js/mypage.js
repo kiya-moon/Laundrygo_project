@@ -253,4 +253,18 @@ function removeRD_addr() {
     addr_mod.removeAttribute("readonly");
 }
 
+function chkCancel() {
+
+    var keep = document.getElementById("keep").value;
+    if(keep == 1){
+        let cancelConfirm = confirm('정말 해지하시겠습니까?');
+    if(cancelConfirm) {
+        location.href = "/laundrygo/cancel" + keep;
+        alert('해지되었습니다.');
+    }
+    } else{
+        location.href = "/laundrygo/cancel" + keep;
+        alert('해지취소 되었습니다.');
+    }
+}
 

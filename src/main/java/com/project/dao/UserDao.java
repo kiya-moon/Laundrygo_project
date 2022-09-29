@@ -26,5 +26,7 @@ public interface UserDao {
 
     int card_modify(String card_num, String card_type, String email) throws Exception;
 
+    int cancel(String email, int keep) throws Exception;
+
     int delete(String email) throws Exception;
 }

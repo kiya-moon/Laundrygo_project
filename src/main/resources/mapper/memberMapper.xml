@@ -71,8 +71,14 @@
         WHERE email = #{email}
     </update>
 
+    <update id="cancel" parameterType="map">
+        UPDATE monthly_list
+        SET keep = #{keep}
+        WHERE email = #{email}
+    </update>
+
     <delete id="delete" parameterType="String">
-        DELETE from user_info where email=#{email}
+        DELETE from user_info where email= #{email}
     </delete>
 
 </mapper>
