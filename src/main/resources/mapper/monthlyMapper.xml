@@ -11,6 +11,10 @@
         SELECT * FROM monthly_type WHERE m_name = #{name}
     </select>
 
+    <select id="monthlyList" resultType="MonthlyPayList">
+        SELECT * FROM monthly_list
+    </select>
+
     <select id="cardInfo" parameterType="String" resultType="Card">
         SELECT * FROM credit_info WHERE email = #{email}
     </select>
@@ -24,9 +28,9 @@
 
     <insert id="payListInsert" parameterType="PayList">
         INSERT INTO paylist
-        (email, m_name, m_price, pay_date, card_num, card_type)
+        (email, m_name, m_price, pay_date, card_num, card_type, total_price, extra_charge)
         VALUES
-            (#{email}, #{m_name}, #{m_price}, #{pay_date}, #{card_num}, #{card_type})
+            (#{email}, #{m_name}, #{m_price}, #{pay_date}, #{card_num}, #{card_type}, #{total_price}, #{extra_charge} )
     </insert>
 
     <update id="pointUpdate" parameterType="map">
@@ -39,5 +43,19 @@
         VALUES
             (#{email}, #{m_name}, #{use_point}, now())
     </insert>
+
+    <update id="monthlyListUpdate" parameterType="map">
+        UPDATE monthly_list SET card_type = #{card_type} , card_num = #{card_num} WHERE email = #{email}
+    </update>
+
+    <update id="new_monthlyListUpdate" parameterType="map">
+        UPDATE  monthly_list
+        SET life_cnt = #{life_cnt}, cleaning_cnt = #{cleaning_cnt}, free_cnt = #{free_cnt}, start_date = #{start_date}, end_date = #{end_date}, extra_charge = 0
+        WHERE email = #{email}
+    </update>
+
+    <delete id="monthlyListDelete" parameterType="String">
+        DELETE FROM monthly_list WHERE email = #{email}
+    </delete>
 
 </mapper>

@@ -7,10 +7,12 @@ public class PayList {
     private int paylist_num;
     private String email;
     private String m_name;
-    private String m_price;
+    private int m_price;
     private LocalDateTime pay_date;
     private String card_num;
     private String card_type;
+    private int total_price;
+    private int extra_charge;
 
     public PayList(){}
 
@@ -19,21 +21,23 @@ public class PayList {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PayList payList = (PayList) o;
-        return paylist_num == payList.paylist_num && Objects.equals(email, payList.email) && Objects.equals(m_name, payList.m_name) && Objects.equals(m_price, payList.m_price) && Objects.equals(card_num, payList.card_num) && Objects.equals(card_type, payList.card_type);
+        return paylist_num == payList.paylist_num && m_price == payList.m_price && total_price == payList.total_price && extra_charge == payList.extra_charge && Objects.equals(email, payList.email) && Objects.equals(m_name, payList.m_name) && Objects.equals(card_num, payList.card_num) && Objects.equals(card_type, payList.card_type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(paylist_num, email, m_name, m_price, card_num, card_type);
+        return Objects.hash(paylist_num, email, m_name, m_price, card_num, card_type, total_price, extra_charge);
     }
 
-    public PayList(int paylist_num, String email, String m_name, String m_price, String card_num, String card_type) {
+    public PayList(int paylist_num, String email, String m_name, int m_price, String card_num, String card_type, int total_price, int extra_charge) {
         this.paylist_num = paylist_num;
         this.email = email;
         this.m_name = m_name;
         this.m_price = m_price;
         this.card_num = card_num;
         this.card_type = card_type;
+        this.total_price = total_price;
+        this.extra_charge = extra_charge;
     }
 
     public int getPaylist_num() {
@@ -60,11 +64,11 @@ public class PayList {
         this.m_name = m_name;
     }
 
-    public String getM_price() {
+    public int getM_price() {
         return m_price;
     }
 
-    public void setM_price(String m_price) {
+    public void setM_price(int m_price) {
         this.m_price = m_price;
     }
 
@@ -92,16 +96,34 @@ public class PayList {
         this.card_type = card_type;
     }
 
+    public int getTotal_price() {
+        return total_price;
+    }
+
+    public void setTotal_price(int total_price) {
+        this.total_price = total_price;
+    }
+
+    public int getExtra_charge() {
+        return extra_charge;
+    }
+
+    public void setExtra_charge(int extra_charge) {
+        this.extra_charge = extra_charge;
+    }
+
     @Override
     public String toString() {
         return "PayList{" +
                 "paylist_num=" + paylist_num +
                 ", email='" + email + '\'' +
                 ", m_name='" + m_name + '\'' +
-                ", m_price='" + m_price + '\'' +
+                ", m_price=" + m_price +
                 ", pay_date=" + pay_date +
                 ", card_num='" + card_num + '\'' +
                 ", card_type='" + card_type + '\'' +
+                ", total_price=" + total_price +
+                ", extra_charge=" + extra_charge +
                 '}';
     }
 }

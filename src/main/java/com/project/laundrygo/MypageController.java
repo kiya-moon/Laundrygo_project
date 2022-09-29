@@ -24,6 +24,9 @@ public class MypageController {
 	private PickupService pickupService;
 
 	@Autowired
+	private MonthlyService monthlyService;
+
+	@Autowired
 	UserDao userDao;
 
 	@GetMapping("/mypage")
@@ -90,6 +93,7 @@ public class MypageController {
 
 		User user = userService.selectUser(email);
 		Credit credit = userService.selectCredit(email);
+		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
 
 		if( pwd_mod == "" ) {
 			new_pwd = user.getPassword();
@@ -121,6 +125,10 @@ public class MypageController {
 				account_cnt = userService.card_insert(new_account_num, new_account, email);
 			} else if( credit != null ) {
 				account_cnt = userService.card_modify(new_account_num, new_account, email);
+			}
+
+			if( monthlyPayList != null ) {
+				monthlyService.monthlyListUpdate(email, new_account, new_account_num);
 			}
 
 		}
