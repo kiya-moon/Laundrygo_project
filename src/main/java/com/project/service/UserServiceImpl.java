@@ -82,6 +82,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int cancel(String email, int keep) throws Exception {
+        System.out.println("월정액 해지");
+
+        return userDao.cancel(email, keep);
+    }
+
+    @Override
     public int delete(String email) throws Exception {
 
         return userDao.delete(email);

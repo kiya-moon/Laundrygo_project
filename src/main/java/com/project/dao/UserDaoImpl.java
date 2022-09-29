@@ -102,6 +102,14 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public int cancel(String email, int keep) throws Exception {
+        Map map = new HashMap();
+        map.put("keep", keep);
+        map.put("email", email);
+        return session.update(namespace+"cancel", map);
+    }
+
+    @Override
     public int delete(String email) throws Exception {
 
         return session.delete(namespace + "delete", email);

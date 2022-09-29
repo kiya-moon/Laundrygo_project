@@ -19,6 +19,6 @@
     </update>
 
     <select id="pickupList" parameterType="String" resultType="map">
-        SELECT * from pickup where email = #{email}
+        SELECT * from pickup where email = #{email} order by pickup_num DESC
     </select>
 </mapper>

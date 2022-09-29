@@ -182,5 +182,19 @@ public class MypageController {
 		return "redirect:/";
 	}
 
+	@GetMapping("cancel{keep}")
+	public String cancel(@PathVariable("keep") int keep, HttpSession session) throws Exception {
+		System.out.println("ㅋㅓㄴ트로러 도착");
+		String email = (String)session.getAttribute("email");
+		if(keep == 1){
+			keep = 0;
+		}else {
+			keep = 1;
+		}
+		System.out.println(keep);
+		userService.cancel(email, keep);
+
+		return "redirect:/mypage";
+	}
 
 }
