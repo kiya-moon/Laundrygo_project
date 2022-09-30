@@ -1,6 +1,7 @@
 package com.project.dao;
 
 import com.project.dto.Credit;
+import com.project.dto.PayList;
 import com.project.dto.Point;
 import com.project.dto.User;
 import org.apache.ibatis.session.SqlSession;
@@ -120,4 +121,8 @@ public class UserDaoImpl implements UserDao {
         return session.selectList(namespace+"usePointList", email);
     }
 
+    @Override
+    public List<PayList> userPayList(String email) throws Exception {
+        return session.selectList(namespace + "userPayList", email);
+    }
 }

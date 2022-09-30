@@ -1,6 +1,7 @@
 package com.project.service;
 
 import com.project.dto.Credit;
+import com.project.dto.PayList;
 import com.project.dto.Point;
 import com.project.dto.User;
 
@@ -33,4 +34,6 @@ public interface UserService {
     int delete(String email) throws Exception;
 
     List<Point> usePointList(String email) throws Exception;
+
+    List<PayList> userPayList(String email) throws Exception;
 }

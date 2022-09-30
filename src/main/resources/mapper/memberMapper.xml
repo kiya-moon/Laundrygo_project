@@ -88,4 +88,8 @@
         ORDER BY point_num DESC
     </select>
 
+    <select id="userPayList" parameterType="String" resultType="PayList">
+        SELECT * FROM paylist where email = #{email} ORDER BY paylist_num DESC
+    </select>
+
 </mapper>
