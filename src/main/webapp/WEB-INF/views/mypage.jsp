@@ -164,16 +164,18 @@
 										<th scope="col">총 금액</th>
 									</tr>
 									</thead>
-									<tbody>
-									<tr>
-										<th scope="row">1</th>
-										<td>Mark</td>
-										<td>Otto</td>
-										<td>@mdo</td>
-										<td>extra-price</td>
-										<td>total-price</td>
-									</tr>
-									</tbody>
+                                    <tbody>
+                                    <c:forEach var="paylist" items="${paylist}" end="9">
+                                        <tr>
+                                            <td>${paylist.m_name}</td>
+                                            <td>${paylist.m_price}원</td>
+                                            <td>${paylist.card_type}</td>
+                                            <td>${paylist.pay_date}</td>
+                                            <td>${paylist.extra_charge}</td>
+                                            <td>${paylist.total_price}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
 								</table>
 							</div>
 						</div>

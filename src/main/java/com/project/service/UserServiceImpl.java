@@ -2,6 +2,7 @@ package com.project.service;
 
 import com.project.dao.UserDao;
 import com.project.dto.Credit;
+import com.project.dto.PayList;
 import com.project.dto.Point;
 import com.project.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,4 +100,8 @@ public class UserServiceImpl implements UserService {
         return userDao.usePointList(email);
     }
 
+    @Override
+    public List<PayList> userPayList(String email) throws Exception {
+        return userDao.userPayList(email);
+    }
 }

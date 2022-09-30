@@ -36,6 +36,11 @@ public class MypageController {
 
 		List<Pickup> pickup = pickupService.pickupList(email);
 		List<Point> point = userService.usePointList(email);
+		List<PayList> paylist = userService.userPayList(email);
+
+		if( paylist != null){
+			model.addAttribute("paylist", paylist);
+		}
 
 		System.out.println("point = " + point);
 
