@@ -105,6 +105,7 @@ public class MonthlyController {
 		monthlyPayList.setStart_date(date);
 		monthlyPayList.setEnd_date(date.plusMonths(1));
 
+
 		String m_name = monthlyPayList.getM_name();
 
 		monthlyService.payment(monthlyPayList);
@@ -112,6 +113,7 @@ public class MonthlyController {
 		// payList 저장
 		payList.setEmail(email);
 		payList.setPay_date(date);
+		payList.setTotal_price(payList.getM_price());
 
 		monthlyService.payListInsert(payList);
 
@@ -121,7 +123,7 @@ public class MonthlyController {
 		monthlyService.pointUpdate(email, c_point);
 
 		// use_point 저장
-		if( c_point == 0 ) {
+		if( c_point == 0 && m_point != 0 ) {
 			monthlyService.usePointInsert(email, m_name, m_point);
 		}
 
