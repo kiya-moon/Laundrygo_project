@@ -66,7 +66,7 @@
 							<p>평일 9시 ~ 18시, 주말/휴일 11시 ~ 18시</p>
 							<br>
 							<hr>
-							<form action="<c:url value="/qna"/>" method="post" class="cs-contents" name="csForm" id="csForm">
+							<form action="<c:url value="/qna"/>" method="post" class="cs-contents" name="csForm" id="csForm" enctype="multipart/form-data">
 								<!-- Select box -->
 								<%--@declare id="cs-contents"--%><div class="select-box-area p-t-50 p-b-50">
 								<label class="select-box-area-label p-b-10" for="cs_type"
@@ -99,12 +99,10 @@
 								<!-- 								</div> -->
 
 								<!--File upload 1-->
-								<div id="fileUpload1" class="dropzone m-t-20">
-									<div class="fallback">
-										<input name="cs_img" type="file" multiple />
-									</div>
-								</div>
-								<small id="dropzoneHelp" class="form-text text-muted">Max file size is 2MB and max number of files is 10.</small>
+								<label class="cs-contents-label p-t-40"
+									   style="font-size: 18px">이미지 등록 <span>&nbsp;&nbsp;&nbsp;</span></label>
+								<input id="cs_img" name="cs_img" type="file" onchange="readURL(this)" multiple="multiple"/>
+								<small id="dropzoneHelp" class="form-text text-muted">Max file size is 2MB and max number of files is 2.</small>
 								<!--end: File upload 1-->
 
 								<button type="button" id="btn_cs"
@@ -151,16 +149,14 @@
 	<script src="js/dropzone.js"></script>
 	<script src="js/cs.js"></script>
 	<script>
-		Dropzone.autoDiscover = false;
-		//Form 1
-		var form2 = $('#fileUpload1');
-		form2.dropzone({
-			url: "http://polo/files/post",
-			addRemoveLinks: true,
-			maxFiles: 1,
-			maxFilesize: 10,
-			acceptedFiles: "image/*",
-		});
+		// 이미지 업로드
+		function readURL(input) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				e.target.result;
+			};
+			reader.readAsDataURL(input.files[0]);
+		}
 	</script>
 </body>
 </html>

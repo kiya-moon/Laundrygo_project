@@ -5,9 +5,9 @@
 
     <insert id="insert" parameterType="Cs">
         INSERT INTO cs
-            (email, cs_type, cs_title, cs_content, cs_img, cs_date)
+            (email, cs_type, cs_title, cs_content, cs_date, cs_uuid)
         VALUES
-            (#{email}, #{cs_type}, #{cs_title}, #{cs_content}, #{cs_img}, now())
+            (#{email}, #{cs_type}, #{cs_title}, #{cs_content}, now(), #{cs_uuid})
     </insert>
 
     <select id="selectCs" parameterType="String" resultType="Cs">
@@ -16,5 +16,9 @@
         WHERE email = #{email}
         ORDER BY cs_num DESC
     </select>
+
+    <insert id="imgInsert" parameterType="Map">
+        INSERT INTO cs_img (cs_uuid, img_name, img_file) VALUES(#{cs_uuid}, #{img_name}, #{img_file})
+    </insert>
     
 </mapper>

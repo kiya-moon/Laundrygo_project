@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class CsDaoImpl implements CsDao {
@@ -21,5 +22,10 @@ public class CsDaoImpl implements CsDao {
     @Override
     public List<Cs> selectCs(String email) throws Exception {
         return session.selectList(namespace+"selectCs", email);
+    }
+
+    @Override
+    public int imgSave(Map<String, Object> listMap) throws Exception {
+        return session.insert(namespace+"imgInsert", listMap);
     }
 }
