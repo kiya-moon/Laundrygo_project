@@ -231,7 +231,9 @@ function mod_pwdChk(){
 }
 
 function resetMod() {
+    let card_type = $('#account_mod').val();
     $(".user_mod")[0].reset();
+
     mod_error[0].innerHTML = "";
     mod_error[1].innerHTML = "";
     mod_error[2].innerHTML = "";
@@ -243,6 +245,7 @@ function resetMod() {
     pwd_mod_check.setAttribute("hidden", true);
     phone_mod.setAttribute("readonly", true);
     addr_mod.setAttribute("readonly", true);
+    $('#account_mod').val(card_type).prop("selected", true);
 }
 
 function removeRD_phone() {
