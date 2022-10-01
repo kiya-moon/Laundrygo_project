@@ -1,5 +1,6 @@
 package com.project.dao;
 
+import com.project.dto.CSImg;
 import com.project.dto.Cs;
 
 import java.util.List;
@@ -11,4 +12,10 @@ public interface CsDao {
     List<Cs> selectCs(String email) throws Exception;
 
     int imgSave(Map<String, Object> listMap) throws Exception;
+
+    String selectImg(String img_name) throws Exception;
+
+    List<String> selectUuid(String email) throws Exception;
+
+    List<CSImg> selectCsImg(String idx) throws Exception;
 }

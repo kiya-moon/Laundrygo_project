@@ -101,7 +101,7 @@
 								<!--File upload 1-->
 								<label class="cs-contents-label p-t-40"
 									   style="font-size: 18px">이미지 등록 <span>&nbsp;&nbsp;&nbsp;</span></label>
-								<input id="cs_img" name="cs_img" type="file" onchange="readURL(this)" multiple="multiple"/>
+								<input id="cs_img" name="cs_img" type="file" multiple="multiple"/>
 								<small id="dropzoneHelp" class="form-text text-muted">Max file size is 2MB and max number of files is 2.</small>
 								<!--end: File upload 1-->
 
@@ -118,14 +118,21 @@
 						 aria-labelledby="myqna">
 						<!-- for문 돌려서 데이터 뿌려줘야 함... -->
 						<div class="accordion toggle fancy radius clean">
-                            <c:forEach var="css" items="${css}">
+                            <c:forEach var="css" items="${css}" varStatus="status">
                                 <div class="ac-item">
-                                    <h5 class="ac-title">
-                                        <i class="fa fa-question-circle"></i><b>${css.cs_title}</b>
-                                    </h5>
-                                    <div class="ac-content">
-                                        <p>${css.cs_content}</p>
-                                    </div>
+									<h5 class="ac-title">
+										<i class="fa fa-question-circle"></i><b>${css.cs_title}</b>
+									</h5>
+									<div class="ac-content">
+										<p>${css.cs_content}</p>
+										<div class="m-r-10">
+											<c:forEach var="csImg" items="${csImg}" varStatus="status">
+												<c:if test="${csImg.cs_uuid eq css.cs_uuid}">
+													<img src="/laundrygo/upload/${csImg.img_name}" width="100" height="100">
+												</c:if>
+											</c:forEach>
+										</div>
+									</div>
                                 </div>
 							</c:forEach>
 
