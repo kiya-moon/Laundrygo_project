@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.net.URLEncoder;
@@ -45,13 +47,14 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login(String login_email, String login_password, HttpServletRequest request, Model m) throws Exception{
+    public String login(String login_email, String login_password,
+                        HttpServletRequest request, RedirectAttributes rattr) throws Exception{
 //        userService.user_select(login_email, login_password);
         String uri = request.getHeader("REFERER");
         System.out.println("uri = " + uri);
 
         if(!loginCheck(login_email, login_password)) {
-            m.addAttribute("msg", "login_err");
+            rattr.addFlashAttribute("msg", "login_err");
 
             return "redirect:"+uri;
         }
@@ -86,8 +89,9 @@ public class UserController {
     }
 
     @RequestMapping(value="/findId", method = RequestMethod.POST)
-    public String findId(User user, Model model, HttpServletRequest req) throws Exception {
+    public String findId(User user, RedirectAttributes rattr, HttpServletRequest req) throws Exception {
         System.out.println("id찾기 controller");
+        String uri = req.getHeader("REFERER");
 
         String username = req.getParameter("find_email_name");
         String userphone = req.getParameter("find_email_tel");
@@ -95,20 +99,19 @@ public class UserController {
         String id = userService.findId(username, userphone);
         System.out.println("id = " + id);
 
-        req.setAttribute("id",id);
         if(id == null){
-            model.addAttribute("check", 1);
+            rattr.addFlashAttribute("check", 1);
         } else {
-            model.addAttribute("check", 0);
-            model.addAttribute("id", user.getEmail());
-            req.setAttribute("message","아이디는 "+ id +" 입니다.");
+            rattr.addFlashAttribute("check", 2);
+            rattr.addFlashAttribute("message","아이디는 "+ id +" 입니다.");
         }
-        return "index";
+        return "redirect:"+uri;
     }
 
     @RequestMapping(value="/findPw", method = RequestMethod.POST)
-    public String findPw(User user, Model model, HttpServletRequest req) throws Exception{
+    public String findPw(User user, RedirectAttributes rattr, HttpServletRequest req) throws Exception{
         System.out.println("pw찾기 controller");
+        String uri = req.getHeader("REFERER");
 
         String userEmail = req.getParameter("find_pw_email");
         String userName = req.getParameter("find_pw_name");
@@ -116,15 +119,13 @@ public class UserController {
 
         String pw = userService.findPw(userEmail, userName, userPhone);
         System.out.println("pw = " + pw);
-        req.setAttribute("pw",pw);
         if (pw == null){
-            model.addAttribute("check_pw", 1);
+            rattr.addFlashAttribute("check_pw", 1);
         }else{
-            model.addAttribute("check_pw", 0);
-            model.addAttribute("pw", user.getPassword());
-            req.setAttribute("message_pw","비밀번호는 "+ pw +" 입니다.");
+            rattr.addFlashAttribute("check_pw", 2);
+            rattr.addFlashAttribute("message_pw","비밀번호는 "+ pw +" 입니다.");
         }
-        return "index";
+        return "redirect:"+uri;
 
     }
 

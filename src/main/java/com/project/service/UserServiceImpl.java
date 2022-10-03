@@ -43,8 +43,7 @@ public class UserServiceImpl implements UserService {
     public String findPw(String email, String name, String phone) throws Exception {
         System.out.println("Pw찾기 service");
 
-        return userDao.findPw(email, name, phone);
-    }
+        return userDao.findPw(email, name, phone);    }
 
     @Override
     public int pwdChk(String email, String mod_password) throws Exception {

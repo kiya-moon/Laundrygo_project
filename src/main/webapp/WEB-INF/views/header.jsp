@@ -47,6 +47,28 @@
 		if( qna_login == "not" ) alert("1:1 문의는 로그인 후 이용해주세요.");
 	</script>
 
+	<script>
+		let check = "${check}";
+		let message = "${message}";
+
+		if( check == 1 ) {
+			alert('일치하는 정보가 없습니다.');
+		} else if( check == 2 ) {
+			alert(message);
+		}
+	</script>
+
+	<script>
+		let check_pw = "${check_pw}";
+		let message_pw = "${message_pw}";
+
+		if( check_pw == 1 ) {
+			alert('일치하는 정보가 없습니다.');
+		} else if( check_pw == 2 ) {
+			alert(message_pw);
+		}
+	</script>
+
 <%--	<script>--%>
 <%--		let mod_result = "${mod_result}";--%>
 <%--		if( mod_result == "mod_ok" ) alert('회원정보 수정에 성공하였습니다. 다시 로그인해 주세요.');--%>
@@ -67,33 +89,6 @@
 	</script>
 	<% } %>
 
-	<!-- 아이디 찾기 -->
-	<c:set var="message" value="${requestScope.message }" />
-	<c:if test="${check==1}">
-		<script>
-			alert("일치하는 정보가 없습니다.");
-		</script>
-	</c:if>
-	<c:if test="${check == 0}">
-		<script>
-			alert("${message}");
-		</script>
-	</c:if>
-	<!-- 아이디 찾기 끝-->
-
-	<!-- 비밀번호 찾기 -->
-	<c:set var="message_pw" value="${requestScope.message_pw }" />
-	<c:if test="${check_pw==1}">
-		<script>
-			alert("일치하는 정보가 없습니다.");
-		</script>
-	</c:if>
-	<c:if test="${check_pw == 0}">
-		<script>
-			alert("${message_pw}");
-		</script>
-	</c:if>
-	<!-- 비밀번호 찾기 끝-->
 
  <!-- Body Inner -->
     <div class="body-inner">
