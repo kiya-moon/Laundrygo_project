@@ -15,7 +15,7 @@
         SELECT * FROM monthly_list
     </select>
 
-    <select id="cardInfo" parameterType="String" resultType="Card">
+    <select id="cardInfo" parameterType="String" resultType="Credit">
         SELECT * FROM credit_info WHERE email = #{email}
     </select>
 

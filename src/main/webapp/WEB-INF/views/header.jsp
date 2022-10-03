@@ -44,7 +44,7 @@
 		if (msg_monthly == "monthly_arr") alert("월정액 구매 후 이용가능합니다.");
 
 		let qna_login = "${qna_login}";
-		if( qna_login == "not" ) alert("1:1 문의는 로그인 후 이용해주세요.")
+		if( qna_login == "not" ) alert("1:1 문의는 로그인 후 이용해주세요.");
 	</script>
 
 <%--	<script>--%>

@@ -18,7 +18,7 @@ public interface MonthlyService {
 
     int monthlyListDelete(String email) throws Exception;
 
-    Card cardInfo(String email) throws Exception;
+    Credit cardInfo(String email) throws Exception;
 
     int payment(MonthlyPayList monthlyPayList) throws Exception;
 

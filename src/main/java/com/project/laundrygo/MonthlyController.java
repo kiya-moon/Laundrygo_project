@@ -71,10 +71,10 @@ public class MonthlyController {
 		m.addAttribute(monthly);
 		System.out.println(monthly);
 
-		Card card = monthlyService.cardInfo(email);
+		Credit card = monthlyService.cardInfo(email);
 
 		if(card==null){
-			Card temp = new Card();
+			Credit temp = new Credit();
 			temp.setCard_num("카드를 등록해주세요");
 			temp.setCard_type("정보없음");
 			temp.setEmail("");

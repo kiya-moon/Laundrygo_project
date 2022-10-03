@@ -71,9 +71,9 @@ public class PickupController {
 		System.out.println("laundry = " + laundry);
 
 		// O, X 체크용 변수
-		String p_life;
-		String p_cleaning;
-		String p_free;
+		String p_life = "";
+		String p_cleaning = "";
+		String p_free = "";
 
 		// Extra 비용 변수
 		int extra_life = 0;
@@ -89,7 +89,7 @@ public class PickupController {
 		int new_cleaningCnt = 0;
 		int new_freeCnt = 0;
 
-		if (laundry.equals("living") ) {
+		if ( laundry != null && laundry.equals("living") ) {
 			extra_life = lifeCnt-1;
 
 			if(extra_life <= 0){
@@ -99,10 +99,13 @@ public class PickupController {
 				p_life = "O";
 			}
 			new_lifeCnt = extra_life;
-		}else {
-			p_life = "X";
+
+		} else if( laundry == null ) {
+			p_life = " ";
+			new_lifeCnt = lifeCnt;
 		}
-		if (laundry2.equals("each") ) {
+
+		if ( laundry2 != null && laundry2.equals("each") ) {
 			extra_cleaning = cleaningCnt-1;
 			if(extra_cleaning <= 0){
 				p_cleaning = "X";
@@ -112,9 +115,11 @@ public class PickupController {
 				p_cleaning = "O";
 			}
 			new_cleaningCnt = extra_cleaning;
-		} else {
-			p_cleaning = "X";
+		} else if( laundry2 == null ) {
+			p_cleaning = " ";
+			new_cleaningCnt = cleaningCnt;
 		}
+
 		if(extra_free<=0){
 			p_free = "X";
 //			new_freeCnt = 0;

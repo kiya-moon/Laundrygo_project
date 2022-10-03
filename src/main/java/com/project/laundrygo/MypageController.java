@@ -152,6 +152,8 @@ public class MypageController {
 			rattr.addFlashAttribute("mod_result", "mod_error");
 			return "redirect:/mypage";
 		}
+
+
 	}
 
 	@ResponseBody

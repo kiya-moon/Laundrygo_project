@@ -44,7 +44,7 @@ public class MonthlyServiceImpl implements MonthlyService {
     }
 
     @Override
-    public Card cardInfo(String email) throws Exception {
+    public Credit cardInfo(String email) throws Exception {
         return monthlyDao.cardInfo(email);
     }
 

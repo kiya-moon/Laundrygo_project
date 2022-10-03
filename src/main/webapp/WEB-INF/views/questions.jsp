@@ -128,7 +128,7 @@
 										<div class="m-r-10">
 											<c:forEach var="csImg" items="${csImg}" varStatus="status">
 												<c:if test="${csImg.cs_uuid eq css.cs_uuid}">
-													<img src="/laundrygo/upload/${csImg.img_name}" width="100" height="100">
+													<img src="/laundrygo/upload/${csImg.img_name}" width="300" height="300">
 												</c:if>
 											</c:forEach>
 										</div>

@@ -58,7 +58,7 @@ public class MonthlyDaoImpl implements MonthlyDao {
     }
 
     @Override
-    public Card cardInfo(String email) throws Exception {
+    public Credit cardInfo(String email) throws Exception {
         return session.selectOne(namespace+"cardInfo", email);
     }
 

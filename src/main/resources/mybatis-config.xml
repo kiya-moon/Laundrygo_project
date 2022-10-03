@@ -7,9 +7,9 @@
         <typeAlias alias="User" type="com.project.dto.User"/>
         <typeAlias alias="Monthly" type="com.project.dto.Monthly"/>
         <typeAlias alias="Credit" type="com.project.dto.Credit"/>
-        <typeAlias alias="Card" type="com.project.dto.Card"/>
         <typeAlias alias="MonthlyPayList" type="com.project.dto.MonthlyPayList"/>
         <typeAlias alias="Cs" type="com.project.dto.Cs"/>
+        <typeAlias alias="CSImg" type="com.project.dto.CSImg"/>
         <typeAlias alias="Pickup" type="com.project.dto.Pickup"/>
         <typeAlias alias="Point" type="com.project.dto.Point"/>
         <typeAlias alias="PayList" type="com.project.dto.PayList"/>

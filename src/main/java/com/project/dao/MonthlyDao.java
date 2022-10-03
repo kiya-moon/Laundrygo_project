@@ -4,7 +4,6 @@ import com.project.dto.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public interface MonthlyDao {
     User userInfo(String email) throws Exception;
@@ -19,7 +18,7 @@ public interface MonthlyDao {
 
     int monthlyListDelete(String email) throws Exception;
 
-    Card cardInfo(String email) throws Exception;
+    Credit cardInfo(String email) throws Exception;
 
     int payment(MonthlyPayList monthlyPayList) throws Exception;
 
