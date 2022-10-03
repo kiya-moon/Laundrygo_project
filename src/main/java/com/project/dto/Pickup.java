@@ -11,10 +11,7 @@ public class Pickup {
     private String p_free;
     private String going;
 
-    public Pickup() {
-    }
-
-    ;
+    public Pickup() {};
 
     public Pickup(int pickup_num, String email, String p_addr, String p_life, String p_cleaning, String p_free, String going) {
         this.pickup_num = pickup_num;

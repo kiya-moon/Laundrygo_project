@@ -61,7 +61,7 @@ public class PickupController {
 
 
 	@PostMapping("/pickup")
-	public String pickupdate(MonthlyPayList monthlyPayList, String laundry, String laundry2, String p_addr , HttpSession httpSession) throws Exception{
+	public String pickupdate(MonthlyPayList monthlyPayList, String laundry, String laundry2, String p_addr, int inputCnt, HttpSession httpSession) throws Exception{
 		// 세션 받아오기
 		String email = (String)httpSession.getAttribute("email");
 
@@ -85,6 +85,7 @@ public class PickupController {
 		int lifeCnt = monthlyPayList.getLife_cnt();
 		int cleaningCnt = monthlyPayList.getCleaning_cnt();
 
+		// Cnt 업데이트용 변수
 		int new_lifeCnt = 0;
 		int new_cleaningCnt = 0;
 		int new_freeCnt = 0;
@@ -92,9 +93,9 @@ public class PickupController {
 		if ( laundry != null && laundry.equals("living") ) {
 			extra_life = lifeCnt-1;
 
-			if(extra_life <= 0){
+			if(extra_life < 0){
 				p_life = "X";
-//				new_lifeCnt=0;
+//            new_lifeCnt=0;
 			}else{
 				p_life = "O";
 			}
@@ -106,10 +107,10 @@ public class PickupController {
 		}
 
 		if ( laundry2 != null && laundry2.equals("each") ) {
-			extra_cleaning = cleaningCnt-1;
-			if(extra_cleaning <= 0){
+			extra_cleaning = cleaningCnt-inputCnt;
+			if(extra_cleaning < 0){
 				p_cleaning = "X";
-//				new_cleaningCnt = 0;
+//            new_cleaningCnt = 0;
 
 			}else{
 				p_cleaning = "O";
@@ -120,9 +121,9 @@ public class PickupController {
 			new_cleaningCnt = cleaningCnt;
 		}
 
-		if(extra_free<=0){
+		if(extra_free<0){
 			p_free = "X";
-//			new_freeCnt = 0;
+//         new_freeCnt = 0;
 
 		} else {
 			p_free = "O";
