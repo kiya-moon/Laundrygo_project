@@ -1,3 +1,14 @@
+let new_pw = ""
+let user_phone = ""
+let user_addr = ""
+let credit_num = ""
+
+$(document).ready(function() {
+    new_pw = $("#pwd_mod").val();
+    user_phone = $("#phone_mod").val();
+    user_addr = $("#addr_mod").val();
+    credit_num = $("#account_num_mod").val();
+});
 
 const autoHyphen2 = (target) => {
     target.value = target.value
@@ -147,10 +158,10 @@ function modAddAccount() {
 
 function validateModify() {
 
-    if( pwd_mod.getAttribute('hidden') != null &&
-        phone_mod.getAttribute('readonly') != null &&
-        addr_mod.getAttribute('readonly') != null &&
-        account_num_mod.value == '') {
+    if( new_pw == "" &&
+        user_phone == phone_mod.value &&
+        user_addr == addr_mod.value &&
+        (account_num_mod.value == '' || credit_num == account_num_mod.value)) {
 
         alert('수정할 내용이 없습니다.');
         return false;
