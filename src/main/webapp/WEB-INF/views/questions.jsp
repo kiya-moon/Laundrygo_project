@@ -17,8 +17,7 @@
 		  type="text/css" rel="stylesheet">
 	<link href="${pageContext.request.contextPath }/css/custom_ky.css"
 		  type="text/css" rel="stylesheet">
-	<!-- Dropzone plugin files-->
-	<link href="${pageContext.request.contextPath }/css/dropzone.css" rel="stylesheet">
+	
 </head>
 <body>
 	<script>
@@ -152,8 +151,6 @@
 	<script src="js/plugins.js"></script>
 	<!—Template functions—>
 	<script src="js/functions.js"></script>
-	<!— Dropzone plugin files—>
-	<script src="js/dropzone.js"></script>
 	<script src="js/cs.js"></script>
 	<script>
 		// 이미지 업로드
