@@ -15,7 +15,7 @@ public interface UserService {
 
     User selectUser(String login_email) throws Exception;
 
-    String findId(String name, String phone) throws Exception;
+    List<User> findId(String name, String phone) throws Exception;
 
     String findPw(String email, String name, String phone) throws Exception;
 

@@ -37,13 +37,13 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public String findId(String name, String phone) throws Exception {
+    public List<User> findId(String name, String phone) throws Exception {
         System.out.println("id찾기Dao");
         Map map = new HashMap();
         map.put("name", name);
         map.put("phone",phone);
 
-        return session.selectOne(namespace + "findId", map);
+        return session.selectList(namespace + "findId", map);
     }
 
     public String findPw(String email, String name, String phone) throws Exception {
