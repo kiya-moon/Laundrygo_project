@@ -1,13 +1,55 @@
-## :pushpin: LaundryGo
->### 오늘 맡기고 내일 밤 받는 웹페이지 세탁소 :smile:
->(세탁 어플 웹서비스)
-</br>
+# 👕Laundrygo Project
+> ### '우리집 모바일 세탁소, 런드리고'의 웹사이트 버전
+> SpringMVC, MyBatis를 기반으로 제작한 세탁 서비스 웹사이트<br>
+> 어플 사용이 어려울 때, 웹사이트로도 이용가능 하도록 하여 사용자의 불편함을 해소하는 프로젝트
 
-## 1. 제작 기간 & 참여 인원
-- (2022. 8. 7.~2022. 8. 21.) : 프론트엔드 작업
-- (2022. 9. 18.~2022. 10. 4.) : 백엔드 작업
-- 팀 프로젝트(총 4명)
-</br>
+<br><br>
+
+# 👕제작기간 및 참여인원
+### FrontEnd
+> 2022-08-07 ~ 2022-08-21
+### BackEnd
+> 2022-09-18 ~ 2022-10-04
+### 참여인원
+> 팀 프로젝트 (총 4명)
+
+<br><br>
+
+# 👕사용기술
+### FrontEnd
+<img src="https://img.shields.io/badge/HTML5-black?style=for-the-badge&logo=HTML5&logoColor=white">&nbsp;<img 
+src="https://img.shields.io/badge/CSS3-black?style=for-the-badge&logo=CSS#&logoColor=white">&nbsp;<img 
+src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=JavaScript&logoColor=white">&nbsp;<img 
+src="https://img.shields.io/badge/JQuery-black?style=for-the-badge&logo=JQuery&logoColor=white">&nbsp;<img 
+src="https://img.shields.io/badge/Ajax-black?style=for-the-badge&logo=Ajax&logoColor=white">
+<br>
+
+### BackEnd
+<img src="https://img.shields.io/badge/Java11-black?style=for-the-badge&logo=Java11&logoColor=white">&nbsp;<img 
+src="https://img.shields.io/badge/Spring MVC-black?style=for-the-badge&logo=Spring&logoColor=white">&nbsp;<img 
+src="https://img.shields.io/badge/ApacheTomcat 9.0-black?style=for-the-badge&logo=Apache Tomcat&logoColor=white">&nbsp;<img 
+src="https://img.shields.io/badge/JSTL-black?style=for-the-badge&logo=JSTL&logoColor=white">&nbsp;<img 
+src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis&logoColor=white">
+
+<br><br>
+
+# 👕개발환경
+### Tools
+<img src="https://img.shields.io/badge/IntelliJ IDEA-black?style=for-the-badge&logo=IntelliJ IDEA&logoColor=white">&nbsp;
+<img src="https://img.shields.io/badge/MySQL-black?style=for-the-badge&logo=MySQL#&logoColor=white">
+<br>
+
+### DBMS
+<img src="https://img.shields.io/badge/MySQL-black?style=for-the-badge&logo=MySQL#&logoColor=white">&nbsp;
+<br>
+
+### Languages
+<img src="https://img.shields.io/badge/Java11-black?style=for-the-badge&logo=Java11&logoColor=white">&nbsp;<img 
+src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=JavaScript&logoColor=white">
+<br>
+
+### 협업 툴
+<img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=GitHub&logoColor=white">
 
 ## 7. 트러블 슈팅
 
