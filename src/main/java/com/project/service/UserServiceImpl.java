@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String findId(String name, String phone) throws Exception {
+    public List<User> findId(String name, String phone) throws Exception {
         System.out.println("Id찾기 service");
 
         return userDao.findId(name, phone);

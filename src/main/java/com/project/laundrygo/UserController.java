@@ -16,6 +16,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.net.URLEncoder;
+import java.util.List;
 
 @Controller
 //@RequestMapping("/laundrygo")
@@ -96,14 +97,21 @@ public class UserController {
         String username = req.getParameter("find_email_name");
         String userphone = req.getParameter("find_email_tel");
 
-        String id = userService.findId(username, userphone);
+        List<User> id = userService.findId(username, userphone);
         System.out.println("id = " + id);
+        StringBuilder idList = new StringBuilder();
 
         if(id == null){
             rattr.addFlashAttribute("check", 1);
         } else {
+            for( int i = 0; i < id.size(); i++ ) {
+                idList.append(id.get(i).getEmail());
+                idList.append(", ");
+            }
+            int lastEmail = idList.lastIndexOf(",");
+            idList = new StringBuilder(idList.substring(0, lastEmail));
             rattr.addFlashAttribute("check", 2);
-            rattr.addFlashAttribute("message","아이디는 "+ id +" 입니다.");
+            rattr.addFlashAttribute("message","아이디는 "+ idList +" 입니다.");
         }
         return "redirect:"+uri;
     }

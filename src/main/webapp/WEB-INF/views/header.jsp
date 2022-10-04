@@ -353,7 +353,7 @@
 							</div>
 							<div class="form-group mb-3">
 								<span>
-									<input type="tel" name="find_email_tel" id="find_email_tel"
+									<input type="tel" name="find_email_tel" id="find_email_tel" oninput="autoHyphen(this)"
 										class="form-control" placeholder="전화번호(ex 010-0000-0000)">
 								</span>
 								<span class="error_next_box"></span>
@@ -399,7 +399,7 @@
 							</div>
 							<div class="form-group mb-3">
 								<span>
-									<input type="tel" name="find_pw_tel" id="find_pw_tel"
+									<input type="tel" name="find_pw_tel" id="find_pw_tel" oninput="autoHyphen(this)"
 										class="form-control" placeholder="전화번호(ex 010-0000-0000)">
 								</span>
 								<span class="error_next_box"></span>
