@@ -1,7 +1,22 @@
+# ✨목차
+1. [소개](#laundrygo-project)
+2. [제작기간 및 참여인원](#제작기간-및-참여인원)
+3. [사용기술](#사용기술)
+4. [개발환경](#개발환경)
+5. [설계](#설계)
+6. [화면구성 및 기능](#화면구성-및-기능)
+7. [트러블 슈팅](#트러블-슈팅)
+
+<br><br>
+
 # 👕Laundrygo Project
-> ### '우리집 모바일 세탁소, 런드리고'의 웹사이트 버전
-> SpringMVC, MyBatis를 기반으로 제작한 세탁 서비스 웹사이트<br>
-> 어플 사용이 어려울 때, 웹사이트로도 이용가능 하도록 하여 사용자의 불편함을 해소하는 프로젝트
+### '우리집 모바일 세탁소, 런드리고'의 웹사이트 버전
+Spring MVC, MyBatis를 기반으로 제작한 세탁 서비스 웹사이트<br>
+어플 사용이 어려울 때, 웹사이트로도 이용가능 하도록 하여 사용자의 불편함을 해소하는 프로젝트<br>
+
+<br>
+
+[목차🔺](#목차)
 
 <br><br>
 
@@ -11,7 +26,11 @@
 ### BackEnd
 2022-09-18 ~ 2022-10-04
 ### 참여인원
-팀 프로젝트 (총 4명)
+팀 프로젝트 (총 4명)<br>
+
+<br>
+
+[목차🔺](#목차)
 
 <br><br>
 
@@ -29,7 +48,11 @@ src="https://img.shields.io/badge/Ajax-black?style=for-the-badge&logo=Ajax&logoC
 src="https://img.shields.io/badge/Spring MVC-black?style=for-the-badge&logo=Spring&logoColor=white">&nbsp;<img 
 src="https://img.shields.io/badge/ApacheTomcat 9.0-black?style=for-the-badge&logo=Apache Tomcat&logoColor=white">&nbsp;<img 
 src="https://img.shields.io/badge/JSTL-black?style=for-the-badge&logo=JSTL&logoColor=white">&nbsp;<img 
-src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis&logoColor=white">
+src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis&logoColor=white"><br>
+
+<br>
+
+[목차🔺](#목차)
 
 <br><br>
 
@@ -49,15 +72,40 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 <br>
 
 ### Team Collaboration Tool
-<img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=GitHub&logoColor=white">
+<img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=GitHub&logoColor=white"><br>
+
+<br>
+
+[목차🔺](#목차)
 
 <br><br>
 
 # 👕설계
 ### 흐름도
-<img src = "
+<br>
+<img width="80%" src="https://user-images.githubusercontent.com/101784768/193979952-54059312-d5e4-4e25-8ec7-e233de2fc9d3.png"/>
 
-## 7. 트러블 슈팅
+<br>
+
+### ERD
+<br>
+<img width="80%" height="700px" src="https://user-images.githubusercontent.com/101784768/193981651-56a1a411-4e99-457f-a6bc-23ef7afc3632.png"><br>
+
+<br>
+
+[목차🔺](#목차)
+
+<br><br>
+
+# 👕화면구성 및 기능
+
+<br>
+
+[목차🔺](#목차)
+
+<br><br>
+
+# 👕트러블 슈팅
 
 ### 1:1 문의 이미지 등록 시 이미지 저장 및 받아오는 기능
 ![image](https://user-images.githubusercontent.com/101616249/193774595-11da1b69-d7bd-4c22-be8a-80b56fbaac45.png)
@@ -108,3 +156,7 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 - 월정액을 해지하였을 때, 해당 월정액을 DB에서 삭제하고, 추가금액 만큼을 결제내역에 insert 하였다.
 
 ---
+
+<br>
+
+[목차🔺](#목차)
