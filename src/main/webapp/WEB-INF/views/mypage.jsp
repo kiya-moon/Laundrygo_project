@@ -345,8 +345,8 @@
 							<div class="team-member text-dark row p-10 m-0">
 								<div class="text-left col-lg-12 p-t-10 d-inline">
 									<h3 class="d-inline">${monthlyPayList.m_name eq null? temp.m_name : monthlyPayList.m_name}</h3>
-									<h5 id="period" style="display:inline">${monthlyPayList.keep == 1 ? "(결제 예정일 : " : "(해지 예정일 : "} ${monthlyPayList.end_date})</h5>
-									<button type="button" id="keep" name="keep" class="btn btn-red float-lg-right" value="${monthlyPayList.keep}" onclick="chkCancel();">${monthlyPayList.keep == 1 ? "해지하기" : "해지취소"}</button>
+									<h5 id="period" style="display:inline">${monthlyPayList.m_name != null? " " : monthlyPayList.keep == 1 ? "결제 예정일 : " : "해지 예정일 : "} ${monthlyPayList.end_date}</h5>
+									<button type="button"  id="keep" name="keep" class="btn btn-red float-lg-right" value="${monthlyPayList.keep}" onclick="chkCancel();">${monthlyPayList.keep == 1 ? "해지하기" : "해지취소"}</button>
 								</div>
 								<div class="col-lg-12 border-bottom"></div>
 								<div class=" col-lg-4 text-center p-t-30 p-l-60">
@@ -423,8 +423,16 @@
 
 	$(document).ready(function() {
 		let card_type = '${credit.card_type}';
-
 		$('#account_mod').val(card_type).prop("selected", true);
+
+		var text = $('#period').text();
+
+		console.log(text);
+
+		if(text == '  '){
+			$('#keep').hide();
+		}
+
 	});
 
 	function deleteUser() {

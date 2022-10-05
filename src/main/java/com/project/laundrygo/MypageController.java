@@ -29,31 +29,48 @@ public class MypageController {
 	@Autowired
 	UserDao userDao;
 
+	// 마이페이지
 	@GetMapping("/mypage")
-	public String mypage(Model model, HttpSession session) throws Exception {
+	public String mypage(Model model, HttpSession session, RedirectAttributes rattr) throws Exception {
+		// 세션에서 이메일 받아오기
 		String email = (String)session.getAttribute("email");
-		System.out.println(email);
 
-		List<Pickup> pickup = pickupService.pickupList(email);
-		List<Point> point = userService.usePointList(email);
-		List<PayList> paylist = userService.userPayList(email);
+		if( email == null ) {
+			rattr.addFlashAttribute("mypage_msg", "mypage_err");
 
-		if( paylist != null){
-			model.addAttribute("paylist", paylist);
+			return "redirect:/";
 		}
 
-		System.out.println("point = " + point);
+		// 이용내역 받아오기
+		List<Pickup> pickup = pickupService.pickupList(email);
+		if(pickup != null){
+			model.addAttribute("pickup",pickup);
+		}
 
-		model.addAttribute("pickup",pickup);
-
+		// 포인트 정보 받아오기
+		List<Point> point = userService.usePointList(email);
 		if( point != null ) {
 			model.addAttribute("point", point);
 			model.addAttribute("point_length", point.size());
 		}
 
+		// 결제내역 받아오기
+		List<PayList> paylist = userService.userPayList(email);
+		if( paylist != null){
+			model.addAttribute("paylist", paylist);
+		}
+
+		// 유저 정보 받아오기
 		User user = userService.selectUser(email);
-		Credit credit = userService.selectCredit(email);
 		model.addAttribute(user);
+
+		// 카드 정보 받아오기
+		Credit credit = userService.selectCredit(email);
+		if( credit != null ) {
+			model.addAttribute(credit);
+		}
+
+		// 구입한 월정액 정보 받아오기
 		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
 
 		if( monthlyPayList != null){
@@ -76,104 +93,61 @@ public class MypageController {
 			model.addAttribute(temp);
 		}
 
-		if( credit != null ) {
-			model.addAttribute(credit);
-		}
-
-
 		return "mypage";
 	}
 
+	// 회원정보 수정
 	@PostMapping("/mypage")
 	public String modify(String pwd_mod, String phone_mod, String addr_mod, String account_mod,
 						 String account_num_mod, Model model, HttpSession session, RedirectAttributes rattr) throws Exception {
-
-//		User user = (User)session.getAttribute("user");
+		// 세션에서 이메일 받아오기
 		String email = (String)session.getAttribute("email");
-		String new_pwd = null;
-		String new_phone = null;
-		String new_addr = null;
-		String new_account = null;
-		String new_account_num = null;
 
+		// 기존 정보 받아오기
 		User user = userService.selectUser(email);
 		Credit credit = userService.selectCredit(email);
 		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
 
-		if( pwd_mod == "" ) {
-			new_pwd = user.getPassword();
-		} else {
-			new_pwd = pwd_mod;
-		}
+		// 회원정보 수정
+		int mod_cnt = userService.userModify(pwd_mod, phone_mod, addr_mod, email, user);
 
-		if( phone_mod == "" ) {
-			new_phone = user.getPhone();
-		} else {
-			new_phone = phone_mod;
-		}
+		// 카드정보 수정
+		int account_cnt = userService.cardModify(account_mod, account_num_mod, email, credit, monthlyPayList);
 
-		if( addr_mod == "" ) {
-			new_addr = user.getAddr();
-		} else {
-			new_addr = addr_mod;
-		}
-
-		int mod_cnt = userService.modify(email, new_pwd, new_phone, new_addr);
-		int account_cnt = 0;
-		System.out.println("mod_cnt = " + mod_cnt);
-
-		if( account_mod != "" & account_num_mod != "" ) {
-			new_account = account_mod;
-			new_account_num = account_num_mod;
-
-			if( credit == null ) {
-				account_cnt = userService.card_insert(new_account_num, new_account, email);
-			} else if( credit != null ) {
-				account_cnt = userService.card_modify(new_account_num, new_account, email);
-			}
-
-			if( monthlyPayList != null ) {
-				monthlyService.monthlyListUpdate(email, new_account, new_account_num);
-			}
-
-		}
-		System.out.println("account_cnt = " + account_cnt);
-
+		// 수정 정보 유무 확인 후 처리
 		if( mod_cnt == 1 || account_cnt == 1 ) {
 			rattr.addFlashAttribute("mod_result", "mod_ok");
-//			session.invalidate();
 			user = userService.selectUser(email);
 			credit = userService.selectCredit(email);
 			model.addAttribute(user);
 			model.addAttribute(credit);
-
 			return "redirect:/mypage";
 		} else {
 			rattr.addFlashAttribute("mod_result", "mod_error");
 			return "redirect:/mypage";
 		}
-
-
 	}
 
+	// 비밀번호 확인
 	@ResponseBody
 	@RequestMapping(value="/mypage/pwdChk", method = RequestMethod.POST)
 	public int mod_pwdChk(@RequestParam("mod_password") String mod_password, HttpSession session) throws Exception {
-//		User user = (User)session.getAttribute("user");
+		// 세션에서 이메일 받아오기
 		String email = (String)session.getAttribute("email");
 
-		System.out.println("현재 비밀번호 확인 가자");
+		// 비밀번호 확인
 		int cnt = userService.pwdChk(email, mod_password);
-		System.out.println("cnt = " + cnt);
 
 		return cnt;
 	}
 
+	// 탈퇴
 	@PostMapping("/delete")
 	public String delete(HttpSession session, Model model, RedirectAttributes rattr) throws Exception {
+		// 세션에서 이메일 받아오기
 		String email = (String)session.getAttribute("email");
-		System.out.println("왔나??");
 
+		// 예외처리
 		try {
 			int cnt = userService.delete(email);
 			System.out.println("cnt = " + cnt);
@@ -189,16 +163,13 @@ public class MypageController {
 		return "redirect:/";
 	}
 
+	// 해지/해지취소
 	@GetMapping("cancel{keep}")
 	public String cancel(@PathVariable("keep") int keep, HttpSession session) throws Exception {
-		System.out.println("ㅋㅓㄴ트로러 도착");
+		// 세션에서 이메일 받아오기
 		String email = (String)session.getAttribute("email");
-		if(keep == 1){
-			keep = 0;
-		}else {
-			keep = 1;
-		}
-		System.out.println(keep);
+
+		// 해지/해지취소 업데이트
 		userService.cancel(email, keep);
 
 		return "redirect:/mypage";

@@ -11,7 +11,7 @@ public interface CsDao {
 
     List<Cs> selectCs(String email) throws Exception;
 
-    int imgSave(Map<String, Object> listMap) throws Exception;
+    void imgSave(Map<String, Object> listMap) throws Exception;
 
     String selectImg(String img_name) throws Exception;
 

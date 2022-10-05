@@ -37,14 +37,14 @@ public class CsDaoImpl implements CsDao {
     }
 
     @Override
-    public int imgSave(Map<String, Object> listMap) throws Exception {
-        return session.insert(namespace+"imgInsert", listMap);
+    public void imgSave(Map<String, Object> listMap) throws Exception {
+        session.insert(namespace+"imgInsert", listMap);
     }
 
     @Override
-    public String selectImg(String cs_uuid) throws Exception {
-        System.out.println("다오임플 도착" + cs_uuid);
-        String path = session.selectOne(namespace+"selectImg", cs_uuid);
+    public String selectImg(String img_name) throws Exception {
+        System.out.println("다오임플 도착" + img_name);
+        String path = session.selectOne(namespace+"selectImg", img_name);
         System.out.println("다오임플 path : " + path);
         return path;
     }

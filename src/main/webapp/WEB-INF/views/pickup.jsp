@@ -124,7 +124,7 @@
                                     등의</h5></span> <span><h5 class="text-bold m-l-40">개별로 과금되는
                                     세탁물입니다.</h5></span>
 									<span><h5 class="text-bold m-l-40 m-b-10">클리닝 보내시는
-                                    옷 가짓수를 입력해주세요.</h5></span><span class="m-l-40"><input type="number" name="inputCnt" id="inputCnt"></span>
+                                    옷 가짓수를 입력해주세요.</h5></span><span class="m-l-40"><input type="number" name="inputCnt" id="inputCnt" value="0"></span>
 								</div>
 							</div>
 						</div>

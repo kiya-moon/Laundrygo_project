@@ -8,6 +8,9 @@ $(document).ready(function() {
     user_phone = $("#phone_mod").val();
     user_addr = $("#addr_mod").val();
     credit_num = $("#account_num_mod").val();
+
+
+
 });
 
 const autoHyphen2 = (target) => {

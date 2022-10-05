@@ -31,20 +31,26 @@ public class PickupController {
 	@Autowired
 	UserDao userDao;
 
+	// 수거 신청 페이지
 	@GetMapping("/pickup")
 	public String pickup(HttpServletRequest request, HttpSession httpSession, Model m) throws Exception{
+		// 로그인 체크
 		if(!emailCheck(request)) {
 			m.addAttribute("login_pickup_msg", "login_pickup");
 
 			return "index";
 		}
+
+		// 세션에서 이메일 받아오기
 		String email = (String)httpSession.getAttribute("email");
 
+		// 유저 정보 받아오기
 		User user = monthlyService.userInfo(email);
-		Credit credit = userService.selectCredit(email);
 		m.addAttribute(user);
-		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
 
+		// 가입한 월정액 정보 받아오기
+		MonthlyPayList monthlyPayList = pickupService.monthlyList(email);
+		// 월정액 상품 가입여부 확인
 		if( monthlyPayList != null){
 			m.addAttribute(monthlyPayList);
 		} else{
@@ -52,6 +58,8 @@ public class PickupController {
 			return "monthly";
 		}
 
+		// 카드 정보 받아오기
+		Credit credit = userService.selectCredit(email);
 		if( credit != null ) {
 			m.addAttribute(credit);
 		}
@@ -59,99 +67,14 @@ public class PickupController {
 		return "pickup";
 	}
 
-
+	// 수거신청 등록
 	@PostMapping("/pickup")
 	public String pickupdate(MonthlyPayList monthlyPayList, String laundry, String laundry2, String p_addr, int inputCnt, HttpSession httpSession) throws Exception{
 		// 세션 받아오기
 		String email = (String)httpSession.getAttribute("email");
 
-		// 월정액 이름 넘기기
-		String m_name = monthlyPayList.getM_name();
-		System.out.println("m_name = " + m_name);
-		System.out.println("laundry = " + laundry);
-
-		// O, X 체크용 변수
-		String p_life = "";
-		String p_cleaning = "";
-		String p_free = "";
-
-		// Extra 비용 변수
-		int extra_life = 0;
-		int extra_cleaning = 0;
-		int extra_free = monthlyPayList.getFree_cnt()-1;
-		int exTotal = 0;
-
-		// MonthlytPayList cnt 차감 및 O, X 넘기는 로직
-		int lifeCnt = monthlyPayList.getLife_cnt();
-		int cleaningCnt = monthlyPayList.getCleaning_cnt();
-
-		// Cnt 업데이트용 변수
-		int new_lifeCnt = 0;
-		int new_cleaningCnt = 0;
-		int new_freeCnt = 0;
-
-		if ( laundry != null && laundry.equals("living") ) {
-			extra_life = lifeCnt-1;
-
-			if(extra_life < 0){
-				p_life = "X";
-//            new_lifeCnt=0;
-			}else{
-				p_life = "O";
-			}
-			new_lifeCnt = extra_life;
-
-		} else if( laundry == null ) {
-			p_life = " ";
-			new_lifeCnt = lifeCnt;
-		}
-
-		if ( laundry2 != null && laundry2.equals("each") ) {
-			extra_cleaning = cleaningCnt-inputCnt;
-			if(extra_cleaning < 0){
-				p_cleaning = "X";
-//            new_cleaningCnt = 0;
-
-			}else{
-				p_cleaning = "O";
-			}
-			new_cleaningCnt = extra_cleaning;
-		} else if( laundry2 == null ) {
-			p_cleaning = " ";
-			new_cleaningCnt = cleaningCnt;
-		}
-
-		if(extra_free<0){
-			p_free = "X";
-//         new_freeCnt = 0;
-
-		} else {
-			p_free = "O";
-		}
-		new_freeCnt = extra_free;
-
-		// 그리고 엑스트라 비용들은 if문을 거쳐 0이상이면 0으로 고정
-		if(extra_cleaning>=0){
-			extra_cleaning = 0;
-		}
-		if(extra_life>=0){
-			extra_life = 0;
-		}
-		if(extra_free>=0){
-			extra_free = 0;
-		}
-
-		exTotal = Math.abs((extra_cleaning*5000) + (extra_life*9900) + (extra_free*3500));
-		// exTotal은 monthlyPayList로 보내야 함
-
-		System.out.println(new_cleaningCnt);
-		System.out.println(new_freeCnt);
-		System.out.println(new_lifeCnt);
-
-		// 픽업 내역 저장
-		pickupService.pickupInsert(p_addr, m_name, email, p_life, p_cleaning, p_free);
-
-		pickupService.cntUpdate(new_lifeCnt,new_cleaningCnt,new_freeCnt, email, exTotal);
+		// 수거신청 정보 저장
+		pickupService.pickupUpdate(monthlyPayList, laundry, laundry2, p_addr, inputCnt, email);
 
 		return "index";
 	}
