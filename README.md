@@ -147,7 +147,7 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 		}
 ```
 ```java
-  @GetMapping("/qna")
+  	@GetMapping("/qna")
 	public String qna( Model model, HttpSession session, RedirectAttributes rattr ) throws Exception {
 		String email = (String)session.getAttribute("email");
 
