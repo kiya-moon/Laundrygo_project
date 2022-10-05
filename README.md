@@ -126,7 +126,7 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 
 ![4login](https://user-images.githubusercontent.com/97427387/194041357-fbd79650-ef1b-4e3b-b2b0-7b87f5dc9e68.gif)
 
-- 로그인 완료시 Topber [로그인/회원가입] → [로그아웃/마이페이지] 변경
+- 로그인 완료시 Topbar [로그인/회원가입] → [로그아웃/마이페이지] 변경
 <br>
 
 ---
@@ -182,7 +182,7 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 - 문의 유형 선택X → 문의하기X
 - MultipartResolver를 이용하여 파일 크기를 설정
 - 문의하기 완료 → 나의 문의내역에서 내가 신청한 문의 내용들만 모아 볼수있음
-- 문의 내용 첫줄의 10칸까지가 제목으로 나옴
+- 문의 내용 첫줄의 문자 10개까지 제목으로 나옴
 <br>
 
 ---
