@@ -101,7 +101,7 @@ public class UserController {
         System.out.println("id = " + id);
         StringBuilder idList = new StringBuilder();
 
-        if(id == null){
+        if(id.size() == 0){
             rattr.addFlashAttribute("check", 1);
         } else {
             for( int i = 0; i < id.size(); i++ ) {
