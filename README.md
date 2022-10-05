@@ -7,11 +7,11 @@
 
 # 👕제작기간 및 참여인원
 ### FrontEnd
-> 2022-08-07 ~ 2022-08-21
+2022-08-07 ~ 2022-08-21
 ### BackEnd
-> 2022-09-18 ~ 2022-10-04
+2022-09-18 ~ 2022-10-04
 ### 참여인원
-> 팀 프로젝트 (총 4명)
+팀 프로젝트 (총 4명)
 
 <br><br>
 
@@ -48,8 +48,14 @@ src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis
 src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=JavaScript&logoColor=white">
 <br>
 
-### 협업 툴
+### Team Collaboration Tool
 <img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=GitHub&logoColor=white">
+
+<br><br>
+
+# 👕설계
+### 흐름도
+<img src = "
 
 ## 7. 트러블 슈팅
 
