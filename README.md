@@ -295,7 +295,7 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 <br>
 
 ```java
-    int life_cnt = 0;
+    		int life_cnt = 0;
 		int cleaning_cnt = 0;
 		int free_cnt = 0;
 		int m_price = 0;
