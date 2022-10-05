@@ -191,6 +191,7 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 
 <details>
 <summary>포인트</summary>
+<br>
 	
 ![10포인트](https://user-images.githubusercontent.com/97427387/194048259-c7577789-52c3-4293-bf87-c19ea099e296.jpg)
 
@@ -203,6 +204,7 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 
 <details>
 <summary>결제내역</summary>
+<br>
 	
 ![11결제내역](https://user-images.githubusercontent.com/97427387/194048682-b5770123-48a6-4370-8d34-b030d74f8fc4.jpg)
 
@@ -215,6 +217,7 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 
 <details>
 <summary>내정보</summary>
+<br>	
 	
 ![12내정보](https://user-images.githubusercontent.com/97427387/194048826-4eadcfc0-5eed-4856-99b5-2698ffd7de01.gif)
 
@@ -231,6 +234,7 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 
 <details>
 <summary>이용중</summary>
+<br>
 	
 ![13이용중](https://user-images.githubusercontent.com/97427387/194049777-b7388653-c2ea-46b3-a245-25f179ae6a12.gif)
 
