@@ -164,7 +164,7 @@ function validateModify() {
     if( new_pw == "" &&
         user_phone == phone_mod.value &&
         user_addr == addr_mod.value &&
-        (account_num_mod.value == '' || credit_num == account_num_mod.value)) {
+        (account_num_mod.value == '' && credit_num == account_num_mod.value)) {
 
         alert('수정할 내용이 없습니다.');
         return false;

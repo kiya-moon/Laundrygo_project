@@ -173,54 +173,6 @@ function signCheckAddr() {
     }
 }
 
-// function signCheckAccount() {
-//     /* 카드 종류 확인 체크 */
-//     if(sign_account.value === "") {
-//         error[8].innerHTML = "카드 종류를 선택해 주세요.";
-//         error[8].style.color = "red";
-//         error[8].style.display = "block";
-//     } else if(sign_account.value === "그 외") {
-//         error[8].innerHTML = "카드 번호 앞에 카드 종류를 기재해 주세요.";
-//         error[8].style.color = "orange";
-//         error[8].style.display = "block";
-//     } else if((!sign_account.value == "" || sign_account.value == "그 외") && !sign_account_num.value == '') {
-//         error[8].innerHTML = "카드번호를 반드시 확인해 주세요."
-//         error[8].style.color = "#08A600";
-//         error[8].style.display = "block";
-//     } else {
-//         error[8].innerHTML = "카드가 선택되었습니다."
-//         error[8].style.color = "#08A600";
-//         error[8].style.display = "block";
-//     }
-// }
-
-// function signCheckAccountNum() {
-//     /* 카드번호 확인 체크 */
-//     var accountPattern = /^(\d{4})-(\d{4})-(\d{4})-(\d{4})$/;
-//     if(sign_account.value === "") {
-//         error[8].innerHTML = "카드 종류를 선택해 주세요.";
-//         error[8].style.color = "red";
-//         error[8].style.display = "block";
-//     } else if(sign_account_num.value === "") {
-//         error[8].innerHTML = "카드번호를 입력해 주세요.";
-//         error[8].style.color = "red";
-//         error[8].style.display = "block";
-//     } else {
-//         error[8].innerHTML = "카드번호를 반드시 확인해 주세요."
-//         error[8].style.color = "#08A600";
-//         error[8].style.display = "block";
-//     }
-// }
-
-
-/* 모달창 닫을때 입력값 초기화 실패,, */
-//     	$('#login').on('hidden.bs.modal', function(e) {
-// 			document.forms['login'].reset();
-// 		})
-
-// 		$('#user').on('hidden.bs.modal', function(e) {
-// 			document.forms['signUp'].reset();
-// 		})
 function resetDupli(){
     chk_dupli=0;
 }
@@ -309,7 +261,7 @@ function dupliChk(){
         url: "./dupliChk",
         data: { "email": email },
         success: function(data) {
-            if (data == 1) {
+            if (data == 1 || sign_email.value == '') {
                 error[2].innerHTML = "중복된 이메일입니다.";
                 error[2].style.color = "red";
                 error[2].style.display = "block";
