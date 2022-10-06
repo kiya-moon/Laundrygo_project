@@ -40,6 +40,9 @@
 		let msg_pickup = "${login_pickup_msg}";
 		if (msg_pickup == "login_pickup") alert("로그인 후 이용해주세요.");
 
+		let msg_mypage = "${mypage_msg}";
+		if (msg_mypage == "mypage_err") alert("세션이 만료되었습니다.\n다시 로그인 해주세요.");
+
 		let msg_monthly = "${monthly_arr_msg}";
 		if (msg_monthly == "monthly_arr") alert("월정액 구매 후 이용가능합니다.");
 
