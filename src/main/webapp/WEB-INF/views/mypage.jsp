@@ -286,13 +286,13 @@
 								<div class="col-lg-3 p-r-10">
 									<select name="account_mod" id="account_mod" onselect="${credit.card_type}">
 										<option value="">카드</option>
-										<option value="삼성">삼성</option>
-										<option value="NH농협">NH농협</option>
-										<option value="롯데">롯데</option>
-										<option value="비씨">비씨</option>
-										<option value="신한">신한</option>
-										<option value="현대">현대</option>
-										<option value="하나">하나</option>
+										<option value="삼성" <c:if test="${credit.card_type=='삼성'}"> selected </c:if>>삼성</option>
+										<option value="NH농협" <c:if test="${credit.card_type=='NH농협'}"> selected </c:if>>NH농협</option>
+										<option value="롯데" <c:if test="${credit.card_type=='롯데'}"> selected </c:if>>롯데</option>
+										<option value="비씨" <c:if test="${credit.card_type=='비씨'}"> selected </c:if>>비씨</option>
+										<option value="신한" <c:if test="${credit.card_type=='신한'}"> selected </c:if>>신한</option>
+										<option value="현대" <c:if test="${credit.card_type=='현대'}"> selected </c:if>>현대</option>
+										<option value="하나" <c:if test="${credit.card_type=='하나'}"> selected </c:if>>하나</option>
 									</select>
 								</div>
 								<div class="col-lg-9">
@@ -422,8 +422,8 @@
 <script>
 
 	$(document).ready(function() {
-		let card_type = '${credit.card_type}';
-		$('#account_mod').val(card_type).prop("selected", true);
+		<%--let card_type = '${credit.card_type}';--%>
+		<%--$('#account_mod').val(card_type).prop("selected", true);--%>
 
 		var text = $('#period').text();
 
