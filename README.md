@@ -290,7 +290,6 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 			listMap.put("img_name", imgName_x);
 			listMap.put("img_file", imgPath + imgName);
 			listMap.put("cs_uuid", cs_uuid);
-			System.out.println("map에 들어가는지 ???? " + listMap);
 
 			// 서비스 단에 map 넘기기
 			csService.imgSave(listMap);
@@ -308,21 +307,18 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 		}
 
 		List<Cs> css = csService.selectCs(email);
-		System.out.println("css = " + css);
 
 		if( css != null ) {
 			model.addAttribute("css", css);
 		}
 
 		List<String> cs_uuid = csService.selectUuid(email);
-		System.out.println("cs_uuid = " + cs_uuid);
 
 		List<CSImg> csImg = new ArrayList<>();
 
 		for (int i=0; i<cs_uuid.size(); i++){
 			List<CSImg> csImgList = new ArrayList<>();
 			String idx = cs_uuid.get(i);
-			System.out.println("디비에서 받아온 uuid : " + csService.selectCsImg(idx));
 			csImgList = csService.selectCsImg(idx);
 			for(int j=0; j<csImgList.size(); j++){
 				csImg.add(csImgList.get(j));
@@ -330,7 +326,6 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 		}
 
 		if( csImg.size() > 0  ) {
-			System.out.println("이거야?" + csImg.get(0).getImg_name());
 			model.addAttribute("csImg", csImg);
 		}
 
@@ -353,14 +348,12 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 ```java
     @RequestMapping(value="/findId", method = RequestMethod.POST)
     public String findId(User user, RedirectAttributes rattr, HttpServletRequest req) throws Exception {
-        System.out.println("id찾기 controller");
         String uri = req.getHeader("REFERER");
 
         String username = req.getParameter("find_email_name");
         String userphone = req.getParameter("find_email_tel");
 
         List<User> id = userService.findId(username, userphone);
-        System.out.println("id = " + id);
         StringBuilder idList = new StringBuilder();
 
         if(id.size() == 0){
@@ -394,14 +387,12 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 ```java
     @RequestMapping(value="/findId", method = RequestMethod.POST)
     public String findId(User user, RedirectAttributes rattr, HttpServletRequest req) throws Exception {
-        System.out.println("id찾기 controller");
         String uri = req.getHeader("REFERER");
 
         String username = req.getParameter("find_email_name");
         String userphone = req.getParameter("find_email_tel");
 
         List<User> id = userService.findId(username, userphone);
-        System.out.println("id = " + id);
         StringBuilder idList = new StringBuilder();
 
         if(id.size() == 0){
@@ -423,7 +414,6 @@ src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=Java
 ```java
     @Override
     public List<User> findId(String name, String phone) throws Exception {
-        System.out.println("id찾기Dao");
         Map map = new HashMap();
         map.put("name", name);
         map.put("phone",phone);
