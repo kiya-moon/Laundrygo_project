@@ -81,9 +81,9 @@ public class MonthlyController {
 			temp.setCard_type("정보없음");
 			temp.setEmail("");
 
-			m.addAttribute(temp);
+			m.addAttribute("temp",temp);
 		} else{
-			m.addAttribute(card);
+			m.addAttribute("credit",card);
 		}
 		return "apply";
 	}
