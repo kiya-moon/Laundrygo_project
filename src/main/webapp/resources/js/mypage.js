@@ -1,12 +1,14 @@
-let new_pw = ""
-let user_phone = ""
-let user_addr = ""
-let credit_num = ""
+let new_pw = "";
+let user_phone = "";
+let user_addr = "";
+let credit_type = "";
+let credit_num = "";
 
 $(document).ready(function() {
     new_pw = $("#pwd_mod").val();
     user_phone = $("#phone_mod").val();
     user_addr = $("#addr_mod").val();
+    credit_type = $("#account_mod").val();
     credit_num = $("#account_num_mod").val();
 });
 
@@ -116,16 +118,23 @@ function modAccountType() {
     if(account_mod.value === "" && account_num_mod.value === "") {
         mod_error[5].innerHTML = "";
         mod_error[5].style.display = "none";
+    } else if(account_mod.value == credit_type && account_num_mod.value == credit_num) {
+        mod_error[5].innerHTML = "";
+        mod_error[5].style.display = "none";
     } else if(account_num_mod.value != '' && account_mod.value === "") {
         mod_error[5].innerHTML = "카드 종류를 선택해 주세요.";
         mod_error[5].style.color = "red";
         mod_error[5].style.display = "block";
-    } else if(account_mod.value != "" && !account_mod.value == '') {
-        mod_error[5].innerHTML = "카드번호를 반드시 확인해 주세요."
-        mod_error[5].style.color = "#08A600";
+    } else if(account_mod.value != "" && account_num_mod.value == "") {
+        mod_error[5].innerHTML = "카드번호를 반드시 입력해 주세요."
+        mod_error[5].style.color = "red";
+        mod_error[5].style.display = "block";
+    } else if(account_mod.value != credit_type && account_num_mod.value == credit_num) {
+        mod_error[5].innerHTML = "카드사를 수정하시려면 카드번호 또한 수정해 주세요."
+        mod_error[5].style.color = "red";
         mod_error[5].style.display = "block";
     } else {
-        mod_error[5].innerHTML = "카드가 선택되었습니다."
+        mod_error[5].innerHTML = "카드가 선택되었습니다. 카드번호를 반드시 확인해 주세요."
         mod_error[5].style.color = "#08A600";
         mod_error[5].style.display = "block";
     }
@@ -135,6 +144,9 @@ function modAddAccount() {
     /* 카드번호 확인 체크 */
     var accountPattern = /^(\d{4})-(\d{4})-(\d{4})-(\d{4})$/;
     if(account_mod.value === "" && account_num_mod.value === "") {
+        mod_error[5].innerHTML = "";
+        mod_error[5].style.display = "none";
+    } else if(account_mod.value == credit_type && account_num_mod.value == credit_num) {
         mod_error[5].innerHTML = "";
         mod_error[5].style.display = "none";
     } else if(account_mod.value === "") {
@@ -149,6 +161,10 @@ function modAddAccount() {
         mod_error[5].innerHTML = "카드번호를 정확하게 입력해 주세요.";
         mod_error[5].style.color = "red";
         mod_error[5].style.display = "block";
+    } else if(account_mod.value != credit_type && account_num_mod.value == credit_num) {
+        mod_error[5].innerHTML = "카드사를 수정하시려면 카드번호 또한 수정해 주세요."
+        mod_error[5].style.color = "red";
+        mod_error[5].style.display = "block";
     } else {
         mod_error[5].innerHTML = "카드번호를 반드시 확인해 주세요."
         mod_error[5].style.color = "#08A600";
@@ -161,7 +177,7 @@ function validateModify() {
     if( new_pw == "" &&
         user_phone == phone_mod.value &&
         user_addr == addr_mod.value &&
-        (account_num_mod.value == '' || credit_num == account_num_mod.value)) {
+        (account_mod.value == credit_type && account_num_mod.value == credit_num)) {
 
         alert('수정할 내용이 없습니다.');
         return false;
@@ -198,7 +214,7 @@ function validateModify() {
     }
 
     if( (!mod_error[5].innerText == "" && mod_error[5].style.color == "red") ) {
-        alert('카드정보를 정확하게 입력해 주세요.');
+        alert('카드정보 또는 수정정보를 정확하게 입력해 주세요..');
         document.getElementById('account_num_mod').focus();
         return false;
     }
@@ -242,7 +258,7 @@ function mod_pwdChk(){
 }
 
 function resetMod() {
-    let card_type = $('#account_mod').val();
+    let card_type = credit_type;
     $(".user_mod")[0].reset();
 
     mod_error[0].innerHTML = "";

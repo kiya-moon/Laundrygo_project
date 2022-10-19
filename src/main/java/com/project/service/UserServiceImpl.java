@@ -1,10 +1,9 @@
 package com.project.service;
 
+import com.project.dao.MonthlyDao;
+import com.project.dao.PickupDao;
 import com.project.dao.UserDao;
-import com.project.dto.Credit;
-import com.project.dto.PayList;
-import com.project.dto.Point;
-import com.project.dto.User;
+import com.project.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +13,12 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
+
+    @Autowired
+    private PickupDao pickupDao;
+
+    @Autowired
+    private MonthlyDao monthlyDao;
 
     @Override
     public int user_insert(User user) throws Exception {
@@ -43,7 +48,8 @@ public class UserServiceImpl implements UserService {
     public String findPw(String email, String name, String phone) throws Exception {
         System.out.println("Pw찾기 service");
 
-        return userDao.findPw(email, name, phone);    }
+        return userDao.findPw(email, name, phone);
+    }
 
     @Override
     public int pwdChk(String email, String mod_password) throws Exception {
@@ -51,17 +57,10 @@ public class UserServiceImpl implements UserService {
         System.out.println("pwd = " + pwd);
         int cnt = 0;
 
-        if( pwd.equals(mod_password) ) {
+        if (pwd.equals(mod_password)) {
             cnt = 1;
         }
         return cnt;
-    }
-
-    @Override
-    public int modify(String email, String password, String phone, String addr) throws Exception {
-        System.out.println("회원정보 수정");
-
-        return userDao.modify(email, password, phone, addr);
     }
 
     @Override
@@ -70,27 +69,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int card_insert(String card_num, String card_type, String email) throws Exception {
-        System.out.println("카드 새로 등록");
-        return userDao.card_insert(card_num, card_type, email);
-    }
-
-    @Override
-    public int card_modify(String card_num, String card_type, String email) throws Exception {
-        System.out.println("카드정보 수정");
-        return userDao.card_modify(card_num, card_type, email);
-    }
-
-    @Override
     public int cancel(String email, int keep) throws Exception {
+        if(keep == 1){
+            keep = 0;
+        }else {
+            keep = 1;
+        }
         System.out.println("월정액 해지");
-
         return userDao.cancel(email, keep);
     }
 
     @Override
     public int delete(String email) throws Exception {
-
         return userDao.delete(email);
     }
 
@@ -103,4 +93,63 @@ public class UserServiceImpl implements UserService {
     public List<PayList> userPayList(String email) throws Exception {
         return userDao.userPayList(email);
     }
+
+    @Override
+    public int userModify(String pwd_mod, String phone_mod, String addr_mod, String email, User user) throws Exception {
+        // 새 정보 담을 변수 선언
+        String new_pwd = null;
+        String new_phone = null;
+        String new_addr = null;
+
+        // 새 정보와 기존 정보 비교 로직
+        if( pwd_mod == "" ) {
+            new_pwd = user.getPassword();
+        } else {
+            new_pwd = pwd_mod;
+        }
+
+        if( phone_mod == "" ) {
+            new_phone = user.getPhone();
+        } else {
+            new_phone = phone_mod;
+        }
+
+        if( addr_mod == "" ) {
+            new_addr = user.getAddr();
+        } else {
+            new_addr = addr_mod;
+        }
+        // 로직 끝
+
+        return userDao.modify(email, new_pwd, new_phone, new_addr);
+    }
+
+    @Override
+    public int cardModify(String account_mod, String account_num_mod, String email, Credit credit, MonthlyPayList monthlyPayList) throws Exception {
+        // 새 정보 담을 변수 선언
+        String new_account = null;
+        String new_account_num = null;
+        int account_cnt = 0;
+
+        // 새 정보 업데이트 로직
+        if( account_mod != "" & account_num_mod != "" ) {
+            new_account = account_mod;
+            new_account_num = account_num_mod;
+
+            if( credit == null ) {
+                account_cnt = userDao.card_insert(new_account_num, new_account, email);
+            } else if( credit != null ) {
+                account_cnt = userDao.card_modify(new_account_num, new_account, email);
+            }
+
+            if( monthlyPayList != null ) {
+                monthlyDao.monthlyListUpdate(email, new_account, new_account_num);
+            }
+        }
+
+        return account_cnt;
+    }
 }
+
+
+

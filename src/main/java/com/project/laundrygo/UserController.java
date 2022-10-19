@@ -28,17 +28,21 @@ public class UserController {
     @Autowired
     UserDao userDao;
 
+    // 회원가입
     @PostMapping("/member")
     public String member(User user) throws Exception {
         userService.user_insert(user);
 
         return "redirect:/";
     }
+
+    // 로그인 페이지
     @GetMapping("/login")
     public String loginForm() {
         return null;
     }
 
+    // 로그아웃
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         // 1. 세션을 종료
@@ -47,13 +51,15 @@ public class UserController {
         return "redirect:/";
     }
 
+    // 로그인
     @PostMapping("/login")
     public String login(String login_email, String login_password,
                         HttpServletRequest request, RedirectAttributes rattr) throws Exception{
-//        userService.user_select(login_email, login_password);
-        String uri = request.getHeader("REFERER");
-        System.out.println("uri = " + uri);
 
+        // 이전 페이지의 url 및 파라미터
+        String uri = request.getHeader("REFERER");
+
+        // 로그인 에러처리
         if(!loginCheck(login_email, login_password)) {
             rattr.addFlashAttribute("msg", "login_err");
 
@@ -63,12 +69,16 @@ public class UserController {
         // 세션 저장
         HttpSession session = request.getSession();
         session.setAttribute("email", login_email);
-//        session.setAttribute("user", userService.selectUser(login_email));
-        // 로그인 완료 시???
+
         return "redirect:"+uri;
     }
+
+    // 로그인 체크
     private boolean loginCheck(String login_email, String login_password) {
+        // 로그인 유저 정보 받을 객체 선언
         User user = null;
+
+        // 유저 정보 받아오기
         try {
             user = userService.selectUser(login_email);
         } catch (Exception e) {
@@ -77,30 +87,34 @@ public class UserController {
         }
 
         return user!=null && user.getPassword().equals(login_password);
-//        return "asdf".equals(id) && "1234".equals(pwd);
     }
 
+    // 중복체크
     @ResponseBody
     @RequestMapping(value="/dupliChk", method = RequestMethod.GET)
     public int dupliChk(@RequestParam("email") String email) throws Exception {
-        System.out.println("컨트롤러를 왜 안넘어올까???");
+
+        // 중복체크 로직
         int cnt = userService.dupliChk(email);
-        System.out.println("cnt = " + cnt);
+
         return cnt;
     }
 
+    // 아이디 찾기
     @RequestMapping(value="/findId", method = RequestMethod.POST)
     public String findId(User user, RedirectAttributes rattr, HttpServletRequest req) throws Exception {
-        System.out.println("id찾기 controller");
+        // 이전 페이지의 url 및 파라미터
         String uri = req.getHeader("REFERER");
 
+        // 뷰단에서 사용자 입력 정보 받아오기
         String username = req.getParameter("find_email_name");
         String userphone = req.getParameter("find_email_tel");
 
+        // id 찾아오기
         List<User> id = userService.findId(username, userphone);
-        System.out.println("id = " + id);
-        StringBuilder idList = new StringBuilder();
 
+        // id 찾기 실행 후 alert 메세지 전달
+        StringBuilder idList = new StringBuilder();
         if(id.size() == 0){
             rattr.addFlashAttribute("check", 1);
         } else {
@@ -113,28 +127,33 @@ public class UserController {
             rattr.addFlashAttribute("check", 2);
             rattr.addFlashAttribute("message","아이디는 "+ idList +" 입니다.");
         }
+
         return "redirect:"+uri;
     }
 
+    // 비밀번호 찾기
     @RequestMapping(value="/findPw", method = RequestMethod.POST)
     public String findPw(User user, RedirectAttributes rattr, HttpServletRequest req) throws Exception{
-        System.out.println("pw찾기 controller");
+        // 이전 페이지의 url 및 파라미터
         String uri = req.getHeader("REFERER");
 
+        // 뷰단에서 사용자 입력 정보 받아오기
         String userEmail = req.getParameter("find_pw_email");
         String userName = req.getParameter("find_pw_name");
         String userPhone = req.getParameter("find_pw_tel");
 
+        // pw 찾아오기
         String pw = userService.findPw(userEmail, userName, userPhone);
-        System.out.println("pw = " + pw);
+
+        // pw 찾기 실행 후 alert 메세지 전달
         if (pw == null){
             rattr.addFlashAttribute("check_pw", 1);
         }else{
             rattr.addFlashAttribute("check_pw", 2);
             rattr.addFlashAttribute("message_pw","비밀번호는 "+ pw +" 입니다.");
         }
-        return "redirect:"+uri;
 
+        return "redirect:"+uri;
     }
 
 }

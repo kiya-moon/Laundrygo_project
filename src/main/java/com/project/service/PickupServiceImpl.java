@@ -20,18 +20,86 @@ public class PickupServiceImpl implements PickupService {
     }
 
     @Override
-    public int pickupInsert(String p_addr, String m_name, String email, String p_life, String p_cleaning, String p_free) throws Exception{
-        return  pickupDao.pickupInsert(p_addr, m_name, email, p_life, p_cleaning, p_free);
-    }
-
-    @Override
-    public int cntUpdate(int new_lifeCnt, int new_cleaningCnt, int new_freeCnt, String email, int exTotal) throws Exception {
-        return pickupDao.cntUpdate(new_lifeCnt,new_cleaningCnt,new_freeCnt, email, exTotal);
-    }
-
-    @Override
     public List<Pickup> pickupList(String email) throws Exception {
-
         return pickupDao.pickupList(email);
+    }
+
+    @Override
+    public void pickupUpdate(MonthlyPayList monthlyPayList, String laundry, String laundry2, String p_addr, int inputCnt, String email) throws Exception {
+
+        // 월정액 이름 받아오기
+        String m_name = monthlyPayList.getM_name();
+
+        // O, X 체크용 변수
+        String p_life = "";
+        String p_cleaning = "";
+        String p_free = "";
+
+        // Extra 비용 변수
+        int extra_life = 0;
+        int extra_cleaning = 0;
+        int extra_free = monthlyPayList.getFree_cnt()-1;
+        int exTotal = 0;
+
+        // MonthlytPayList cnt 차감 및 O, X 넘기는 로직
+        int lifeCnt = monthlyPayList.getLife_cnt();
+        int cleaningCnt = monthlyPayList.getCleaning_cnt();
+
+        // Cnt 업데이트용 변수
+        int new_lifeCnt = 0;
+        int new_cleaningCnt = 0;
+        int new_freeCnt = 0;
+
+        if ( laundry != null && laundry.equals("living") ) {
+            extra_life = lifeCnt-1;
+            if(extra_life < 0){
+                p_life = "X";
+            }else{
+                p_life = "O";
+            }
+            new_lifeCnt = extra_life;
+
+        } else if( laundry == null ) {
+            p_life = " ";
+            new_lifeCnt = lifeCnt;
+        }
+
+        if ( laundry2 != null && laundry2.equals("each") ) {
+            extra_cleaning = cleaningCnt-inputCnt;
+            if(extra_cleaning < 0){
+                p_cleaning = "X";
+            }else{
+                p_cleaning = "O";
+            }
+            new_cleaningCnt = extra_cleaning;
+        } else if( laundry2 == null ) {
+            p_cleaning = " ";
+            new_cleaningCnt = cleaningCnt;
+        }
+
+        if(extra_free<0){
+            p_free = "X";
+        } else {
+            p_free = "O";
+        }
+        new_freeCnt = extra_free;
+
+        // 그리고 엑스트라 비용들은 if문을 거쳐 0이상이면 0으로 고정
+        if(extra_cleaning>=0){
+            extra_cleaning = 0;
+        }
+        if(extra_life>=0){
+            extra_life = 0;
+        }
+        if(extra_free>=0){
+            extra_free = 0;
+        }
+
+        exTotal = Math.abs((extra_cleaning*5000) + (extra_life*9900) + (extra_free*3500));
+
+        // 수거신청 정보 저장
+        pickupDao.pickupInsert(p_addr, m_name, email, p_life, p_cleaning, p_free);
+        pickupDao.cntUpdate(new_lifeCnt,new_cleaningCnt,new_freeCnt, email, exTotal);
+
     }
 }
