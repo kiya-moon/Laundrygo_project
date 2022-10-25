@@ -64,17 +64,25 @@ src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis
 <br><br>
 
 # 👕개발환경
-### Tools
+### IDE
 <img src="https://img.shields.io/badge/IntelliJ IDEA-black?style=for-the-badge&logo=IntelliJ IDEA&logoColor=white">&nbsp;
 <br>
 
-### DBMS
+### DB
 <img src="https://img.shields.io/badge/MySQL-black?style=for-the-badge&logo=MySQL#&logoColor=white">&nbsp;
 <br>
 
-### Languages
-<img src="https://img.shields.io/badge/Java11-black?style=for-the-badge&logo=Java11&logoColor=white">&nbsp;<img 
-src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=JavaScript&logoColor=white">
+### F/E
+<img src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=JavaScript&logoColor=white">&nbsp;
+<img src="https://img.shields.io/badge/HTML5-black?style=for-the-badge&logo=HTML5&logoColor=white">&nbsp;
+<img src="https://img.shields.io/badge/CSS3-black?style=for-the-badge&logo=CSS3&logoColor=white">&nbsp;
+<img src="https://img.shields.io/badge/JSP-black?style=for-the-badge&logo=JSP&logoColor=white">&nbsp;
+<br>
+
+### B/E
+<img src="https://img.shields.io/badge/Java11-black?style=for-the-badge&logo=Java11&logoColor=white">&nbsp;
+<img src="https://img.shields.io/badge/Spring-black?style=for-the-badge&logo=Spring&logoColor=white">&nbsp;
+<img src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis&logoColor=white">&nbsp;
 <br>
 
 ### Team Collaboration Tool
