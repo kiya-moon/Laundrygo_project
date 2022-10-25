@@ -53,7 +53,6 @@ src="https://img.shields.io/badge/Ajax-black?style=for-the-badge&logo=Ajax&logoC
 ### BackEnd
 <img src="https://img.shields.io/badge/Java11-black?style=for-the-badge&logo=Java11&logoColor=white">&nbsp;<img 
 src="https://img.shields.io/badge/Spring MVC-black?style=for-the-badge&logo=Spring&logoColor=white">&nbsp;<img 
-src="https://img.shields.io/badge/ApacheTomcat 9.0-black?style=for-the-badge&logo=Apache Tomcat&logoColor=white">&nbsp;<img 
 src="https://img.shields.io/badge/JSTL-black?style=for-the-badge&logo=JSTL&logoColor=white">&nbsp;<img 
 src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis&logoColor=white"><br>
 
@@ -72,17 +71,8 @@ src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis
 <img src="https://img.shields.io/badge/MySQL-black?style=for-the-badge&logo=MySQL#&logoColor=white">&nbsp;
 <br>
 
-### F/E
-<img src="https://img.shields.io/badge/JavaScript-black?style=for-the-badge&logo=JavaScript&logoColor=white">&nbsp;
-<img src="https://img.shields.io/badge/HTML5-black?style=for-the-badge&logo=HTML5&logoColor=white">&nbsp;
-<img src="https://img.shields.io/badge/CSS3-black?style=for-the-badge&logo=CSS3&logoColor=white">&nbsp;
-<img src="https://img.shields.io/badge/JSP-black?style=for-the-badge&logo=JSP&logoColor=white">&nbsp;
-<br>
-
-### B/E
-<img src="https://img.shields.io/badge/Java11-black?style=for-the-badge&logo=Java11&logoColor=white">&nbsp;
-<img src="https://img.shields.io/badge/Spring-black?style=for-the-badge&logo=Spring&logoColor=white">&nbsp;
-<img src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis&logoColor=white">&nbsp;
+### Server
+<img src="https://img.shields.io/badge/ApacheTomcat 9.0-black?style=for-the-badge&logo=Apache Tomcat&logoColor=white">&nbsp;
 <br>
 
 ### Team Collaboration Tool
