@@ -66,7 +66,6 @@ src="https://img.shields.io/badge/MyBatis-black?style=for-the-badge&logo=MyBatis
 # 👕개발환경
 ### Tools
 <img src="https://img.shields.io/badge/IntelliJ IDEA-black?style=for-the-badge&logo=IntelliJ IDEA&logoColor=white">&nbsp;
-<img src="https://img.shields.io/badge/MySQL-black?style=for-the-badge&logo=MySQL#&logoColor=white">
 <br>
 
 ### DBMS
